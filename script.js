@@ -335,7 +335,7 @@ const products = [
       "Kiểu giao tiếp: Kỹ thuật số 1 dây (Single-Bus)",
     ],
 
-    image: "sensor",
+    image: "dht22",
   },
 
   {
@@ -367,7 +367,7 @@ const products = [
       "Tín hiệu trigger đầu vào: 10µs TTL",
     ],
 
-    image: "sensor",
+    image: "sieuam",
   },
 
   {
@@ -399,7 +399,7 @@ const products = [
       "Góc cảm ứng: < 120 độ",
     ],
 
-    image: "sensor",
+    image: "pir",
   },
 
   {
@@ -431,7 +431,7 @@ const products = [
       "Điện áp hoạt động: 3.3V - 5V",
     ],
 
-    image: "sensor",
+    image: "hongngoai",
   },
 
   {
@@ -462,7 +462,7 @@ const products = [
       "Đầu ra: Cả Analog và Digital",
     ],
 
-    image: "sensor",
+    image: "khigas",
   },
 
   {
@@ -493,7 +493,7 @@ const products = [
       "IC so sánh: LM393 độ nhạy cao",
     ],
 
-    image: "sensor",
+    image: "cbas",
   },
 
   {
@@ -525,7 +525,7 @@ const products = [
       "Tốc độ baudrate mặc định: 9600 - 115200 bps",
     ],
 
-    image: "sensor",
+    image: "cbvt",
   },
 
   // --- MÀN HÌNH HIỂN THỊ ---
@@ -591,7 +591,7 @@ const products = [
       "Điện áp nuôi mạch: 5V DC",
     ],
 
-    image: "display",
+    image: "lcd16x2",
   },
 
   {
@@ -623,7 +623,7 @@ const products = [
       "IC điều khiển hiển thị: ILI9341",
     ],
 
-    image: "display",
+    image: "TFT",
   },
 
   {
@@ -655,7 +655,7 @@ const products = [
       "Màu sắc hiển thị: Đỏ sáng",
     ],
 
-    image: "display",
+    image: "7d4",
   },
 
   {
@@ -687,7 +687,7 @@ const products = [
       "Điện áp nuôi: 5V DC",
     ],
 
-    image: "display",
+    image: "matrix",
   },
 
   // --- BỘ NGUểN & PIN SẠC ---
@@ -721,7 +721,7 @@ const products = [
       "Hiệu suất chuyển đổi: Lên tới 92%",
     ],
 
-    image: "power",
+    image: "haap",
   },
 
   {
@@ -753,7 +753,7 @@ const products = [
       "IC tăng áp: XL6009E1",
     ],
 
-    image: "power",
+    image: "tangap",
   },
 
   {
@@ -785,7 +785,7 @@ const products = [
       "Điện áp ngắt khi cạn: 2.5V",
     ],
 
-    image: "power",
+    image: "pinlithiumion",
   },
 
   {
@@ -817,7 +817,7 @@ const products = [
       "Chức năng bảo vệ: Có ngắt bảo vệ chống cạn pin",
     ],
 
-    image: "power",
+    image: "machsaclipo",
   },
 
   {
@@ -849,7 +849,7 @@ const products = [
       "Kiểu chân đóng gói: TO-220",
     ],
 
-    image: "power",
+    image: "iconap",
   },
 
   {
@@ -881,7 +881,7 @@ const products = [
       "Công suất tải định mức: 120W",
     ],
 
-    image: "power",
+    image: "nguontoong",
   },
 
   // --- ROBOTICS & ĐỘNG CƠ ---
@@ -915,7 +915,7 @@ const products = [
       "Trọng lượng siêu nhẹ: 9 grams",
     ],
 
-    image: "robotics",
+    image: "servo",
   },
 
   {
@@ -947,7 +947,7 @@ const products = [
       "Dải nguồn hoạt động: 4.8 - 7.2V",
     ],
 
-    image: "robotics",
+    image: "servomg996r",
   },
 
   {
@@ -979,7 +979,7 @@ const products = [
       "Đường kính trục ra: 5mm trục chữ D",
     ],
 
-    image: "robotics",
+    image: "nema",
   },
 
   {
@@ -1011,7 +1011,7 @@ const products = [
       "Dòng tải chịu tối đa: 2A cho mỗi cầu H",
     ],
 
-    image: "robotics",
+    image: "l298n",
   },
 
   {
@@ -1042,7 +1042,7 @@ const products = [
       "Nguồn nuôi hoạt động: 3 - 6V DC",
     ],
 
-    image: "robotics",
+    image: "4wd",
   },
 
   {
@@ -1074,7 +1074,7 @@ const products = [
       "Khớp trục nối: Trục chữ D kích thước 4mm",
     ],
 
-    image: "robotics",
+    image: "mo60mm",
   },
 
   {
@@ -1106,7 +1106,7 @@ const products = [
       "Lắp ráp: Người dùng tự lắp ráp theo sách hướng dẫn",
     ],
 
-    image: "robotics",
+    image: "4dof",
   },
 
   // --- LINH KIỆN MÁY TÍNH ---
@@ -1141,7 +1141,7 @@ const products = [
       "Hỗ trợ chuẩn socket: LGA1700",
     ],
 
-    image: "computer",
+    image: "cpu",
   },
 
   {
@@ -1173,7 +1173,7 @@ const products = [
       "Kết nối ổ cứng: 3x khe cắm M.2 PCIe 4.0 SSD",
     ],
 
-    image: "computer",
+    image: "b760f",
   },
 
   {
@@ -1205,13 +1205,13 @@ const products = [
       "Cổng kết nối ra: 3x DisplayPort, 1x HDMI",
     ],
 
-    image: "computer",
+    image: "rtx3060",
   },
 
   {
     id: 36,
 
-    name: "Thanh Nhớ Samsung 8GB DDR4 3200MHz Desktop RAM",
+    name: "Ram Samsung 8GB DDR4 3200MHz Desktop RAM",
 
     category: "computer",
 
@@ -1237,7 +1237,7 @@ const products = [
       "Điện áp RAM hoạt động: 1.2V",
     ],
 
-    image: "computer",
+    image: "ram8gbddr4ss",
   },
 
   {
@@ -1269,7 +1269,7 @@ const products = [
       "Kích thước ổ: 2.5 inch",
     ],
 
-    image: "computer",
+    image: "ssd",
   },
 
   {
@@ -1301,7 +1301,7 @@ const products = [
       "Kết nối: SATA III 6Gb/s",
     ],
 
-    image: "computer",
+    image: "hdd",
   },
 
   {
@@ -1333,7 +1333,7 @@ const products = [
       "Kích thước quạt tản: 120mm êm ái",
     ],
 
-    image: "computer",
+    image: "pow",
   },
 
   {
@@ -1365,7 +1365,7 @@ const products = [
       "Độ ồn tối đa phát ra: 24.6 dB(A)",
     ],
 
-    image: "computer",
+    image: "noc",
   },
 
   {
@@ -1397,7 +1397,7 @@ const products = [
       "Cổng giao tiếp trước: USB 3.2 Type-A và Type-C",
     ],
 
-    image: "computer",
+    image: "nzxt",
   },
 
   // --- LINH KIỆN CƠ BẢN ---
@@ -1431,7 +1431,7 @@ const products = [
       "Số lượng gói: Gói đóng 100 chiếc điện trở",
     ],
 
-    image: "components",
+    image: "10k",
   },
 
   {
@@ -1462,7 +1462,7 @@ const products = [
       "Tổng số lượng tụ trong hộp: Hộp sắp xếp 120 chiếc",
     ],
 
-    image: "components",
+    image: "120",
   },
 
   {
@@ -1494,7 +1494,7 @@ const products = [
       "Số lượng đóng gói: Gói 100 chiếc đi-ốt",
     ],
 
-    image: "components",
+    image: "1n4007",
   },
 
   {
@@ -1526,7 +1526,7 @@ const products = [
       "Kiểu đóng gói: TO-92 chân cắm",
     ],
 
-    image: "components",
+    image: "pn2222",
   },
 
   {
@@ -1558,7 +1558,7 @@ const products = [
       "Đóng gói chân cắm: TO-220",
     ],
 
-    image: "components",
+    image: "irf540n",
   },
 
   {
@@ -1590,7 +1590,7 @@ const products = [
       "Số lượng gói: Gói đóng 10 con chip",
     ],
 
-    image: "components",
+    image: "ne5555",
   },
 
   {
@@ -1622,7 +1622,7 @@ const products = [
       "Cách ly chống giật: Optocoupler quang bảo vệ",
     ],
 
-    image: "components",
+    image: "relay5v",
   },
 
   {
@@ -1654,7 +1654,7 @@ const products = [
       "Số lượng đóng gói: Gói 10 chiếc thạch anh",
     ],
 
-    image: "components",
+    image: "16kmhz",
   },
 
   {
@@ -1686,7 +1686,7 @@ const products = [
       "Số lượng dây: 3 vỉ x 40 sợi tổng cộng 120 sợi",
     ],
 
-    image: "components",
+    image: "jumperwire",
   },
 
   // --- DỤNG CỤ KỸ THUẬT ---
@@ -1720,7 +1720,7 @@ const products = [
       "Điện trở rò rỉ nối đất: < 2 Ohms bảo vệ IC",
     ],
 
-    image: "tools",
+    image: "yihua",
   },
 
   {
@@ -1752,7 +1752,7 @@ const products = [
       "Tính năng đo đi kèm: Còi thông mạch buzzer, đo hệ số khuếch đại hFE transistor",
     ],
 
-    image: "tools",
+    image: "dt830d",
   },
 
   {
@@ -1784,7 +1784,7 @@ const products = [
       "Kích thước màn hình đồ họa: 2.4 inch TFT màu LCD",
     ],
 
-    image: "tools",
+    image: "dso150",
   },
 
   {
@@ -1815,7 +1815,7 @@ const products = [
       "Tay cầm bọc cao su: Cao su nhám chống trượt tay",
     ],
 
-    image: "tools",
+    image: "45i1",
   },
 
   {
@@ -1846,7 +1846,7 @@ const products = [
       "Tay bọc bảo vệ: Nhựa bọc PVC màu xanh dương",
     ],
 
-    image: "tools",
+    image: "plato",
   },
 
   {
@@ -1877,7 +1877,7 @@ const products = [
       "Sách hướng dẫn quy trình: Có kèm hướng dẫn an toàn",
     ],
 
-    image: "tools",
+    image: "pcb",
   },
 
   // --- DIY & KẾT NỐI KHÔNG DÂY ---
@@ -1933,7 +1933,7 @@ const products = [
     badge: null,
 
     description:
-      "Cạc WiFi siêu nhỏ gọn giao tiếp qua giao thức Serial lệnh AT. Giúp thêm tính năng gửi tin nhắn WiFi lên internet cho Arduino Uno dễ dàng.",
+      "Card WiFi siêu nhỏ gọn giao tiếp qua giao thức Serial lệnh AT. Giúp thêm tính năng gửi tin nhắn WiFi lên internet cho Arduino Uno dễ dàng.",
 
     specs: [
       "Chế độ mạng WiFi: Station / SoftAP kết hợp",
@@ -1942,7 +1942,7 @@ const products = [
       "Điện áp nuôi: 3.3V DC (Cắm 5V sẽ gây cháy chip ngay lập tức)",
     ],
 
-    image: "iot",
+    image: "esp01s",
   },
 
   {
@@ -1974,7 +1974,7 @@ const products = [
       "Điện áp cấp nuôi: 3.6V - 6V DC",
     ],
 
-    image: "iot",
+    image: "hc05",
   },
 
   {
@@ -2006,7 +2006,7 @@ const products = [
       "Điện áp nuôi mạch đọc: 3.3V DC",
     ],
 
-    image: "iot",
+    image: "rfid",
   },
 
   {
@@ -2038,7 +2038,7 @@ const products = [
       "Dải đo nhiệt độ: -40 đến 85°C",
     ],
 
-    image: "sensor",
+    image: "bmp280",
   },
 
   {
@@ -2070,7 +2070,7 @@ const products = [
       "Số chân Analog Input: 8 chân",
     ],
 
-    image: "arduino_uno",
+    image: "nanov3",
   },
 
   {
@@ -2102,7 +2102,7 @@ const products = [
       "Giao tiếp: UART, SPI, I2C",
     ],
 
-    image: "stm32",
+    image: "stm8s",
   },
 
   {
@@ -2133,7 +2133,7 @@ const products = [
       "Nguồn cấp đầu ra: 3.3V và 5V DC",
     ],
 
-    image: "stm32",
+    image: "napstm",
   },
 
   {
@@ -2164,7 +2164,7 @@ const products = [
       "IC so sánh tích hợp: LM393 chỉnh độ nhạy",
     ],
 
-    image: "sensor",
+    image: "cambiendoam",
   },
 
   {
@@ -2195,7 +2195,7 @@ const products = [
       "LED phát xạ tích hợp: Đỏ và Hồng ngoại",
     ],
 
-    image: "sensor",
+    image: "max30102",
   },
 
   {
@@ -2226,7 +2226,7 @@ const products = [
       "Bộ chuyển đổi ADC tích hợp: 16-bit",
     ],
 
-    image: "sensor",
+    image: "mpu6050",
   },
 
   {
@@ -2257,7 +2257,7 @@ const products = [
       "Dải đo từ trường: ±0.88 đến ±8.1 gauss",
     ],
 
-    image: "sensor",
+    image: "hmc5883m",
   },
 
   {
@@ -2288,7 +2288,7 @@ const products = [
       "Chuẩn giao tiếp điều khiển: SPI 3-wire/4-wire",
     ],
 
-    image: "display",
+    image: "ep",
   },
 
   {
@@ -2319,7 +2319,7 @@ const products = [
       "Chuẩn giao tiếp nối tiếp: SPI Serial 3 chân",
     ],
 
-    image: "display",
+    image: "led78",
   },
 
   {
@@ -2350,7 +2350,7 @@ const products = [
       "Chất liệu vỏ khay: Nhựa ABS chịu lực tốt",
     ],
 
-    image: "power",
+    image: "18650",
   },
 
   {
@@ -2381,7 +2381,7 @@ const products = [
       "Công suất sạc ra tối đa: 24W",
     ],
 
-    image: "power",
+    image: "MachHaAp",
   },
 
   {
@@ -2412,7 +2412,7 @@ const products = [
       "Dòng tải ngõ ra tối đa: 2.0A",
     ],
 
-    image: "power",
+    image: "adt",
   },
 
   {
@@ -2443,7 +2443,7 @@ const products = [
       "Tốc độ không tải ở 6V: 200 vòng/phút",
     ],
 
-    image: "robotics",
+    image: "DongCoGiamToc",
   },
 
   {
@@ -2474,7 +2474,7 @@ const products = [
       "Lõi khớp nối: Trục lục giác đồng 6mm",
     ],
 
-    image: "robotics",
+    image: "BanhXeRobot",
   },
 
   {
@@ -2505,7 +2505,7 @@ const products = [
       "Chế độ vi bước tối đa: 1/16 bước",
     ],
 
-    image: "robotics",
+    image: "a4988",
   },
 
   {
@@ -2536,7 +2536,7 @@ const products = [
       "Kiểu RAM: DDR4 UDIMM có tản nhiệt nhôm",
     ],
 
-    image: "computer",
+    image: "MachDriver-A4988",
   },
 
   {
@@ -2567,7 +2567,7 @@ const products = [
       "Độ nhớt keo: 870 poise",
     ],
 
-    image: "computer",
+    image: "KeoTanNhietCPU",
   },
 
   {
@@ -2597,7 +2597,7 @@ const products = [
       "Kích cỡ thông dụng gồm: 6x6x5mm đến 12x12x7.3mm",
     ],
 
-    image: "components",
+    image: "HopNutNhan",
   },
 
   {
@@ -2628,7 +2628,7 @@ const products = [
       "Kiểu đóng gói: Chân cắm WH148 trục dẹt",
     ],
 
-    image: "components",
+    image: "ChietApXoayDonWh148",
   },
 
   {
@@ -2659,7 +2659,7 @@ const products = [
       "Tần số âm thanh phát ra: 2300Hz ±300Hz",
     ],
 
-    image: "components",
+    image: "CoiBaoDongBuzzer",
   },
 
   {
@@ -2690,7 +2690,7 @@ const products = [
       "Thành phần hợp kim: Thiếc và Đồng",
     ],
 
-    image: "tools",
+    image: "CuonDayThepHan",
   },
 
   {
@@ -2721,7 +2721,7 @@ const products = [
       "Tính năng bảo vệ: Chống tĩnh điện",
     ],
 
-    image: "tools",
+    image: "NhipGapLinhKien",
   },
 
   {
@@ -2752,7 +2752,7 @@ const products = [
       "Điện áp cấp nuôi: 3.3V - 5V DC",
     ],
 
-    image: "iot",
+    image: "BoModule",
   },
 
   {
@@ -2783,7 +2783,7 @@ const products = [
       "Khoảng cách đọc ghi tối đa: < 5cm",
     ],
 
-    image: "iot",
+    image: "Module-Pn532",
   },
 
   {
@@ -2815,7 +2815,7 @@ const products = [
       "Chân Analog Input: 1 cổng (Tối đa 3.2V)",
     ],
 
-    image: "wemos",
+    image: "MachESp8266",
   },
 
   {
@@ -2846,7 +2846,7 @@ const products = [
       "Hỗ trợ cầu chì tự phục hồi chống quá dòng bảo vệ cổng USB",
     ],
 
-    image: "stlink",
+    image: "MachSTM8",
   },
 
   {
@@ -2878,7 +2878,7 @@ const products = [
       "Tích hợp sẵn DAC 8-bit nội",
     ],
 
-    image: "arduino_nano",
+    image: "CamBien-BMP180",
   },
 
   {
@@ -2910,7 +2910,7 @@ const products = [
       "Tích hợp cảm biến đo nhiệt độ môi trường",
     ],
 
-    image: "sensor",
+    image: "CamBien-BMP180",
   },
 
   {
@@ -2942,7 +2942,7 @@ const products = [
       "Không yêu cầu linh kiện tính toán cân chỉnh bên ngoài",
     ],
 
-    image: "sensor",
+    image: "CamBienBH1750",
   },
 
   {
@@ -2974,7 +2974,7 @@ const products = [
       "Dòng điện hoạt động: 10mA",
     ],
 
-    image: "sensor",
+    image: "CamBien-VL53LOX",
   },
 
   {
@@ -3006,7 +3006,7 @@ const products = [
       "Điện áp hoạt động: 3V - 5V DC",
     ],
 
-    image: "sensor",
+    image: "CamBien-TCS3200",
   },
 
   {
@@ -3038,7 +3038,7 @@ const products = [
       "Hỗ trợ kết nối song song 8-bit hoặc 4-bit thông dụng",
     ],
 
-    image: "lcd2004",
+    image: "MangHinh-LCD20x4",
   },
 
   {
@@ -3070,7 +3070,7 @@ const products = [
       "Hỗ trợ khe cắm thẻ nhớ SD ở mặt sau màn hình",
     ],
 
-    image: "tft18",
+    image: "ManHinhMáuT7735-128x160",
   },
 
   {
@@ -3102,7 +3102,7 @@ const products = [
       "Điện áp hoạt động: 3.3V - 5V DC",
     ],
 
-    image: "led7",
+    image: "KhoiHienThiLed-TM1637",
   },
 
   {
@@ -3134,7 +3134,7 @@ const products = [
       "Dòng tải tối đa liên tục: 3A (cần tản nhiệt nếu tải nặng)",
     ],
 
-    image: "power",
+    image: "MachTangAp-XL6009",
   },
 
   {
@@ -3166,7 +3166,7 @@ const products = [
       "Tần số chuyển mạch: 1.5MHz",
     ],
 
-    image: "power",
+    image: "MachHaApDc-Dc3ÁieuNho",
   },
 
   {
@@ -3198,7 +3198,7 @@ const products = [
       "Dòng sạc tối đa cho pin: 1A",
     ],
 
-    image: "power",
+    image: "ModuleSacPin-18650",
   },
 
   {
@@ -3230,7 +3230,7 @@ const products = [
       "Bộ sản phẩm bao gồm: Ốc vít và linh kiện cơ khí",
     ],
 
-    image: "robotics",
+    image: "CanhTayRobot-SG90",
   },
 
   {
@@ -3261,7 +3261,7 @@ const products = [
       "Mặt đế: 2 tầng Mica tròn đường kính 140mm",
     ],
 
-    image: "robotics",
+    image: "KhungXeoRobotMica",
   },
 
   {
@@ -3293,7 +3293,7 @@ const products = [
       "Tích hợp sẵn nhôm tản nhiệt màu xanh dương",
     ],
 
-    image: "robotics",
+    image: "MachDieuKieu-A4988",
   },
 
   {
@@ -3325,7 +3325,7 @@ const products = [
       "Không chứa thành phần kim loại (an toàn tuyệt đối không dẫn điện)",
     ],
 
-    image: "computer",
+    image: "KeoMX-4",
   },
 
   {
@@ -3357,7 +3357,7 @@ const products = [
       "Đầu kết nối nguồn: 4-pin Molex cắm trực tiếp nguồn PC",
     ],
 
-    image: "computer",
+    image: "QuatTanNhietRGB12cm",
   },
 
   {
@@ -3389,7 +3389,7 @@ const products = [
       "Kích thước đầu ra: Tròn ngoài 5.5mm / Kim trong 2.1mm",
     ],
 
-    image: "computer",
+    image: "adt",
   },
 
   {
@@ -3420,7 +3420,7 @@ const products = [
       "Chất liệu nhựa: PP trong suốt dày dặn cứng cáp",
     ],
 
-    image: "components",
+    image: "HopLinhKienNhua-15",
   },
 
   {
@@ -3452,7 +3452,7 @@ const products = [
       "Đường kính loa còi: 12mm",
     ],
 
-    image: "components",
+    image: "BoCoiCHipCoiBao12v",
   },
 
   {
@@ -3483,7 +3483,7 @@ const products = [
       "Kiểu chân: Chân đồng thẳng dẹt mạ thiếc tiếp xúc dẫn điện tốt",
     ],
 
-    image: "components",
+    image: "HảngaoDucDon2.54mm40chan",
   },
 
   {
@@ -3515,7 +3515,7 @@ const products = [
       "Chiều dài kìm cắt: 130mm",
     ],
 
-    image: "tools",
+    image: "KImCatChanLinhKienPalato170",
   },
 
   {
@@ -3546,7 +3546,7 @@ const products = [
       "Đầu hút thiếc: Nhựa Teflon chịu nhiệt độ cao không chảy",
     ],
 
-    image: "tools",
+    image: "THietBiHutThietBomHutChi",
   },
 
   {
@@ -3577,7 +3577,7 @@ const products = [
       "Tích hợp sẵn đèn LED chỉ báo luồng truyền dữ liệu RX/TX",
     ],
 
-    image: "iot",
+    image: "MachChuyendoiUSB-CP2102",
   },
 ];
 
@@ -4974,10 +4974,14 @@ class SearchManager {
     // Ẩn overlayInput vì ta sẽ gõ trực tiếp trên triggerInput
     if (this.triggerInput) {
       this.triggerInput.addEventListener("focus", () => this.openOverlay());
-      
+
       // Ấn ESC để đóng
       window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && this.overlay && this.overlay.classList.contains("open")) {
+        if (
+          e.key === "Escape" &&
+          this.overlay &&
+          this.overlay.classList.contains("open")
+        ) {
           this.closeOverlay();
         }
       });
@@ -4998,7 +5002,7 @@ class SearchManager {
     // Click ra ngoài thì đóng
     document.addEventListener("click", (e) => {
       if (
-        this.overlay && 
+        this.overlay &&
         this.overlay.classList.contains("open") &&
         !this.overlay.contains(e.target) &&
         e.target !== this.triggerInput
@@ -5033,13 +5037,16 @@ class SearchManager {
     if (cleanQuery === "") {
       // Chưa gõ gì → gợi ý 6 sản phẩm nổi bật (HOT badge trước)
       filtered = [...this.productsList]
-        .sort((a, b) => (b.badge === "HOT" ? 1 : 0) - (a.badge === "HOT" ? 1 : 0))
+        .sort(
+          (a, b) => (b.badge === "HOT" ? 1 : 0) - (a.badge === "HOT" ? 1 : 0),
+        )
         .slice(0, 6);
     } else {
-      filtered = this.productsList.filter(p =>
-        p.name.toLowerCase().includes(cleanQuery) ||
-        p.category.toLowerCase().includes(cleanQuery) ||
-        p.brand.toLowerCase().includes(cleanQuery)
+      filtered = this.productsList.filter(
+        (p) =>
+          p.name.toLowerCase().includes(cleanQuery) ||
+          p.category.toLowerCase().includes(cleanQuery) ||
+          p.brand.toLowerCase().includes(cleanQuery),
       );
     }
 
@@ -5056,7 +5063,7 @@ class SearchManager {
 
     // ── 3. NHÓM THEO DANH MỤC (tham khảo từ VLAPTOP keyword grouping) ──
     const grouped = {};
-    filtered.slice(0, 12).forEach(p => {
+    filtered.slice(0, 12).forEach((p) => {
       const cat = getVnCatName(p.category);
       if (!grouped[cat]) grouped[cat] = [];
       grouped[cat].push(p);
@@ -5078,7 +5085,7 @@ class SearchManager {
       header.textContent = catName;
       this.resultsContainer.appendChild(header);
 
-      items.forEach(p => {
+      items.forEach((p) => {
         const item = document.createElement("div");
         item.className = "search-result-item";
         item.style.cssText = `
@@ -5090,8 +5097,11 @@ class SearchManager {
           transition: background .15s;
           border-bottom: 1px solid rgba(255,255,255,0.04);
         `;
-        item.addEventListener("mouseenter", () => item.style.background = "var(--bg-card)");
-        item.addEventListener("mouseleave", () => item.style.background = "");
+        item.addEventListener(
+          "mouseenter",
+          () => (item.style.background = "var(--bg-card)"),
+        );
+        item.addEventListener("mouseleave", () => (item.style.background = ""));
 
         // Badge tình trạng kho (tham khảo VLAPTOP cart-count badge)
         const inStock = p.stock > 0;
@@ -5108,8 +5118,10 @@ class SearchManager {
 
         // Highlight từ khóa (tham khảo VLAPTOP highlightText)
         const highlightName = cleanQuery
-          ? p.name.replace(new RegExp(`(${cleanQuery})`, "gi"),
-              '<mark style="background:rgba(0,212,255,0.25);color:var(--accent-blue);border-radius:2px;padding:0 1px">$1</mark>')
+          ? p.name.replace(
+              new RegExp(`(${cleanQuery})`, "gi"),
+              '<mark style="background:rgba(0,212,255,0.25);color:var(--accent-blue);border-radius:2px;padding:0 1px">$1</mark>',
+            )
           : p.name;
 
         item.innerHTML = `
@@ -5146,7 +5158,11 @@ class SearchManager {
         // Click → mở Quick View (giữ nguyên hành vi cũ)
         item.addEventListener("click", () => {
           this.closeOverlay();
-          openQuickView(p.id, this.filterManager.cartManager, this.filterManager.wishlistManager);
+          openQuickView(
+            p.id,
+            this.filterManager.cartManager,
+            this.filterManager.wishlistManager,
+          );
         });
 
         this.resultsContainer.appendChild(item);
