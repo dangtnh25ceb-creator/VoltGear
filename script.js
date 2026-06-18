@@ -1,15 +1,4 @@
-/**
-
- * TechStore VN - Cửa Hàng Linh Kiện Điện Tử & Thiết Bị Phần Cứng
-
- * File script.js xử lý nghiệp vụ của website (Vanilla JS)
-
- */
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   // Khởi tạo các trình quản lý nghiệp vụ chính
 
   const toastManager = new ToastManager();
@@ -19,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartManager = new CartManager(toastManager);
 
   const wishlistManager = new WishlistManager(toastManager, cartManager);
-
-  
 
   // Khởi tạo giao diện tĩnh
 
@@ -32,61 +19,51 @@ document.addEventListener('DOMContentLoaded', () => {
 
   initHeroSlider();
 
-  
-
   // Hiển thị sản phẩm ban đầu & lắp ráp bộ lọc
 
-  const filterManager = new FilterManager(products, cartManager, wishlistManager);
+  const filterManager = new FilterManager(
+    products,
+    cartManager,
+    wishlistManager,
+  );
 
   filterManager.renderAll();
-
-
 
   // Khởi tạo bộ tìm kiếm trực tiếp
 
   const searchManager = new SearchManager(products, filterManager);
 
-
-
   // Khởi tạo hướng dẫn đồ án tốt nghiệp
 
   initProjects(toastManager, cartManager);
-
-
 
   // Xử lý gửi biểu mẫu
 
   initForms(toastManager);
 
-
-
   // Nút quay lại đầu trang
 
   initScrollTop();
 
-
   // View Switcher Logic
-  const viewBtns = document.querySelectorAll('[data-view]');
-  viewBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
+  const viewBtns = document.querySelectorAll("[data-view]");
+  viewBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
       e.preventDefault();
-      const targetView = btn.getAttribute('data-view');
+      const targetView = btn.getAttribute("data-view");
       if (targetView) {
-        document.querySelectorAll('.view-section').forEach(view => {
-          view.style.display = 'none';
+        document.querySelectorAll(".view-section").forEach((view) => {
+          view.style.display = "none";
         });
-        const viewEl = document.getElementById(targetView + '-view');
+        const viewEl = document.getElementById(targetView + "-view");
         if (viewEl) {
-          viewEl.style.display = 'block';
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          viewEl.style.display = "block";
+          window.scrollTo({ top: 0, behavior: "smooth" });
         }
       }
     });
   });
-
 });
-
-
 
 // ==========================================
 
@@ -95,11 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // ==========================================
 
 const products = [
-
   // --- VI ĐIỀU KHIỂN & PHÁT TRIỂN ---
 
   {
-
     id: 1,
 
     name: "Bo Mạch Vi Điều Khiển Arduino Uno R3 (Chip Cắm ATmega328P)",
@@ -118,16 +93,21 @@ const products = [
 
     badge: null,
 
-    description: "Bo mạch vi điều khiển Arduino Uno R3 chính hãng là lựa chọn hàng đầu cho sinh viên bắt đầu học lập trình nhúng và điện tử. Sử dụng chip nạp ATmega328P thông dụng nhất hiện nay.",
+    description:
+      "Bo mạch vi điều khiển Arduino Uno R3 chính hãng là lựa chọn hàng đầu cho sinh viên bắt đầu học lập trình nhúng và điện tử. Sử dụng chip nạp ATmega328P thông dụng nhất hiện nay.",
 
-    specs: ["Vi điều khiển chính: ATmega328P", "Điện áp hoạt động: 5V", "Điện áp vào khuyên dùng: 7-12V", "Số chân Digital I/O: 14 chân", "Số chân Analog Input: 6 chân"],
+    specs: [
+      "Vi điều khiển chính: ATmega328P",
+      "Điện áp hoạt động: 5V",
+      "Điện áp vào khuyên dùng: 7-12V",
+      "Số chân Digital I/O: 14 chân",
+      "Số chân Analog Input: 6 chân",
+    ],
 
-    image: "arduino_uno"
-
+    image: "arduino_uno",
   },
 
   {
-
     id: 2,
 
     name: "Bo Mạch Vi Điều Khiển Arduino Mega 2560 R3",
@@ -146,16 +126,21 @@ const products = [
 
     badge: "HOT",
 
-    description: "Phiên bản mở rộng hoàn hảo dành cho các đồ án phức tạp cần nhiều chân kết nối tín hiệu. Thường được sử dụng làm bộ não máy in 3D, máy CNC mini và cánh tay robot.",
+    description:
+      "Phiên bản mở rộng hoàn hảo dành cho các đồ án phức tạp cần nhiều chân kết nối tín hiệu. Thường được sử dụng làm bộ não máy in 3D, máy CNC mini và cánh tay robot.",
 
-    specs: ["Vi điều khiển: ATmega2560", "Bộ nhớ Flash: 256KB", "Bộ nhớ SRAM: 8KB", "Chân Digital I/O: 54 chân", "Chân Analog Inputs: 16 chân"],
+    specs: [
+      "Vi điều khiển: ATmega2560",
+      "Bộ nhớ Flash: 256KB",
+      "Bộ nhớ SRAM: 8KB",
+      "Chân Digital I/O: 54 chân",
+      "Chân Analog Inputs: 16 chân",
+    ],
 
-    image: "mega"
-
+    image: "mega",
   },
 
   {
-
     id: 3,
 
     name: "Mạch Thu Phát ESP32 DevKit V1 WiFi & Bluetooth NodeMCU",
@@ -174,16 +159,21 @@ const products = [
 
     badge: "HOT",
 
-    description: "Dòng chip lõi kép hiệu năng cao tích hợp sẵn kết nối WiFi và Bluetooth. Lựa chọn tối ưu nhất cho các đồ án nhà thông minh, IoT công nghiệp và truyền nhận dữ liệu xa.",
+    description:
+      "Dòng chip lõi kép hiệu năng cao tích hợp sẵn kết nối WiFi và Bluetooth. Lựa chọn tối ưu nhất cho các đồ án nhà thông minh, IoT công nghiệp và truyền nhận dữ liệu xa.",
 
-    specs: ["Lõi xử lý: Tensilica 32-bit Dual-Core", "Tần số hoạt động: 240MHz", "Bộ nhớ SRAM: 520KB", "Bộ nhớ Flash: 4MB", "Cổng nạp: micro-USB / Type-C"],
+    specs: [
+      "Lõi xử lý: Tensilica 32-bit Dual-Core",
+      "Tần số hoạt động: 240MHz",
+      "Bộ nhớ SRAM: 520KB",
+      "Bộ nhớ Flash: 4MB",
+      "Cổng nạp: micro-USB / Type-C",
+    ],
 
-    image: "esp32"
-
+    image: "esp32",
   },
 
   {
-
     id: 4,
 
     name: "Mạch Thu Phát NodeMCU ESP8266 V3 Lua WiFi",
@@ -202,16 +192,20 @@ const products = [
 
     badge: null,
 
-    description: "Bo mạch truyền nhận dữ liệu qua mạng WiFi giá rẻ. Thích hợp xây dựng các trạm cảm biến khí tượng đo đạc không dây đơn giản.",
+    description:
+      "Bo mạch truyền nhận dữ liệu qua mạng WiFi giá rẻ. Thích hợp xây dựng các trạm cảm biến khí tượng đo đạc không dây đơn giản.",
 
-    specs: ["Chip chính: ESP8266EX", "Chuẩn WiFi: 802.11 b/g/n", "Bộ nhớ Flash: 4MB", "Ăng-ten: Vẽ trực tiếp trên mạch in PCB"],
+    specs: [
+      "Chip chính: ESP8266EX",
+      "Chuẩn WiFi: 802.11 b/g/n",
+      "Bộ nhớ Flash: 4MB",
+      "Ăng-ten: Vẽ trực tiếp trên mạch in PCB",
+    ],
 
-    image: "nodemcu"
-
+    image: "nodemcu",
   },
 
   {
-
     id: 5,
 
     name: "Mạch Phát Triển STM32F103C8T6 Blue Pill ARM Cortex-M3",
@@ -230,16 +224,21 @@ const products = [
 
     badge: "NEW",
 
-    description: "Bộ điều khiển 32-bit mạnh mẽ tốc độ cao. Dành cho các hệ thống đòi hỏi tính toán logic nhanh, nạp code thời gian thực RTOS và thiết bị điều khiển công nghiệp.",
+    description:
+      "Bộ điều khiển 32-bit mạnh mẽ tốc độ cao. Dành cho các hệ thống đòi hỏi tính toán logic nhanh, nạp code thời gian thực RTOS và thiết bị điều khiển công nghiệp.",
 
-    specs: ["Kiến trúc: ARM 32-bit Cortex-M3", "Tần số thạch anh: 72MHz", "Bộ nhớ Flash: 64KB", "SRAM: 20KB", "Điện áp hoạt động: 2.0V - 3.6V"],
+    specs: [
+      "Kiến trúc: ARM 32-bit Cortex-M3",
+      "Tần số thạch anh: 72MHz",
+      "Bộ nhớ Flash: 64KB",
+      "SRAM: 20KB",
+      "Điện áp hoạt động: 2.0V - 3.6V",
+    ],
 
-    image: "stm32"
-
+    image: "stm32",
   },
 
   {
-
     id: 6,
 
     name: "Máy Tính Nhúng Đơn Board Raspberry Pi 4 Model B (4GB RAM)",
@@ -258,16 +257,21 @@ const products = [
 
     badge: "HOT",
 
-    description: "Máy tính mini chạy hệ điều hành Linux trực tiếp. Thích hợp làm trạm Edge Computing xử lý trí tuệ nhân tạo (AI), nhận diện khuôn mặt và điều khiển trung tâm xe tự hành.",
+    description:
+      "Máy tính mini chạy hệ điều hành Linux trực tiếp. Thích hợp làm trạm Edge Computing xử lý trí tuệ nhân tạo (AI), nhận diện khuôn mặt và điều khiển trung tâm xe tự hành.",
 
-    specs: ["CPU: Quad-core ARM Cortex-A72 64-bit", "Bộ nhớ RAM: 4GB LPDDR4", "Kết nối: WiFi băng tần kép, Gigabit Ethernet", "Cổng USB: 2x USB 3.0, 2x USB 2.0", "Cổng hiển thị: 2x micro-HDMI xuất 4K"],
+    specs: [
+      "CPU: Quad-core ARM Cortex-A72 64-bit",
+      "Bộ nhớ RAM: 4GB LPDDR4",
+      "Kết nối: WiFi băng tần kép, Gigabit Ethernet",
+      "Cổng USB: 2x USB 3.0, 2x USB 2.0",
+      "Cổng hiển thị: 2x micro-HDMI xuất 4K",
+    ],
 
-    image: "raspi"
-
+    image: "raspi",
   },
 
   {
-
     id: 7,
 
     name: "Mạch Vi Điều Khiển Raspberry Pi Pico (RP2040 Lõi Kép)",
@@ -286,20 +290,23 @@ const products = [
 
     badge: "NEW",
 
-    description: "Mạch vi điều khiển giá rẻ đầu tiên được thiết kế bởi hãng Raspberry Pi. Hỗ trợ lập trình dễ dàng thông qua ngôn ngữ C/C++ và MicroPython.",
+    description:
+      "Mạch vi điều khiển giá rẻ đầu tiên được thiết kế bởi hãng Raspberry Pi. Hỗ trợ lập trình dễ dàng thông qua ngôn ngữ C/C++ và MicroPython.",
 
-    specs: ["Lõi xử lý: RP2040 Dual ARM Cortex-M0+", "Bộ nhớ SRAM: 264KB", "Flash ngoài: 2MB QSPI", "Số chân GPIO: 26 chân", "Độ phân giải ADC: 12-bit"],
+    specs: [
+      "Lõi xử lý: RP2040 Dual ARM Cortex-M0+",
+      "Bộ nhớ SRAM: 264KB",
+      "Flash ngoài: 2MB QSPI",
+      "Số chân GPIO: 26 chân",
+      "Độ phân giải ADC: 12-bit",
+    ],
 
-    image: "pico"
-
+    image: "pico",
   },
-
-
 
   // --- CẢM BIẾN & ĐO ĐẠC ---
 
   {
-
     id: 8,
 
     name: "Cảm Biến Đo Nhiệt Độ & Độ Ẩm Không Khí DHT22",
@@ -318,16 +325,20 @@ const products = [
 
     badge: null,
 
-    description: "Cảm biến đo độ ẩm nhiệt độ không khí kỹ thuật số thế hệ mới có độ chính xác rất cao, ổn định lâu dài.",
+    description:
+      "Cảm biến đo độ ẩm nhiệt độ không khí kỹ thuật số thế hệ mới có độ chính xác rất cao, ổn định lâu dài.",
 
-    specs: ["Dải đo độ ẩm: 0-100% RH", "Dải đo nhiệt độ: -40 đến 80°C", "Sai số đo: ±2% RH / ±0.5°C", "Kiểu giao tiếp: Kỹ thuật số 1 dây (Single-Bus)"],
+    specs: [
+      "Dải đo độ ẩm: 0-100% RH",
+      "Dải đo nhiệt độ: -40 đến 80°C",
+      "Sai số đo: ±2% RH / ±0.5°C",
+      "Kiểu giao tiếp: Kỹ thuật số 1 dây (Single-Bus)",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 9,
 
     name: "Cảm Biến Siêu Âm Đo Khoảng Cách HC-SR04",
@@ -346,16 +357,20 @@ const products = [
 
     badge: null,
 
-    description: "Hoạt động bằng cách phát sóng siêu âm và đo thời gian phản hồi lại để tính toán khoảng cách vật cản trước mặt.",
+    description:
+      "Hoạt động bằng cách phát sóng siêu âm và đo thời gian phản hồi lại để tính toán khoảng cách vật cản trước mặt.",
 
-    specs: ["Điện áp cấp: 5V DC", "Dải đo hiệu quả: 2cm - 400cm", "Góc đo quét rộng: 15 độ", "Tín hiệu trigger đầu vào: 10µs TTL"],
+    specs: [
+      "Điện áp cấp: 5V DC",
+      "Dải đo hiệu quả: 2cm - 400cm",
+      "Góc đo quét rộng: 15 độ",
+      "Tín hiệu trigger đầu vào: 10µs TTL",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 10,
 
     name: "Cảm Biến Hồng Ngoại Phát Hiện Người PIR HC-SR501",
@@ -374,16 +389,20 @@ const products = [
 
     badge: null,
 
-    description: "Thiết bị cảm biến chuyển động hồng ngoại thụ động. Thường dùng trong hệ thống chống trộm đột nhập hoặc tự bật đèn khi có người bước vào.",
+    description:
+      "Thiết bị cảm biến chuyển động hồng ngoại thụ động. Thường dùng trong hệ thống chống trộm đột nhập hoặc tự bật đèn khi có người bước vào.",
 
-    specs: ["Điện áp đầu vào: 4.5V-20V", "Thời gian trễ: Điều chỉnh 0.3 giây - 5 phút", "Cự ly phát hiện: 3 đến 7 mét", "Góc cảm ứng: < 120 độ"],
+    specs: [
+      "Điện áp đầu vào: 4.5V-20V",
+      "Thời gian trễ: Điều chỉnh 0.3 giây - 5 phút",
+      "Cự ly phát hiện: 3 đến 7 mét",
+      "Góc cảm ứng: < 120 độ",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 11,
 
     name: "Module Cảm Biến Hồng Ngoại Tránh Vật Cản Cự Ly Gần",
@@ -402,16 +421,20 @@ const products = [
 
     badge: null,
 
-    description: "Bộ truyền nhận mắt hồng ngoại lắp ráp sẵn chiết áp chỉnh độ nhạy. Xuất tín hiệu mức thấp logic khi nhận diện được chướng ngại vật trước mặt.",
+    description:
+      "Bộ truyền nhận mắt hồng ngoại lắp ráp sẵn chiết áp chỉnh độ nhạy. Xuất tín hiệu mức thấp logic khi nhận diện được chướng ngại vật trước mặt.",
 
-    specs: ["Khoảng cách phát hiện: 2-30cm", "Góc phát hiện vật: 35 độ", "Tín hiệu ra: Kỹ thuật số số 0 hoặc 1", "Điện áp hoạt động: 3.3V - 5V"],
+    specs: [
+      "Khoảng cách phát hiện: 2-30cm",
+      "Góc phát hiện vật: 35 độ",
+      "Tín hiệu ra: Kỹ thuật số số 0 hoặc 1",
+      "Điện áp hoạt động: 3.3V - 5V",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 12,
 
     name: "Cảm Biến Phát Hiện Rò Rỉ Khí Ga & Khói MQ-2",
@@ -430,16 +453,19 @@ const products = [
 
     badge: "NEW",
 
-    description: "Thích hợp làm mạch cảnh báo rò rỉ bình gas trong bếp hoặc mạch cảnh báo khói báo cháy tự động trong tòa nhà.",
+    description:
+      "Thích hợp làm mạch cảnh báo rò rỉ bình gas trong bếp hoặc mạch cảnh báo khói báo cháy tự động trong tòa nhà.",
 
-    specs: ["Khí phát hiện được: Khí hóa lỏng LPG, Propane, Hydrogen, Khói", "Nồng độ nhạy: 300-10000ppm", "Đầu ra: Cả Analog và Digital"],
+    specs: [
+      "Khí phát hiện được: Khí hóa lỏng LPG, Propane, Hydrogen, Khói",
+      "Nồng độ nhạy: 300-10000ppm",
+      "Đầu ra: Cả Analog và Digital",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 13,
 
     name: "Module Cảm Biến Ánh Sáng Sử Dụng Quang Trở LDR",
@@ -458,16 +484,19 @@ const products = [
 
     badge: null,
 
-    description: "Bộ cảm biến ánh sáng quang trở đi kèm mạch so sánh LM393. Tự động đóng ngắt bóng đèn khi trời tối.",
+    description:
+      "Bộ cảm biến ánh sáng quang trở đi kèm mạch so sánh LM393. Tự động đóng ngắt bóng đèn khi trời tối.",
 
-    specs: ["Điện áp cấp: 3.3V - 5V", "Đầu ra cổng: D0 (Digital) và A0 (Analog)", "IC so sánh: LM393 độ nhạy cao"],
+    specs: [
+      "Điện áp cấp: 3.3V - 5V",
+      "Đầu ra cổng: D0 (Digital) và A0 (Analog)",
+      "IC so sánh: LM393 độ nhạy cao",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 14,
 
     name: "Cảm Biến Nhận Diện Vân Tay Quang Học AS608",
@@ -486,20 +515,22 @@ const products = [
 
     badge: "NEW",
 
-    description: "Cảm biến quét vân tay quang học hiệu năng cao tích hợp sẵn bộ nhớ lưu mẫu vân tay, đối chiếu dữ liệu vân tay trực tiếp.",
+    description:
+      "Cảm biến quét vân tay quang học hiệu năng cao tích hợp sẵn bộ nhớ lưu mẫu vân tay, đối chiếu dữ liệu vân tay trực tiếp.",
 
-    specs: ["Điện áp cấp: 3.3V DC", "Dung lượng bộ nhớ: Lưu tối đa 120 mẫu vân tay", "Chuẩn giao tiếp: UART Serial", "Tốc độ baudrate mặc định: 9600 - 115200 bps"],
+    specs: [
+      "Điện áp cấp: 3.3V DC",
+      "Dung lượng bộ nhớ: Lưu tối đa 120 mẫu vân tay",
+      "Chuẩn giao tiếp: UART Serial",
+      "Tốc độ baudrate mặc định: 9600 - 115200 bps",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
-
-
 
   // --- MÀN HÌNH HIỂN THỊ ---
 
   {
-
     id: 15,
 
     name: "Màn Hình OLED 0.96 inch I2C Xanh/Vàng-Xanh",
@@ -518,16 +549,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Màn hình hiển thị chữ OLED 128x64 sắc nét tự phát sáng. Chỉ sử dụng 4 dây kết nối qua giao tiếp I2C tiện lợi.",
+    description:
+      "Màn hình hiển thị chữ OLED 128x64 sắc nét tự phát sáng. Chỉ sử dụng 4 dây kết nối qua giao tiếp I2C tiện lợi.",
 
-    specs: ["Độ phân giải hiển thị: 128x64 Pixels", "IC điều khiển driver: SSD1306", "Sơ đồ chân: VCC, GND, SCL, SDA", "Màu sắc: Xanh dương hoặc Vàng-Xanh kết hợp"],
+    specs: [
+      "Độ phân giải hiển thị: 128x64 Pixels",
+      "IC điều khiển driver: SSD1306",
+      "Sơ đồ chân: VCC, GND, SCL, SDA",
+      "Màu sắc: Xanh dương hoặc Vàng-Xanh kết hợp",
+    ],
 
-    image: "display"
-
+    image: "display",
   },
 
   {
-
     id: 16,
 
     name: "Màn Hình LCD 16x2 Chữ Kèm Module I2C Hàn Sẵn",
@@ -546,16 +581,20 @@ const products = [
 
     badge: null,
 
-    description: "Màn hình ký tự tinh thể lỏng hiển thị 16 ký tự trên 2 dòng chữ. Đã hàn sẵn mạch chuyển đổi I2C giúp tiết kiệm chân I/O tối đa.",
+    description:
+      "Màn hình ký tự tinh thể lỏng hiển thị 16 ký tự trên 2 dòng chữ. Đã hàn sẵn mạch chuyển đổi I2C giúp tiết kiệm chân I/O tối đa.",
 
-    specs: ["Định dạng hiển thị: 16 ký tự x 2 dòng", "Đèn nền nền: Màu xanh dương / Chữ trắng", "Địa chỉ I2C mặc định: 0x27 hoặc 0x3F", "Điện áp nuôi mạch: 5V DC"],
+    specs: [
+      "Định dạng hiển thị: 16 ký tự x 2 dòng",
+      "Đèn nền nền: Màu xanh dương / Chữ trắng",
+      "Địa chỉ I2C mặc định: 0x27 hoặc 0x3F",
+      "Điện áp nuôi mạch: 5V DC",
+    ],
 
-    image: "display"
-
+    image: "display",
   },
 
   {
-
     id: 17,
 
     name: "Màn Hình Cảm Ứng TFT LCD 2.4 inch SPI Touch Shield",
@@ -574,16 +613,20 @@ const products = [
 
     badge: "NEW",
 
-    description: "Shield màn hình TFT cảm ứng hiển thị màu sắc đầy đủ. Thiết kế cắm chồng khít lên Arduino Uno không cần nối dây nhợ.",
+    description:
+      "Shield màn hình TFT cảm ứng hiển thị màu sắc đầy đủ. Thiết kế cắm chồng khít lên Arduino Uno không cần nối dây nhợ.",
 
-    specs: ["Kích thước đường chéo: 2.4 inch", "Độ phân giải màu: 240x320 Pixels", "Độ sâu màu: 16-bit 65K màu", "IC điều khiển hiển thị: ILI9341"],
+    specs: [
+      "Kích thước đường chéo: 2.4 inch",
+      "Độ phân giải màu: 240x320 Pixels",
+      "Độ sâu màu: 16-bit 65K màu",
+      "IC điều khiển hiển thị: ILI9341",
+    ],
 
-    image: "display"
-
+    image: "display",
   },
 
   {
-
     id: 18,
 
     name: "Module LED 7 Đo 4 Số 0.36 inch TM1637",
@@ -602,16 +645,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch hiển thị LED 7 đoạn chuyên dùng làm đồng hồ hiển thị thời gian hoặc hiển thị nhiệt độ đo đạc thực tế.",
+    description:
+      "Mạch hiển thị LED 7 đoạn chuyên dùng làm đồng hồ hiển thị thời gian hoặc hiển thị nhiệt độ đo đạc thực tế.",
 
-    specs: ["Số ký số: 4 số LED đỏ", "IC chuyên dụng điều khiển: TM1637", "Điện áp hoạt động: 3.3V - 5V", "Màu sắc hiển thị: Đỏ sáng"],
+    specs: [
+      "Số ký số: 4 số LED đỏ",
+      "IC chuyên dụng điều khiển: TM1637",
+      "Điện áp hoạt động: 3.3V - 5V",
+      "Màu sắc hiển thị: Đỏ sáng",
+    ],
 
-    image: "display"
-
+    image: "display",
   },
 
   {
-
     id: 19,
 
     name: "Module LED Ma Trận Điểm Đỏ 8x32 MAX7219",
@@ -630,20 +677,22 @@ const products = [
 
     badge: "HOT",
 
-    description: "Mạch ma trận LED ghép nối tiếp từ 4 mắt LED 8x8. Hỗ trợ hiển thị chữ chạy dài cảnh báo hoặc biểu đồ thời gian.",
+    description:
+      "Mạch ma trận LED ghép nối tiếp từ 4 mắt LED 8x8. Hỗ trợ hiển thị chữ chạy dài cảnh báo hoặc biểu đồ thời gian.",
 
-    specs: ["Kích thước ma trận: 8 hàng x 32 cột", "IC điều khiển: MAX7219 ghép nối", "Chuẩn giao tiếp: SPI Serial", "Điện áp nuôi: 5V DC"],
+    specs: [
+      "Kích thước ma trận: 8 hàng x 32 cột",
+      "IC điều khiển: MAX7219 ghép nối",
+      "Chuẩn giao tiếp: SPI Serial",
+      "Điện áp nuôi: 5V DC",
+    ],
 
-    image: "display"
-
+    image: "display",
   },
-
-
 
   // --- BỘ NGUểN & PIN SẠC ---
 
   {
-
     id: 20,
 
     name: "Mạch Hạ Áp DC-DC LM2596S 3A Có Biến Trở Chỉnh",
@@ -662,16 +711,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch nguồn hạ áp dạng xung hiệu năng cao. Có chiết áp xoay tinh chỉnh dòng áp đầu ra theo mong muốn.",
+    description:
+      "Mạch nguồn hạ áp dạng xung hiệu năng cao. Có chiết áp xoay tinh chỉnh dòng áp đầu ra theo mong muốn.",
 
-    specs: ["Dải áp đầu vào: 3.2V - 40V DC", "Dải áp đầu ra điều chỉnh: 1.25V - 35V DC", "Dòng tải tối đa: 2A (Hoặc 3A nếu có tản nhiệt)", "Hiệu suất chuyển đổi: Lên tới 92%"],
+    specs: [
+      "Dải áp đầu vào: 3.2V - 40V DC",
+      "Dải áp đầu ra điều chỉnh: 1.25V - 35V DC",
+      "Dòng tải tối đa: 2A (Hoặc 3A nếu có tản nhiệt)",
+      "Hiệu suất chuyển đổi: Lên tới 92%",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 21,
 
     name: "Mạch Tăng Áp DC-DC XL6009E1 4A Hiệu Suất Cao",
@@ -690,16 +743,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch kích nguồn tăng điện áp DC. Chuyên dùng nâng điện áp pin sạc lithium lên mức 9V, 12V cấp cho motor hoặc board vi điều khiển.",
+    description:
+      "Mạch kích nguồn tăng điện áp DC. Chuyên dùng nâng điện áp pin sạc lithium lên mức 9V, 12V cấp cho motor hoặc board vi điều khiển.",
 
-    specs: ["Dải áp vào cấp: 3V - 32V DC", "Dải áp ra nâng lên: 5V - 35V DC", "Dòng tải chịu tối đa: 4A", "IC tăng áp: XL6009E1"],
+    specs: [
+      "Dải áp vào cấp: 3V - 32V DC",
+      "Dải áp ra nâng lên: 5V - 35V DC",
+      "Dòng tải chịu tối đa: 4A",
+      "IC tăng áp: XL6009E1",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 22,
 
     name: "Pin Sạc Lithium-ion 18650 LG Dung Lượng 3000mAh",
@@ -718,16 +775,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Dòng pin lithium sạc chất lượng cao có dòng xả ổn định. Chuyên sử dụng chạy nguồn cho các mô hình xe robot hoặc đèn sạc pin cầm tay.",
+    description:
+      "Dòng pin lithium sạc chất lượng cao có dòng xả ổn định. Chuyên sử dụng chạy nguồn cho các mô hình xe robot hoặc đèn sạc pin cầm tay.",
 
-    specs: ["Dung lượng định danh: 3000mAh", "Điện áp tiêu chuẩn: 3.7V", "Điện áp sạc đầy tối đa: 4.2V", "Điện áp ngắt khi cạn: 2.5V"],
+    specs: [
+      "Dung lượng định danh: 3000mAh",
+      "Điện áp tiêu chuẩn: 3.7V",
+      "Điện áp sạc đầy tối đa: 4.2V",
+      "Điện áp ngắt khi cạn: 2.5V",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 23,
 
     name: "Mạch Sạc Pin Lipo TP4056 Có Bảo Vệ (Cổng USB-C)",
@@ -746,16 +807,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch sạc pin 1S lithium nhỏ gọn thông minh. Bảo vệ pin khỏi tình trạng quá xả cạn kiệt nguồn điện hoặc quá tải dòng sạc đầu vào.",
+    description:
+      "Mạch sạc pin 1S lithium nhỏ gọn thông minh. Bảo vệ pin khỏi tình trạng quá xả cạn kiệt nguồn điện hoặc quá tải dòng sạc đầu vào.",
 
-    specs: ["Chuẩn cổng cắm sạc: Type-C USB", "Dòng sạc mặc định: 1A (Có thể chỉnh bằng điện trở)", "Điện áp sạc đầy ngắt sạc: 4.2V", "Chức năng bảo vệ: Có ngắt bảo vệ chống cạn pin"],
+    specs: [
+      "Chuẩn cổng cắm sạc: Type-C USB",
+      "Dòng sạc mặc định: 1A (Có thể chỉnh bằng điện trở)",
+      "Điện áp sạc đầy ngắt sạc: 4.2V",
+      "Chức năng bảo vệ: Có ngắt bảo vệ chống cạn pin",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 24,
 
     name: "IC Ổn Áp Tuyến Tính L7805CV 5V 1.5A (TO-220)",
@@ -774,16 +839,20 @@ const products = [
 
     badge: null,
 
-    description: "IC ổn áp tuyến tính 3 chân kinh điển. Đầu ra cố định 5.0V cực kỳ sạch không bị nhiễu sóng xung, tải ổn định.",
+    description:
+      "IC ổn áp tuyến tính 3 chân kinh điển. Đầu ra cố định 5.0V cực kỳ sạch không bị nhiễu sóng xung, tải ổn định.",
 
-    specs: ["Điện áp ra cố định: 5.0V DC", "Điện áp chênh áp vào-ra tối thiểu: 2.0V", "Dòng tải đầu ra tối đa: 1.5A", "Kiểu chân đóng gói: TO-220"],
+    specs: [
+      "Điện áp ra cố định: 5.0V DC",
+      "Điện áp chênh áp vào-ra tối thiểu: 2.0V",
+      "Dòng tải đầu ra tối đa: 1.5A",
+      "Kiểu chân đóng gói: TO-220",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 25,
 
     name: "Nguồn Tổ Ong 12V 10A (Bộ Nguồn Xung Kim Loại)",
@@ -802,20 +871,22 @@ const products = [
 
     badge: "HOT",
 
-    description: "Bộ biến áp nguồn xung tổ ong vỏ nhôm. Cung cấp nguồn 12V tải khỏe, chạy ổn định cho quạt tản nhiệt, LED dây hoặc động cơ bước công suất trung bình.",
+    description:
+      "Bộ biến áp nguồn xung tổ ong vỏ nhôm. Cung cấp nguồn 12V tải khỏe, chạy ổn định cho quạt tản nhiệt, LED dây hoặc động cơ bước công suất trung bình.",
 
-    specs: ["Điện áp vào cấp: 110V/220V AC xoay chiều", "Điện áp ra cố định: 12V DC (Tinh chỉnh được ±10%)", "Dòng dòng tải tối đa: 10A", "Công suất tải định mức: 120W"],
+    specs: [
+      "Điện áp vào cấp: 110V/220V AC xoay chiều",
+      "Điện áp ra cố định: 12V DC (Tinh chỉnh được ±10%)",
+      "Dòng dòng tải tối đa: 10A",
+      "Công suất tải định mức: 120W",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
-
-
 
   // --- ROBOTICS & ĐỘNG CƠ ---
 
   {
-
     id: 26,
 
     name: "Động Cơ Servo Micro SG90 Góc Xoay 180 Độ",
@@ -834,16 +905,20 @@ const products = [
 
     badge: null,
 
-    description: "Động cơ servo cỡ nhỏ điều khiển góc quay bằng xung PWM. Phổ biến nhất trong các bài thực hành học vi xử lý cơ bản.",
+    description:
+      "Động cơ servo cỡ nhỏ điều khiển góc quay bằng xung PWM. Phổ biến nhất trong các bài thực hành học vi xử lý cơ bản.",
 
-    specs: ["Lực kéo động cơ: 1.6kg-cm", "Tốc độ phản hồi: 0.12 giây/60 độ (4.8V)", "Thứ tự chân cắm: Cam (Xung), Đỏ (VCC), Nâu (GND)", "Trọng lượng siêu nhẹ: 9 grams"],
+    specs: [
+      "Lực kéo động cơ: 1.6kg-cm",
+      "Tốc độ phản hồi: 0.12 giây/60 độ (4.8V)",
+      "Thứ tự chân cắm: Cam (Xung), Đỏ (VCC), Nâu (GND)",
+      "Trọng lượng siêu nhẹ: 9 grams",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 27,
 
     name: "Động Cơ Servo MG996R Bánh Răng Kim Loại (Lực Kéo Cao)",
@@ -862,16 +937,20 @@ const products = [
 
     badge: null,
 
-    description: "Động cơ servo kích thước lớn lực kéo cực kỳ khỏe. Trục nhông truyền động hoàn toàn bằng kim loại đồng chống mòn gãy trục.",
+    description:
+      "Động cơ servo kích thước lớn lực kéo cực kỳ khỏe. Trục nhông truyền động hoàn toàn bằng kim loại đồng chống mòn gãy trục.",
 
-    specs: ["Lực kéo động cơ: 12kg-cm (ở nguồn cấp 6V)", "Góc xoay hành trình: 180 độ", "Chất liệu bánh răng: Kim loại đồng và nhôm", "Dải nguồn hoạt động: 4.8 - 7.2V"],
+    specs: [
+      "Lực kéo động cơ: 12kg-cm (ở nguồn cấp 6V)",
+      "Góc xoay hành trình: 180 độ",
+      "Chất liệu bánh răng: Kim loại đồng và nhôm",
+      "Dải nguồn hoạt động: 4.8 - 7.2V",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 28,
 
     name: "Động Cơ Bước NEMA 17 Stepper Motor 1.5A 40Ncm",
@@ -890,16 +969,20 @@ const products = [
 
     badge: "NEW",
 
-    description: "Động cơ bước định vị góc xoay siêu chính xác. Linh kiện bắt buộc phải có cho máy in 3D, máy vẽ laser CNC và khớp nối cơ khí.",
+    description:
+      "Động cơ bước định vị góc xoay siêu chính xác. Linh kiện bắt buộc phải có cho máy in 3D, máy vẽ laser CNC và khớp nối cơ khí.",
 
-    specs: ["Góc bước chuẩn: 1.8 độ / 1 bước", "Momen xoắn giữ trục: 40 Ncm", "Dòng điện pha chịu được: 1.5A mỗi pha", "Đường kính trục ra: 5mm trục chữ D"],
+    specs: [
+      "Góc bước chuẩn: 1.8 độ / 1 bước",
+      "Momen xoắn giữ trục: 40 Ncm",
+      "Dòng điện pha chịu được: 1.5A mỗi pha",
+      "Đường kính trục ra: 5mm trục chữ D",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 29,
 
     name: "Mạch Cầu H Điều Khiển Động Cơ L298N",
@@ -918,16 +1001,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch cầu H đôi chịu tải tốt chuyên dùng điều tốc độ và đảo chiều quay cho 2 động cơ DC độc lập hoặc 1 động cơ bước 4 dây.",
+    description:
+      "Mạch cầu H đôi chịu tải tốt chuyên dùng điều tốc độ và đảo chiều quay cho 2 động cơ DC độc lập hoặc 1 động cơ bước 4 dây.",
 
-    specs: ["IC điều khiển chính: L298N", "Điện áp logic hoạt động: 5V", "Điện áp động cơ cấp: 5V - 35V DC", "Dòng tải chịu tối đa: 2A cho mỗi cầu H"],
+    specs: [
+      "IC điều khiển chính: L298N",
+      "Điện áp logic hoạt động: 5V",
+      "Điện áp động cơ cấp: 5V - 35V DC",
+      "Dòng tải chịu tối đa: 2A cho mỗi cầu H",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 30,
 
     name: "Bộ Khung Xe Robot Thông Minh 4 Bánh 4WD Mica",
@@ -946,16 +1033,19 @@ const products = [
 
     badge: "NEW",
 
-    description: "Gói khung gầm xe robot hoàn chỉnh bao gồm 2 tấm mica dày, 4 động cơ giảm tốc vàng, 4 bánh xe cao su, hộp pin và các ốc vít cố định.",
+    description:
+      "Gói khung gầm xe robot hoàn chỉnh bao gồm 2 tấm mica dày, 4 động cơ giảm tốc vàng, 4 bánh xe cao su, hộp pin và các ốc vít cố định.",
 
-    specs: ["Vật liệu khung xe: Tấm Mica acrylic đen bóng hoặc trong suốt", "Động cơ bao gồm: 4 động cơ giảm tốc trục đơn", "Nguồn nuôi hoạt động: 3 - 6V DC"],
+    specs: [
+      "Vật liệu khung xe: Tấm Mica acrylic đen bóng hoặc trong suốt",
+      "Động cơ bao gồm: 4 động cơ giảm tốc trục đơn",
+      "Nguồn nuôi hoạt động: 3 - 6V DC",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 31,
 
     name: "Bộ 4 Bánh Xe Vạn Hướng Mecanum Omnidirectional 60mm",
@@ -974,16 +1064,20 @@ const products = [
 
     badge: null,
 
-    description: "Bộ 4 bánh xe Mecanum (2 trái, 2 phải) giúp xe robot của bạn di chuyển theo mọi hướng ngang dọc hoặc tự xoay tròn tại chỗ cực kỳ linh hoạt.",
+    description:
+      "Bộ 4 bánh xe Mecanum (2 trái, 2 phải) giúp xe robot của bạn di chuyển theo mọi hướng ngang dọc hoặc tự xoay tròn tại chỗ cực kỳ linh hoạt.",
 
-    specs: ["Đường kính ngoài bánh: 60mm", "Số con lăn nhỏ: 8 con lăn cao su trên mỗi bánh", "Chất liệu thân bánh: Nhựa ABS đúc chịu lực tốt", "Khớp trục nối: Trục chữ D kích thước 4mm"],
+    specs: [
+      "Đường kính ngoài bánh: 60mm",
+      "Số con lăn nhỏ: 8 con lăn cao su trên mỗi bánh",
+      "Chất liệu thân bánh: Nhựa ABS đúc chịu lực tốt",
+      "Khớp trục nối: Trục chữ D kích thước 4mm",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 32,
 
     name: "Khung Cánh Tay Robot Cơ Khí Acrylic 4 Bậc Tự Do (4-DOF)",
@@ -1002,20 +1096,22 @@ const products = [
 
     badge: "HOT",
 
-    description: "Các mảnh mica được gia công cắt CNC chính xác, đi kèm các ốc vít kim loại lắp ráp cánh tay gắp (Sản phẩm không kèm động cơ servo).",
+    description:
+      "Các mảnh mica được gia công cắt CNC chính xác, đi kèm các ốc vít kim loại lắp ráp cánh tay gắp (Sản phẩm không kèm động cơ servo).",
 
-    specs: ["Chất liệu mảnh: Mica đen chống bám bẩn", "Số khớp xoay (bậc tự do): 4 trục khớp", "Hỗ trợ loại servo: 4 động cơ Servo micro SG90", "Lắp ráp: Người dùng tự lắp ráp theo sách hướng dẫn"],
+    specs: [
+      "Chất liệu mảnh: Mica đen chống bám bẩn",
+      "Số khớp xoay (bậc tự do): 4 trục khớp",
+      "Hỗ trợ loại servo: 4 động cơ Servo micro SG90",
+      "Lắp ráp: Người dùng tự lắp ráp theo sách hướng dẫn",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
-
-
 
   // --- LINH KIỆN MÁY TÍNH ---
 
   {
-
     id: 33,
 
     name: "Bộ Vi Xử Lý Intel Core i5-12400F CPU (LGA1700)",
@@ -1034,16 +1130,21 @@ const products = [
 
     badge: "HOT",
 
-    description: "Bộ vi xử lý hiệu năng phân khúc tầm trung với 6 nhân và 12 luồng xử lý. Tối ưu cực tốt cho việc chạy trình biên dịch code nặng.",
+    description:
+      "Bộ vi xử lý hiệu năng phân khúc tầm trung với 6 nhân và 12 luồng xử lý. Tối ưu cực tốt cho việc chạy trình biên dịch code nặng.",
 
-    specs: ["Số nhân / luồng: 6 nhân / 12 luồng", "Xung nhịp cơ bản: 2.5GHz", "Xung nhịp Turbo tối đa: 4.4GHz", "Bộ nhớ Cache L3: 18MB", "Hỗ trợ chuẩn socket: LGA1700"],
+    specs: [
+      "Số nhân / luồng: 6 nhân / 12 luồng",
+      "Xung nhịp cơ bản: 2.5GHz",
+      "Xung nhịp Turbo tối đa: 4.4GHz",
+      "Bộ nhớ Cache L3: 18MB",
+      "Hỗ trợ chuẩn socket: LGA1700",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 34,
 
     name: "Bo Mạch Chủ ASUS ROG Strix B760-F Gaming",
@@ -1062,16 +1163,20 @@ const products = [
 
     badge: "NEW",
 
-    description: "Bo mạch chủ PC phân khúc gaming cao cấp hỗ trợ RAM DDR5 thế hệ mới, tản nhiệt VRM dày và các cổng PCIe 5.0 băng thông cao.",
+    description:
+      "Bo mạch chủ PC phân khúc gaming cao cấp hỗ trợ RAM DDR5 thế hệ mới, tản nhiệt VRM dày và các cổng PCIe 5.0 băng thông cao.",
 
-    specs: ["Chipset bo mạch: Intel B760", "Socket tương thích: LGA1700", "Khe cắm RAM: 4 khe cắm DDR5 (Tối đa 192GB)", "Kết nối ổ cứng: 3x khe cắm M.2 PCIe 4.0 SSD"],
+    specs: [
+      "Chipset bo mạch: Intel B760",
+      "Socket tương thích: LGA1700",
+      "Khe cắm RAM: 4 khe cắm DDR5 (Tối đa 192GB)",
+      "Kết nối ổ cứng: 3x khe cắm M.2 PCIe 4.0 SSD",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 35,
 
     name: "Card Đồ Họa NVIDIA RTX 3060 Graphics Card 12GB",
@@ -1090,16 +1195,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Bộ tăng tốc xử lý đồ họa GPU tích hợp nhân Tensor Core. Chuyên trị các tác vụ huấn luyện trí tuệ nhân tạo Deep Learning và chạy mô phỏng.",
+    description:
+      "Bộ tăng tốc xử lý đồ họa GPU tích hợp nhân Tensor Core. Chuyên trị các tác vụ huấn luyện trí tuệ nhân tạo Deep Learning và chạy mô phỏng.",
 
-    specs: ["Bộ nhớ đồ họa: 12GB GDDR6", "Số nhân tính toán CUDA: 3584 nhân", "Chuẩn kết nối: PCIe 4.0", "Cổng kết nối ra: 3x DisplayPort, 1x HDMI"],
+    specs: [
+      "Bộ nhớ đồ họa: 12GB GDDR6",
+      "Số nhân tính toán CUDA: 3584 nhân",
+      "Chuẩn kết nối: PCIe 4.0",
+      "Cổng kết nối ra: 3x DisplayPort, 1x HDMI",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 36,
 
     name: "Thanh Nhớ Samsung 8GB DDR4 3200MHz Desktop RAM",
@@ -1118,16 +1227,20 @@ const products = [
 
     badge: null,
 
-    description: "RAM bộ nhớ trong máy tính chất lượng cao của Samsung giúp chạy đa nhiệm các phần mềm IDE lập trình mượt mà không lo giật lag.",
+    description:
+      "RAM bộ nhớ trong máy tính chất lượng cao của Samsung giúp chạy đa nhiệm các phần mềm IDE lập trình mượt mà không lo giật lag.",
 
-    specs: ["Dung lượng RAM: 8GB", "Chuẩn chân cắm: DDR4 UDIMM", "Tốc độ xung nhịp bus: 3200MHz", "Điện áp RAM hoạt động: 1.2V"],
+    specs: [
+      "Dung lượng RAM: 8GB",
+      "Chuẩn chân cắm: DDR4 UDIMM",
+      "Tốc độ xung nhịp bus: 3200MHz",
+      "Điện áp RAM hoạt động: 1.2V",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 37,
 
     name: "Ổ Cứng Thể Rắn Kingston 256GB SATA III SSD",
@@ -1146,16 +1259,20 @@ const products = [
 
     badge: null,
 
-    description: "Ổ cứng thể rắn SSD tăng tốc độ khởi động hệ điều hành Windows, nạp các chương trình biên dịch và tải tài liệu kỹ thuật nhanh chóng.",
+    description:
+      "Ổ cứng thể rắn SSD tăng tốc độ khởi động hệ điều hành Windows, nạp các chương trình biên dịch và tải tài liệu kỹ thuật nhanh chóng.",
 
-    specs: ["Chuẩn giao tiếp: SATA III (6Gb/s)", "Dung lượng chứa: 256GB", "Tốc độ đọc tối đa: 500MB/s", "Kích thước ổ: 2.5 inch"],
+    specs: [
+      "Chuẩn giao tiếp: SATA III (6Gb/s)",
+      "Dung lượng chứa: 256GB",
+      "Tốc độ đọc tối đa: 500MB/s",
+      "Kích thước ổ: 2.5 inch",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 38,
 
     name: "Ổ Cứng HDD Seagate BarraCuda 1TB",
@@ -1174,16 +1291,20 @@ const products = [
 
     badge: null,
 
-    description: "Ổ cứng cơ học truyền thống dung lượng lớn. Thích hợp lưu trữ thư viện code khổng lồ, bộ cài đặt IDE và tài liệu nghiên cứu dài hạn.",
+    description:
+      "Ổ cứng cơ học truyền thống dung lượng lớn. Thích hợp lưu trữ thư viện code khổng lồ, bộ cài đặt IDE và tài liệu nghiên cứu dài hạn.",
 
-    specs: ["Dung lượng chứa: 1TB", "Tốc độ quay đĩa: 7200 vòng/phút", "Bộ nhớ đệm đĩa Cache: 64MB", "Kết nối: SATA III 6Gb/s"],
+    specs: [
+      "Dung lượng chứa: 1TB",
+      "Tốc độ quay đĩa: 7200 vòng/phút",
+      "Bộ nhớ đệm đĩa Cache: 64MB",
+      "Kết nối: SATA III 6Gb/s",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 39,
 
     name: "Bộ Nguồn PC Corsair RM750e 750W Gold Modular",
@@ -1202,16 +1323,20 @@ const products = [
 
     badge: null,
 
-    description: "Nguồn PC đạt chuẩn chứng nhận vàng 80 Plus Gold. Thiết kế dây cáp rời hoàn toàn giúp lòng case máy tính gọn gàng thông thoáng khí.",
+    description:
+      "Nguồn PC đạt chuẩn chứng nhận vàng 80 Plus Gold. Thiết kế dây cáp rời hoàn toàn giúp lòng case máy tính gọn gàng thông thoáng khí.",
 
-    specs: ["Công suất nguồn thực: 750W", "Tiêu chuẩn kiểm định: 80 PLUS Gold Certified", "Dây kết nối: Full Modular (Dây rời rời)", "Kích thước quạt tản: 120mm êm ái"],
+    specs: [
+      "Công suất nguồn thực: 750W",
+      "Tiêu chuẩn kiểm định: 80 PLUS Gold Certified",
+      "Dây kết nối: Full Modular (Dây rời rời)",
+      "Kích thước quạt tản: 120mm êm ái",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 40,
 
     name: "Quạt Tản Nhiệt Khí CPU Noctua NH-D15 Siêu Êm",
@@ -1230,16 +1355,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Vua tản nhiệt khí CPU tháp đôi cao cấp. Giữ cho hệ thống PC luôn mát mẻ kể cả khi chạy biên dịch code suốt đêm.",
+    description:
+      "Vua tản nhiệt khí CPU tháp đôi cao cấp. Giữ cho hệ thống PC luôn mát mẻ kể cả khi chạy biên dịch code suốt đêm.",
 
-    specs: ["Kiểu tản nhiệt: Tháp đôi kim loại", "Quạt làm mát: 2x NF-A15 PWM 140mm", "Tốc độ quạt quay tối đa: 1500 RPM", "Độ ồn tối đa phát ra: 24.6 dB(A)"],
+    specs: [
+      "Kiểu tản nhiệt: Tháp đôi kim loại",
+      "Quạt làm mát: 2x NF-A15 PWM 140mm",
+      "Tốc độ quạt quay tối đa: 1500 RPM",
+      "Độ ồn tối đa phát ra: 24.6 dB(A)",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 41,
 
     name: "Vỏ Case Máy Tính NZXT H5 Flow Premium (Đen)",
@@ -1258,20 +1387,22 @@ const products = [
 
     badge: null,
 
-    description: "Vỏ máy tính mid-tower thiết kế mặt lưới trước tổ ong đột lỗ giúp lưu thông luồng khí tản nhiệt tốt, bảo vệ linh kiện PC.",
+    description:
+      "Vỏ máy tính mid-tower thiết kế mặt lưới trước tổ ong đột lỗ giúp lưu thông luồng khí tản nhiệt tốt, bảo vệ linh kiện PC.",
 
-    specs: ["Kích thước case: Mid-Tower", "Kính cường lực hông: Mặt kính chịu lực", "Số quạt hỗ trợ: Lắp tối đa 6 quạt 120mm", "Cổng giao tiếp trước: USB 3.2 Type-A và Type-C"],
+    specs: [
+      "Kích thước case: Mid-Tower",
+      "Kính cường lực hông: Mặt kính chịu lực",
+      "Số quạt hỗ trợ: Lắp tối đa 6 quạt 120mm",
+      "Cổng giao tiếp trước: USB 3.2 Type-A và Type-C",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
-
-
 
   // --- LINH KIỆN CƠ BẢN ---
 
   {
-
     id: 42,
 
     name: "Túi Trở Vạch Carbon 10k Ohms 1/4W (Gói 100 Chiếc)",
@@ -1290,16 +1421,20 @@ const products = [
 
     badge: null,
 
-    description: "Điện trở vạch carbon công suất 0.25W ổn định. Linh kiện cơ bản bắt buộc phải có để chống cháy chân tín hiệu IO.",
+    description:
+      "Điện trở vạch carbon công suất 0.25W ổn định. Linh kiện cơ bản bắt buộc phải có để chống cháy chân tín hiệu IO.",
 
-    specs: ["Trở kháng chuẩn: 10k Ohms", "Dung sai trị số: ±5%", "Công suất chịu đựng: 0.25 Watt (1/4W)", "Số lượng gói: Gói đóng 100 chiếc điện trở"],
+    specs: [
+      "Trở kháng chuẩn: 10k Ohms",
+      "Dung sai trị số: ±5%",
+      "Công suất chịu đựng: 0.25 Watt (1/4W)",
+      "Số lượng gói: Gói đóng 100 chiếc điện trở",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 43,
 
     name: "Hộp Tụ Hóa Điện Dịch Nhiều Dải Giá Trị (Hộp 120 Chiếc)",
@@ -1318,16 +1453,19 @@ const products = [
 
     badge: null,
 
-    description: "Hộp sắp xếp nhiều dải giá trị dung lượng tụ hóa thông dụng. Dùng để lọc điện áp nhiễu sóng trong các mạch tương tự.",
+    description:
+      "Hộp sắp xếp nhiều dải giá trị dung lượng tụ hóa thông dụng. Dùng để lọc điện áp nhiễu sóng trong các mạch tương tự.",
 
-    specs: ["Dải dung lượng tụ: 0.1µF - 1000µF", "Điện áp chịu tối đa: 16V, 25V, 50V", "Tổng số lượng tụ trong hộp: Hộp sắp xếp 120 chiếc"],
+    specs: [
+      "Dải dung lượng tụ: 0.1µF - 1000µF",
+      "Điện áp chịu tối đa: 16V, 25V, 50V",
+      "Tổng số lượng tụ trong hộp: Hộp sắp xếp 120 chiếc",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 44,
 
     name: "Đi-ốt Chỉnh Lưu 1N4007 1A 1000V (Gói 100 Chiếc)",
@@ -1346,16 +1484,20 @@ const products = [
 
     badge: null,
 
-    description: "Ngăn chặn dòng điện chạy ngược chiều bảo vệ mạch nhúng, dập tắt các xung điện ngược phát ra từ rơ-le.",
+    description:
+      "Ngăn chặn dòng điện chạy ngược chiều bảo vệ mạch nhúng, dập tắt các xung điện ngược phát ra từ rơ-le.",
 
-    specs: ["Dòng chỉnh lưu: 1.0 Ampere", "Điện áp ngược đỉnh tối đa: 1000V", "Kiểu chân đóng gói: Chân cắm DO-41", "Số lượng đóng gói: Gói 100 chiếc đi-ốt"],
+    specs: [
+      "Dòng chỉnh lưu: 1.0 Ampere",
+      "Điện áp ngược đỉnh tối đa: 1000V",
+      "Kiểu chân đóng gói: Chân cắm DO-41",
+      "Số lượng đóng gói: Gói 100 chiếc đi-ốt",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 45,
 
     name: "Bóng Bán Dẫn Transistor PN2222 NPN (Gói 50 Chiếc)",
@@ -1374,16 +1516,20 @@ const products = [
 
     badge: null,
 
-    description: "Transistor phân cực ngược NPN thông dụng. Thích hợp đóng ngắt rơ-le, còi buzzer từ tín hiệu vi điều khiển yếu.",
+    description:
+      "Transistor phân cực ngược NPN thông dụng. Thích hợp đóng ngắt rơ-le, còi buzzer từ tín hiệu vi điều khiển yếu.",
 
-    specs: ["Phân cực: NPN", "Dòng cực C liên tục chịu tối đa: 600mA", "Điện áp cực C-E tối đa: 40V DC", "Kiểu đóng gói: TO-92 chân cắm"],
+    specs: [
+      "Phân cực: NPN",
+      "Dòng cực C liên tục chịu tối đa: 600mA",
+      "Điện áp cực C-E tối đa: 40V DC",
+      "Kiểu đóng gói: TO-92 chân cắm",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 46,
 
     name: "Transistor Trường MOSFET IRF540N N-Channel 33A (TO-220)",
@@ -1402,16 +1548,20 @@ const products = [
 
     badge: null,
 
-    description: "Transistor trường công suất MOSFET dòng xả cao. Đóng ngắt nhanh, không bị tia lửa điện như relay cơ truyền thống.",
+    description:
+      "Transistor trường công suất MOSFET dòng xả cao. Đóng ngắt nhanh, không bị tia lửa điện như relay cơ truyền thống.",
 
-    specs: ["Kênh dẫn dòng: N-Channel", "Dòng dẫn liên tục tối đa: 33A", "Điện áp cực D-S chịu được: 100V DC", "Đóng gói chân cắm: TO-220"],
+    specs: [
+      "Kênh dẫn dòng: N-Channel",
+      "Dòng dẫn liên tục tối đa: 33A",
+      "Điện áp cực D-S chịu được: 100V DC",
+      "Đóng gói chân cắm: TO-220",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 47,
 
     name: "IC Tạo Trễ Thời Gian NE555 Precision Timer (Gói 10 Con)",
@@ -1430,16 +1580,20 @@ const products = [
 
     badge: null,
 
-    description: "IC tạo xung nhịp dao động vuông kinh điển. Dùng để thiết kế mạch còi chớp tắt, điều khiển nhịp xung không cần nạp code.",
+    description:
+      "IC tạo xung nhịp dao động vuông kinh điển. Dùng để thiết kế mạch còi chớp tắt, điều khiển nhịp xung không cần nạp code.",
 
-    specs: ["Loại IC chức năng: Analog Timer", "Kiểu chân đóng gói: DIP-8 chân cắm", "Dải nguồn hoạt động nuôi chip: 4.5V - 16V", "Số lượng gói: Gói đóng 10 con chip"],
+    specs: [
+      "Loại IC chức năng: Analog Timer",
+      "Kiểu chân đóng gói: DIP-8 chân cắm",
+      "Dải nguồn hoạt động nuôi chip: 4.5V - 16V",
+      "Số lượng gói: Gói đóng 10 con chip",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 48,
 
     name: "Module Rơ-le Relay 5V 1 Kênh Cách Ly Quang",
@@ -1458,16 +1612,20 @@ const products = [
 
     badge: null,
 
-    description: "Đóng ngắt thiết bị điện gia dụng xoay chiều 220V từ tín hiệu điều khiển 5V DC. Có tích hợp transistor cách ly quang chống giật ngược áp.",
+    description:
+      "Đóng ngắt thiết bị điện gia dụng xoay chiều 220V từ tín hiệu điều khiển 5V DC. Có tích hợp transistor cách ly quang chống giật ngược áp.",
 
-    specs: ["Điện áp cuộn hút kích: 5V DC", "Tải xoay chiều AC chịu tối đa: 250V AC 10A", "Tải một chiều DC chịu tối đa: 30V DC 10A", "Cách ly chống giật: Optocoupler quang bảo vệ"],
+    specs: [
+      "Điện áp cuộn hút kích: 5V DC",
+      "Tải xoay chiều AC chịu tối đa: 250V AC 10A",
+      "Tải một chiều DC chịu tối đa: 30V DC 10A",
+      "Cách ly chống giật: Optocoupler quang bảo vệ",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 49,
 
     name: "Thạch Anh Dao Động 16.000MHz (Gói 10 Chiếc)",
@@ -1486,16 +1644,20 @@ const products = [
 
     badge: null,
 
-    description: "Linh kiện thạch anh tạo tần số nhịp xung chuẩn 16MHz cho bo mạch vi điều khiển AVR như ATmega328P hoạt động đồng bộ.",
+    description:
+      "Linh kiện thạch anh tạo tần số nhịp xung chuẩn 16MHz cho bo mạch vi điều khiển AVR như ATmega328P hoạt động đồng bộ.",
 
-    specs: ["Tần số dao động chuẩn: 16.000 MHz", "Sai số tần số thạch anh: ±20ppm", "Dạng đóng gói chân cắm: HC-49S vỏ sắt dẹt", "Số lượng đóng gói: Gói 10 chiếc thạch anh"],
+    specs: [
+      "Tần số dao động chuẩn: 16.000 MHz",
+      "Sai số tần số thạch anh: ±20ppm",
+      "Dạng đóng gói chân cắm: HC-49S vỏ sắt dẹt",
+      "Số lượng đóng gói: Gói 10 chiếc thạch anh",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 50,
 
     name: "Bộ Dây Cắm Test Board Jumper Wire 3 Loại (Gói 120 Sợi)",
@@ -1514,20 +1676,22 @@ const products = [
 
     badge: "HOT",
 
-    description: "Bộ cáp cắm bọc nhựa kết nối chân test board nhanh. Gồm đầy đủ 3 loại đầu dây: Đực-Đực, Cái-Cái và Đực-Cái.",
+    description:
+      "Bộ cáp cắm bọc nhựa kết nối chân test board nhanh. Gồm đầy đủ 3 loại đầu dây: Đực-Đực, Cái-Cái và Đực-Cái.",
 
-    specs: ["Chiều dài dây nối: 20cm", "Chất liệu lõi dẫn: Hợp kim đồng mạ kẽm", "Khoảng cách bước chân: 2.54mm tương thích breadboard", "Số lượng dây: 3 vỉ x 40 sợi tổng cộng 120 sợi"],
+    specs: [
+      "Chiều dài dây nối: 20cm",
+      "Chất liệu lõi dẫn: Hợp kim đồng mạ kẽm",
+      "Khoảng cách bước chân: 2.54mm tương thích breadboard",
+      "Số lượng dây: 3 vỉ x 40 sợi tổng cộng 120 sợi",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
-
-
 
   // --- DỤNG CỤ KỸ THUẬT ---
 
   {
-
     id: 51,
 
     name: "Trạm Hàn Thiếc Yihua 60W Có Chỉnh Nhiệt Độ Tay Hàn",
@@ -1546,16 +1710,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Bộ tay hàn nhiệt có núm điều chỉnh nhiệt độ nóng. Thích hợp cho sinh viên hàn chân cắm sensor và sửa bo mạch in hư hỏng.",
+    description:
+      "Bộ tay hàn nhiệt có núm điều chỉnh nhiệt độ nóng. Thích hợp cho sinh viên hàn chân cắm sensor và sửa bo mạch in hư hỏng.",
 
-    specs: ["Công suất ra tay hàn: 60W", "Dải điều chỉnh nhiệt độ hàn: 200 - 480°C", "Điện áp cắm vào nuôi nguồn: 220V AC dân dụng", "Điện trở rò rỉ nối đất: < 2 Ohms bảo vệ IC"],
+    specs: [
+      "Công suất ra tay hàn: 60W",
+      "Dải điều chỉnh nhiệt độ hàn: 200 - 480°C",
+      "Điện áp cắm vào nuôi nguồn: 220V AC dân dụng",
+      "Điện trở rò rỉ nối đất: < 2 Ohms bảo vệ IC",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 52,
 
     name: "Đồng Hồ Đo Vạn Năng Số DT830D Nhỏ Gọn",
@@ -1574,16 +1742,20 @@ const products = [
 
     badge: null,
 
-    description: "Dụng cụ đo đạc không thể thiếu cho bàn học kỹ thuật. Hỗ trợ đo điện áp xoay chiều, đo một chiều DC, thông mạch và trở kháng.",
+    description:
+      "Dụng cụ đo đạc không thể thiếu cho bàn học kỹ thuật. Hỗ trợ đo điện áp xoay chiều, đo một chiều DC, thông mạch và trở kháng.",
 
-    specs: ["Dải đo điện áp một chiều DC: 200mV - 1000V", "Dải đo điện áp xoay chiều AC: 200V - 750V", "Dải đo điện trở đo được: 200 Ohm - 2 Megaohm", "Tính năng đo đi kèm: Còi thông mạch buzzer, đo hệ số khuếch đại hFE transistor"],
+    specs: [
+      "Dải đo điện áp một chiều DC: 200mV - 1000V",
+      "Dải đo điện áp xoay chiều AC: 200V - 750V",
+      "Dải đo điện trở đo được: 200 Ohm - 2 Megaohm",
+      "Tính năng đo đi kèm: Còi thông mạch buzzer, đo hệ số khuếch đại hFE transistor",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 53,
 
     name: "Máy Hiện Sóng Cầm Tay Mini Digital Oscilloscope DSO150",
@@ -1602,16 +1774,20 @@ const products = [
 
     badge: "NEW",
 
-    description: "Máy hiển thị sóng PWM, đo tần số xung tín hiệu nhỏ gọn. Rất hữu ích khi học và gỡ lỗi truyền nhận giao tiếp UART/SPI.",
+    description:
+      "Máy hiển thị sóng PWM, đo tần số xung tín hiệu nhỏ gọn. Rất hữu ích khi học và gỡ lỗi truyền nhận giao tiếp UART/SPI.",
 
-    specs: ["Băng thông analog đo được: 0 - 200KHz", "Tốc độ lấy mẫu tối đa: 1MSps", "Độ nhạy dọc hiển thị: 5mV/Div - 20V/Div", "Kích thước màn hình đồ họa: 2.4 inch TFT màu LCD"],
+    specs: [
+      "Băng thông analog đo được: 0 - 200KHz",
+      "Tốc độ lấy mẫu tối đa: 1MSps",
+      "Độ nhạy dọc hiển thị: 5mV/Div - 20V/Div",
+      "Kích thước màn hình đồ họa: 2.4 inch TFT màu LCD",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 54,
 
     name: "Bộ Tua Vít Đa Năng Sửa Chữa Thiết Bị Jackly 45-in-1",
@@ -1630,16 +1806,19 @@ const products = [
 
     badge: null,
 
-    description: "Bộ hộp tua vít đầu nam châm hút chống rơi ốc. Đầy đủ các đầu lục giác, dẹt, 3 cạnh tháo lắp laptop và đồ cơ khí robot car.",
+    description:
+      "Bộ hộp tua vít đầu nam châm hút chống rơi ốc. Đầy đủ các đầu lục giác, dẹt, 3 cạnh tháo lắp laptop và đồ cơ khí robot car.",
 
-    specs: ["Các loại đầu vít: Torx, Hex, Slotted, Phillips, Triangle", "Chất liệu chế tạo đầu: Thép Chrome Vanadium siêu cứng", "Tay cầm bọc cao su: Cao su nhám chống trượt tay"],
+    specs: [
+      "Các loại đầu vít: Torx, Hex, Slotted, Phillips, Triangle",
+      "Chất liệu chế tạo đầu: Thép Chrome Vanadium siêu cứng",
+      "Tay cầm bọc cao su: Cao su nhám chống trượt tay",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 55,
 
     name: "Kìm Cắt Chân Linh Kiện Plato 170 Chuyên Dụng",
@@ -1658,16 +1837,19 @@ const products = [
 
     badge: null,
 
-    description: "Kìm cắt chân sắt đồng, cắt thừa sau khi hàn mạch hoặc cắt vỏ nhựa tuốt dây cắm tín hiệu nhúng dễ dàng.",
+    description:
+      "Kìm cắt chân sắt đồng, cắt thừa sau khi hàn mạch hoặc cắt vỏ nhựa tuốt dây cắm tín hiệu nhúng dễ dàng.",
 
-    specs: ["Đường kính cắt tối đa: 1.2mm dây đồng mềm", "Lò xo đàn hồi tự mở: Có lò xo trợ lực tự mở tay kìm", "Tay bọc bảo vệ: Nhựa bọc PVC màu xanh dương"],
+    specs: [
+      "Đường kính cắt tối đa: 1.2mm dây đồng mềm",
+      "Lò xo đàn hồi tự mở: Có lò xo trợ lực tự mở tay kìm",
+      "Tay bọc bảo vệ: Nhựa bọc PVC màu xanh dương",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 56,
 
     name: "Bộ Làm Mạch In Thủ Công (Phíp Đồng + Bột Sắt Ăn Mòn)",
@@ -1686,20 +1868,21 @@ const products = [
 
     badge: null,
 
-    description: "Gói vật liệu cơ bản tự vẽ tự ngâm rửa bo mạch in một lớp. Dành cho môn thực tập thiết kế PCB cơ bản.",
+    description:
+      "Gói vật liệu cơ bản tự vẽ tự ngâm rửa bo mạch in một lớp. Dành cho môn thực tập thiết kế PCB cơ bản.",
 
-    specs: ["Phíp đồng bao gồm: 3 tấm phíp đồng kích thước 10x15cm", "Bột sắt ăn mòn: 200g bột sắt ngâm FeCl3", "Sách hướng dẫn quy trình: Có kèm hướng dẫn an toàn"],
+    specs: [
+      "Phíp đồng bao gồm: 3 tấm phíp đồng kích thước 10x15cm",
+      "Bột sắt ăn mòn: 200g bột sắt ngâm FeCl3",
+      "Sách hướng dẫn quy trình: Có kèm hướng dẫn an toàn",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
-
-
 
   // --- DIY & KẾT NỐI KHÔNG DÂY ---
 
   {
-
     id: 57,
 
     name: "Bộ Học Tập Nhà Thông Minh IoT Arduino Smart Home Kit",
@@ -1718,16 +1901,19 @@ const products = [
 
     badge: "HOT",
 
-    description: "Bộ Kit học lập trình hệ thống IoT thông minh. Đầy đủ cảm biến và module điều khiển đóng ngắt, kèm file hướng dẫn lắp ráp mạch chi tiết.",
+    description:
+      "Bộ Kit học lập trình hệ thống IoT thông minh. Đầy đủ cảm biến và module điều khiển đóng ngắt, kèm file hướng dẫn lắp ráp mạch chi tiết.",
 
-    specs: ["Board điều khiển trung tâm: Arduino Uno R3", "Thiết bị bao gồm: Servo SG90, LCD 16x2 I2C, DHT11, MQ-2, Rơ-le, Còi báo động", "Tài liệu kèm theo: Bộ PDF bài học nạp code mẫu"],
+    specs: [
+      "Board điều khiển trung tâm: Arduino Uno R3",
+      "Thiết bị bao gồm: Servo SG90, LCD 16x2 I2C, DHT11, MQ-2, Rơ-le, Còi báo động",
+      "Tài liệu kèm theo: Bộ PDF bài học nạp code mẫu",
+    ],
 
-    image: "iot"
-
+    image: "iot",
   },
 
   {
-
     id: 58,
 
     name: "Module WiFi ESP-01S Giao Tiếp Nối Tiếp UART Siêu Nhỏ",
@@ -1746,16 +1932,20 @@ const products = [
 
     badge: null,
 
-    description: "Cạc WiFi siêu nhỏ gọn giao tiếp qua giao thức Serial lệnh AT. Giúp thêm tính năng gửi tin nhắn WiFi lên internet cho Arduino Uno dễ dàng.",
+    description:
+      "Cạc WiFi siêu nhỏ gọn giao tiếp qua giao thức Serial lệnh AT. Giúp thêm tính năng gửi tin nhắn WiFi lên internet cho Arduino Uno dễ dàng.",
 
-    specs: ["Chế độ mạng WiFi: Station / SoftAP kết hợp", "Tốc độ baudrate mặc định: 115200 bps", "Dung lượng bộ nhớ chip: 1MB Flash", "Điện áp nuôi: 3.3V DC (Cắm 5V sẽ gây cháy chip ngay lập tức)"],
+    specs: [
+      "Chế độ mạng WiFi: Station / SoftAP kết hợp",
+      "Tốc độ baudrate mặc định: 115200 bps",
+      "Dung lượng bộ nhớ chip: 1MB Flash",
+      "Điện áp nuôi: 3.3V DC (Cắm 5V sẽ gây cháy chip ngay lập tức)",
+    ],
 
-    image: "iot"
-
+    image: "iot",
   },
 
   {
-
     id: 59,
 
     name: "Module Bluetooth HC-05 Kết Nối Truyền Nhận UART Không Dây",
@@ -1774,16 +1964,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Module truyền nhận sóng Bluetooth không dây chuẩn UART. Dùng điều khiển hướng chạy xe robot từ điện thoại Android thông qua ứng dụng.",
+    description:
+      "Module truyền nhận sóng Bluetooth không dây chuẩn UART. Dùng điều khiển hướng chạy xe robot từ điện thoại Android thông qua ứng dụng.",
 
-    specs: ["Chuẩn kết nối không dây: Bluetooth v2.0+EDR", "Chế độ cấu hình hoạt động: Master / Slave (Chủ hoặc Tớ)", "Cự ly truyền nhận tối đa: < 10 mét trong phòng", "Điện áp cấp nuôi: 3.6V - 6V DC"],
+    specs: [
+      "Chuẩn kết nối không dây: Bluetooth v2.0+EDR",
+      "Chế độ cấu hình hoạt động: Master / Slave (Chủ hoặc Tớ)",
+      "Cự ly truyền nhận tối đa: < 10 mét trong phòng",
+      "Điện áp cấp nuôi: 3.6V - 6V DC",
+    ],
 
-    image: "iot"
-
+    image: "iot",
   },
 
   {
-
     id: 60,
 
     name: "Bộ Đọc Thẻ Từ Không Tiếp Xúc MFRC522 RFID Kit",
@@ -1802,18 +1996,20 @@ const products = [
 
     badge: null,
 
-    description: "Bộ module đọc/ghi thẻ thông minh RFID tần số 13.56MHz. Trọn bộ gồm mạch đọc, thẻ từ trắng móc khóa và thẻ ATM từ.",
+    description:
+      "Bộ module đọc/ghi thẻ thông minh RFID tần số 13.56MHz. Trọn bộ gồm mạch đọc, thẻ từ trắng móc khóa và thẻ ATM từ.",
 
-    specs: ["Tần số sóng RFID: 13.56 MHz", "Loại thẻ tương thích: Thẻ Mifare1 S50, Mifare1 S70", "Băng thông truyền dữ liệu: Tối đa 10Mbit/s", "Điện áp nuôi mạch đọc: 3.3V DC"],
+    specs: [
+      "Tần số sóng RFID: 13.56 MHz",
+      "Loại thẻ tương thích: Thẻ Mifare1 S50, Mifare1 S70",
+      "Băng thông truyền dữ liệu: Tối đa 10Mbit/s",
+      "Điện áp nuôi mạch đọc: 3.3V DC",
+    ],
 
-    image: "iot"
-
-  }
-
-,
+    image: "iot",
+  },
 
   {
-
     id: 61,
 
     name: "Cảm Biến Áp Suất Khí Quyển & Nhiệt Độ BMP280",
@@ -1832,16 +2028,20 @@ const products = [
 
     badge: null,
 
-    description: "Cảm biến áp suất khí quyển BMP280 độ chính xác cao, tiêu thụ năng lượng cực thấp, hỗ trợ đo cả nhiệt độ và áp suất khí quyển của môi trường xung quanh.",
+    description:
+      "Cảm biến áp suất khí quyển BMP280 độ chính xác cao, tiêu thụ năng lượng cực thấp, hỗ trợ đo cả nhiệt độ và áp suất khí quyển của môi trường xung quanh.",
 
-    specs: ["Điện áp cấp: 1.8 - 3.6V DC", "Giao tiếp: I2C hoặc SPI", "Dải đo áp suất: 300 - 1100 hPa", "Dải đo nhiệt độ: -40 đến 85°C"],
+    specs: [
+      "Điện áp cấp: 1.8 - 3.6V DC",
+      "Giao tiếp: I2C hoặc SPI",
+      "Dải đo áp suất: 300 - 1100 hPa",
+      "Dải đo nhiệt độ: -40 đến 85°C",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 62,
 
     name: "Bo Mạch Vi Điều Khiển Arduino Nano V3 (Chip nạp CH340)",
@@ -1860,16 +2060,20 @@ const products = [
 
     badge: null,
 
-    description: "Phiên bản thu nhỏ cực kỳ tiện lợi của Arduino Uno R3, tích hợp cổng nạp Mini-USB và chip nạp CH340, phù hợp làm các mạch ứng dụng kích thước nhỏ gọn.",
+    description:
+      "Phiên bản thu nhỏ cực kỳ tiện lợi của Arduino Uno R3, tích hợp cổng nạp Mini-USB và chip nạp CH340, phù hợp làm các mạch ứng dụng kích thước nhỏ gọn.",
 
-    specs: ["Vi điều khiển: ATmega328P", "Điện áp hoạt động: 5V", "Số chân Digital I/O: 14 chân", "Số chân Analog Input: 8 chân"],
+    specs: [
+      "Vi điều khiển: ATmega328P",
+      "Điện áp hoạt động: 5V",
+      "Số chân Digital I/O: 14 chân",
+      "Số chân Analog Input: 8 chân",
+    ],
 
-    image: "arduino_uno"
-
+    image: "arduino_uno",
   },
 
   {
-
     id: 63,
 
     name: "Mạch Vi Điều Khiển Giá Rẻ STM8S103F3P6 Hệ 8-bit",
@@ -1888,16 +2092,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch phát triển vi điều khiển 8-bit giá siêu rẻ từ hãng ST, phù hợp cho học sinh, sinh viên nghiên cứu các bài thực hành nhúng cơ bản siêu tiết kiệm.",
+    description:
+      "Mạch phát triển vi điều khiển 8-bit giá siêu rẻ từ hãng ST, phù hợp cho học sinh, sinh viên nghiên cứu các bài thực hành nhúng cơ bản siêu tiết kiệm.",
 
-    specs: ["Lõi xử lý: STM8S 16MHz", "Bộ nhớ Flash: 8KB", "Bộ nhớ RAM: 1KB", "Giao tiếp: UART, SPI, I2C"],
+    specs: [
+      "Lõi xử lý: STM8S 16MHz",
+      "Bộ nhớ Flash: 8KB",
+      "Bộ nhớ RAM: 1KB",
+      "Giao tiếp: UART, SPI, I2C",
+    ],
 
-    image: "stm32"
-
+    image: "stm32",
   },
 
   {
-
     id: 64,
 
     name: "Mạch Nạp ST-Link V2 Cho STM8 và STM32 ARM",
@@ -1916,16 +2124,19 @@ const products = [
 
     badge: "HOT",
 
-    description: "Bộ mạch nạp và gỡ lỗi chuyên nghiệp hỗ trợ đầy đủ các dòng vi điều khiển STM8 qua giao tiếp SWIM và STM32 qua giao tiếp SWD.",
+    description:
+      "Bộ mạch nạp và gỡ lỗi chuyên nghiệp hỗ trợ đầy đủ các dòng vi điều khiển STM8 qua giao tiếp SWIM và STM32 qua giao tiếp SWD.",
 
-    specs: ["Kết nối PC: Cổng USB 2.0", "Hỗ trợ gỡ lỗi: SWIM và SWD", "Nguồn cấp đầu ra: 3.3V và 5V DC"],
+    specs: [
+      "Kết nối PC: Cổng USB 2.0",
+      "Hỗ trợ gỡ lỗi: SWIM và SWD",
+      "Nguồn cấp đầu ra: 3.3V và 5V DC",
+    ],
 
-    image: "stm32"
-
+    image: "stm32",
   },
 
   {
-
     id: 65,
 
     name: "Cảm Biến Đo Độ Ẩm Đất Vách Nhôm Chống Ăn Mòn",
@@ -1944,16 +2155,19 @@ const products = [
 
     badge: null,
 
-    description: "Cảm biến đo độ ẩm đất dạng kim loại mạ niken chống ăn mòn hóa học cao, xuất tín hiệu tương tự analog A0 và tín hiệu số D0.",
+    description:
+      "Cảm biến đo độ ẩm đất dạng kim loại mạ niken chống ăn mòn hóa học cao, xuất tín hiệu tương tự analog A0 và tín hiệu số D0.",
 
-    specs: ["Điện áp cấp nuôi: 3.3V - 5V DC", "Đầu ra cổng: Cả Analog và Digital", "IC so sánh tích hợp: LM393 chỉnh độ nhạy"],
+    specs: [
+      "Điện áp cấp nuôi: 3.3V - 5V DC",
+      "Đầu ra cổng: Cả Analog và Digital",
+      "IC so sánh tích hợp: LM393 chỉnh độ nhạy",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 66,
 
     name: "Cảm Biến Đo Nhịp Tim & Nồng Độ Oxy Máu MAX30102",
@@ -1972,16 +2186,19 @@ const products = [
 
     badge: "NEW",
 
-    description: "Cảm biến đo nhịp tim và nồng độ bão hòa oxy trong máu (SpO2) bằng công nghệ quang học, giao tiếp qua bus I2C ổn định.",
+    description:
+      "Cảm biến đo nhịp tim và nồng độ bão hòa oxy trong máu (SpO2) bằng công nghệ quang học, giao tiếp qua bus I2C ổn định.",
 
-    specs: ["Điện áp nuôi mạch: 1.8V - 3.3V", "Giao tiếp chính: Bus I2C tiện lợi", "LED phát xạ tích hợp: Đỏ và Hồng ngoại"],
+    specs: [
+      "Điện áp nuôi mạch: 1.8V - 3.3V",
+      "Giao tiếp chính: Bus I2C tiện lợi",
+      "LED phát xạ tích hợp: Đỏ và Hồng ngoại",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 67,
 
     name: "Cảm Biến Gia Tốc & Góc Nghiêng 6 Trục MPU6050",
@@ -2000,16 +2217,19 @@ const products = [
 
     badge: "HOT",
 
-    description: "Cảm biến con quay hồi chuyển Gyroscope kết hợp gia tốc kế accelerometer 6 trục, linh kiện cốt lõi làm robot tự cân bằng hoặc thiết bị bay drone.",
+    description:
+      "Cảm biến con quay hồi chuyển Gyroscope kết hợp gia tốc kế accelerometer 6 trục, linh kiện cốt lõi làm robot tự cân bằng hoặc thiết bị bay drone.",
 
-    specs: ["Số trục cảm ứng: 3 trục Gyro + 3 trục Accel", "Giao thức truyền dữ liệu: Bus I2C", "Bộ chuyển đổi ADC tích hợp: 16-bit"],
+    specs: [
+      "Số trục cảm ứng: 3 trục Gyro + 3 trục Accel",
+      "Giao thức truyền dữ liệu: Bus I2C",
+      "Bộ chuyển đổi ADC tích hợp: 16-bit",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 68,
 
     name: "Cảm Biến La Bàn Số 3 Trục Định Hướng HMC5883L",
@@ -2028,16 +2248,19 @@ const products = [
 
     badge: null,
 
-    description: "Cảm biến từ trường đo hướng đi la bàn số 3 trục, hỗ trợ xác định chính xác phương hướng di chuyển cho xe robot tự hành ngoài trời.",
+    description:
+      "Cảm biến từ trường đo hướng đi la bàn số 3 trục, hỗ trợ xác định chính xác phương hướng di chuyển cho xe robot tự hành ngoài trời.",
 
-    specs: ["Độ phân giải hướng: 1 đến 2 độ", "Giao tiếp: Bus I2C tốc độ cao", "Dải đo từ trường: ±0.88 đến ±8.1 gauss"],
+    specs: [
+      "Độ phân giải hướng: 1 đến 2 độ",
+      "Giao tiếp: Bus I2C tốc độ cao",
+      "Dải đo từ trường: ±0.88 đến ±8.1 gauss",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 69,
 
     name: "Màn Hình E-Paper 1.54 inch Tiết Kiệm Điện Hiển Thị Mực Điện Tử",
@@ -2056,16 +2279,19 @@ const products = [
 
     badge: "NEW",
 
-    description: "Màn hình mực điện tử e-ink hiển thị chữ sắc nét không tốn điện năng khi giữ nguyên trạng thái. Thích hợp làm bảng tên thông minh.",
+    description:
+      "Màn hình mực điện tử e-ink hiển thị chữ sắc nét không tốn điện năng khi giữ nguyên trạng thái. Thích hợp làm bảng tên thông minh.",
 
-    specs: ["Kích thước đường chéo: 1.54 inch", "Độ phân giải hiển thị: 200x200 Pixels", "Chuẩn giao tiếp điều khiển: SPI 3-wire/4-wire"],
+    specs: [
+      "Kích thước đường chéo: 1.54 inch",
+      "Độ phân giải hiển thị: 200x200 Pixels",
+      "Chuẩn giao tiếp điều khiển: SPI 3-wire/4-wire",
+    ],
 
-    image: "display"
-
+    image: "display",
   },
 
   {
-
     id: 70,
 
     name: "Module LED 7 Đo 8 Chữ Số Sử Dụng Chip MAX7219",
@@ -2084,16 +2310,19 @@ const products = [
 
     badge: null,
 
-    description: "Mạch hiển thị LED 7 đoạn gồm 8 chữ số độc lập nối tiếp nhau qua driver MAX7219, hiển thị số đếm hoặc thời gian lớn rõ ràng.",
+    description:
+      "Mạch hiển thị LED 7 đoạn gồm 8 chữ số độc lập nối tiếp nhau qua driver MAX7219, hiển thị số đếm hoặc thời gian lớn rõ ràng.",
 
-    specs: ["Tổng số ký số hiển thị: 8 chữ số", "IC chuyên dụng điều khiển: MAX7219", "Chuẩn giao tiếp nối tiếp: SPI Serial 3 chân"],
+    specs: [
+      "Tổng số ký số hiển thị: 8 chữ số",
+      "IC chuyên dụng điều khiển: MAX7219",
+      "Chuẩn giao tiếp nối tiếp: SPI Serial 3 chân",
+    ],
 
-    image: "display"
-
+    image: "display",
   },
 
   {
-
     id: 71,
 
     name: "Đế Sạc Pin Lithium 18650 Đôi 2 Khe Cắm Tiện Lợi",
@@ -2112,16 +2341,19 @@ const products = [
 
     badge: null,
 
-    description: "Khay nhựa lắp ráp sẵn lò xo kim loại giữ chặt 2 viên pin 18650, có sẵn đầu dây dẫn ra nguồn cấp cho robot.",
+    description:
+      "Khay nhựa lắp ráp sẵn lò xo kim loại giữ chặt 2 viên pin 18650, có sẵn đầu dây dẫn ra nguồn cấp cho robot.",
 
-    specs: ["Số khe lắp pin: 2 khe nối tiếp", "Điện áp danh định đầu ra: 7.4V (nếu dùng 2 pin 3.7V)", "Chất liệu vỏ khay: Nhựa ABS chịu lực tốt"],
+    specs: [
+      "Số khe lắp pin: 2 khe nối tiếp",
+      "Điện áp danh định đầu ra: 7.4V (nếu dùng 2 pin 3.7V)",
+      "Chất liệu vỏ khay: Nhựa ABS chịu lực tốt",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 72,
 
     name: "Mạch Hạ Áp DC-DC Tích Hợp Sạc Nhanh QC3.0 USB",
@@ -2140,16 +2372,19 @@ const products = [
 
     badge: "HOT",
 
-    description: "Mạch chuyển đổi nguồn điện DC dải rộng thành ngõ ra USB hỗ trợ sạc nhanh QualComm Quick Charge 3.0 tự động nhận diện thiết bị.",
+    description:
+      "Mạch chuyển đổi nguồn điện DC dải rộng thành ngõ ra USB hỗ trợ sạc nhanh QualComm Quick Charge 3.0 tự động nhận diện thiết bị.",
 
-    specs: ["Dải điện áp đầu vào: 6V - 32V DC", "Chuẩn sạc nhanh hỗ trợ: QC 3.0, FCP, SCP, AFC", "Công suất sạc ra tối đa: 24W"],
+    specs: [
+      "Dải điện áp đầu vào: 6V - 32V DC",
+      "Chuẩn sạc nhanh hỗ trợ: QC 3.0, FCP, SCP, AFC",
+      "Công suất sạc ra tối đa: 24W",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 73,
 
     name: "Bộ Adapter Nguồn 5V 2A DC Jack 5.5x2.1mm",
@@ -2168,16 +2403,19 @@ const products = [
 
     badge: null,
 
-    description: "Củ sạc chuyển đổi nguồn AC dân dụng thành 5V DC đầu ra ổn áp sạch, cấp nguồn qua giắc cắm DC tròn phổ thông cho Arduino.",
+    description:
+      "Củ sạc chuyển đổi nguồn AC dân dụng thành 5V DC đầu ra ổn áp sạch, cấp nguồn qua giắc cắm DC tròn phổ thông cho Arduino.",
 
-    specs: ["Điện áp cấp vào: 100V - 240V AC", "Điện áp ngõ ra cố định: 5.0V DC", "Dòng tải ngõ ra tối đa: 2.0A"],
+    specs: [
+      "Điện áp cấp vào: 100V - 240V AC",
+      "Điện áp ngõ ra cố định: 5.0V DC",
+      "Dòng tải ngõ ra tối đa: 2.0A",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 74,
 
     name: "Động Cơ Giảm Tốc Vàng DC 3-6V Trục Đơn Lực Khỏe",
@@ -2196,16 +2434,19 @@ const products = [
 
     badge: null,
 
-    description: "Động cơ giảm tốc vỏ nhựa màu vàng phổ thông nhất chuyên dùng thiết kế các mô hình xe robot tránh vật cản hoặc xe dò đường.",
+    description:
+      "Động cơ giảm tốc vỏ nhựa màu vàng phổ thông nhất chuyên dùng thiết kế các mô hình xe robot tránh vật cản hoặc xe dò đường.",
 
-    specs: ["Điện áp hoạt động: 3V - 6V DC", "Tỷ số truyền giảm tốc: 1:48", "Tốc độ không tải ở 6V: 200 vòng/phút"],
+    specs: [
+      "Điện áp hoạt động: 3V - 6V DC",
+      "Tỷ số truyền giảm tốc: 1:48",
+      "Tốc độ không tải ở 6V: 200 vòng/phút",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 75,
 
     name: "Bánh Xe Robot Mecanum Đúc Cao Su Đường Kính 80mm Tải Khỏe",
@@ -2224,16 +2465,19 @@ const products = [
 
     badge: "NEW",
 
-    description: "Bánh xe Mecanum đơn kích thước lớn 80mm đúc cao su đặc ma sát cao, hỗ trợ chịu lực và tải trọng lớn cho robot công nghiệp.",
+    description:
+      "Bánh xe Mecanum đơn kích thước lớn 80mm đúc cao su đặc ma sát cao, hỗ trợ chịu lực và tải trọng lớn cho robot công nghiệp.",
 
-    specs: ["Đường kính ngoài bánh: 80mm", "Vật liệu con lăn nhỏ: Cao su đặc chịu tải", "Lõi khớp nối: Trục lục giác đồng 6mm"],
+    specs: [
+      "Đường kính ngoài bánh: 80mm",
+      "Vật liệu con lăn nhỏ: Cao su đặc chịu tải",
+      "Lõi khớp nối: Trục lục giác đồng 6mm",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 76,
 
     name: "Mạch Driver Điều Khiển Động Cơ Bước A4988 Có Tản Nhiệt",
@@ -2252,16 +2496,19 @@ const products = [
 
     badge: null,
 
-    description: "Mạch driver vi bước chuyên dụng chạy động cơ bước NEMA 17 cho máy in 3D và CNC mini, đi kèm miếng nhôm dán tản nhiệt.",
+    description:
+      "Mạch driver vi bước chuyên dụng chạy động cơ bước NEMA 17 cho máy in 3D và CNC mini, đi kèm miếng nhôm dán tản nhiệt.",
 
-    specs: ["Điện áp động cơ chịu tối đa: 8V - 35V DC", "Dòng tải pha chịu được: 1.0A (Hoặc 2.0A nếu có quạt)", "Chế độ vi bước tối đa: 1/16 bước"],
+    specs: [
+      "Điện áp động cơ chịu tối đa: 8V - 35V DC",
+      "Dòng tải pha chịu được: 1.0A (Hoặc 2.0A nếu có quạt)",
+      "Chế độ vi bước tối đa: 1/16 bước",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 77,
 
     name: "Thanh RAM Kingston Fury Beast 16GB DDR4 3200MHz Máy Tính",
@@ -2280,16 +2527,19 @@ const products = [
 
     badge: "HOT",
 
-    description: "Thanh nhớ RAM DDR4 dung lượng cao 16GB có tản nhiệt nhôm đen mát mẻ, tăng tốc khả năng đa nhiệm cho PC thiết kế lập trình nhúng.",
+    description:
+      "Thanh nhớ RAM DDR4 dung lượng cao 16GB có tản nhiệt nhôm đen mát mẻ, tăng tốc khả năng đa nhiệm cho PC thiết kế lập trình nhúng.",
 
-    specs: ["Dung lượng RAM: 16GB", "Xung nhịp bus tối đa: 3200MHz", "Kiểu RAM: DDR4 UDIMM có tản nhiệt nhôm"],
+    specs: [
+      "Dung lượng RAM: 16GB",
+      "Xung nhịp bus tối đa: 3200MHz",
+      "Kiểu RAM: DDR4 UDIMM có tản nhiệt nhôm",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 78,
 
     name: "Keo Tản Nhiệt CPU Cao Cấp Arctic MX-4 (Tuýp 4 Grams)",
@@ -2308,16 +2558,19 @@ const products = [
 
     badge: null,
 
-    description: "Keo tản nhiệt silicon carbon dẫn nhiệt cực tốt chuyên dùng bôi mặt lưng CPU/GPU giúp giảm nóng máy hiệu quả khi render nặng.",
+    description:
+      "Keo tản nhiệt silicon carbon dẫn nhiệt cực tốt chuyên dùng bôi mặt lưng CPU/GPU giúp giảm nóng máy hiệu quả khi render nặng.",
 
-    specs: ["Trọng lượng tịnh: 4g dạng xi lanh", "Độ dẫn nhiệt: 8.5 W/(mK)", "Độ nhớt keo: 870 poise"],
+    specs: [
+      "Trọng lượng tịnh: 4g dạng xi lanh",
+      "Độ dẫn nhiệt: 8.5 W/(mK)",
+      "Độ nhớt keo: 870 poise",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 79,
 
     name: "Hộp Nút Nhấn Tactile Switch Nhiều Kích Cỡ (Hộp 100 Chiếc)",
@@ -2336,16 +2589,18 @@ const products = [
 
     badge: null,
 
-    description: "Hộp sắp xếp nhiều nút nhấn cơ đóng ngắt phím bấm 2 chân, 4 chân có độ nảy tốt, thích hợp làm nút Reset hoặc cài đặt thông số.",
+    description:
+      "Hộp sắp xếp nhiều nút nhấn cơ đóng ngắt phím bấm 2 chân, 4 chân có độ nảy tốt, thích hợp làm nút Reset hoặc cài đặt thông số.",
 
-    specs: ["Số nút nhấn trong hộp: Hộp 100 chiếc", "Kích cỡ thông dụng gồm: 6x6x5mm đến 12x12x7.3mm"],
+    specs: [
+      "Số nút nhấn trong hộp: Hộp 100 chiếc",
+      "Kích cỡ thông dụng gồm: 6x6x5mm đến 12x12x7.3mm",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 80,
 
     name: "Chiết Áp Xoay Đơn Trị Số 10k Ohms WH148 Kèm Núm Chụp",
@@ -2364,16 +2619,19 @@ const products = [
 
     badge: null,
 
-    description: "Điện trở xoay tinh chỉnh giá trị dòng điện và điện áp tương tự analog, đi kèm núm nhựa chụp đầu trục bảo vệ thẩm mỹ.",
+    description:
+      "Điện trở xoay tinh chỉnh giá trị dòng điện và điện áp tương tự analog, đi kèm núm nhựa chụp đầu trục bảo vệ thẩm mỹ.",
 
-    specs: ["Trị số trở kháng chuẩn: 10k Ohms", "Góc xoay hành trình: 300 độ ±10%", "Kiểu đóng gói: Chân cắm WH148 trục dẹt"],
+    specs: [
+      "Trị số trở kháng chuẩn: 10k Ohms",
+      "Góc xoay hành trình: 300 độ ±10%",
+      "Kiểu đóng gói: Chân cắm WH148 trục dẹt",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 81,
 
     name: "Còi Báo Động Buzzer 5V Active Có Sẵn Màng Rung",
@@ -2392,16 +2650,19 @@ const products = [
 
     badge: null,
 
-    description: "Còi báo động phát tiếng kêu tít tít chói tai liên tục khi cấp nguồn 5V trực tiếp, còi cảnh báo an toàn cho hệ thống chống trộm.",
+    description:
+      "Còi báo động phát tiếng kêu tít tít chói tai liên tục khi cấp nguồn 5V trực tiếp, còi cảnh báo an toàn cho hệ thống chống trộm.",
 
-    specs: ["Điện áp hoạt động: 4V - 7V DC", "Dòng điện tiêu thụ: < 30mA khi kêu", "Tần số âm thanh phát ra: 2300Hz ±300Hz"],
+    specs: [
+      "Điện áp hoạt động: 4V - 7V DC",
+      "Dòng điện tiêu thụ: < 30mA khi kêu",
+      "Tần số âm thanh phát ra: 2300Hz ±300Hz",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 82,
 
     name: "Cuộn Dây Thiếc Hàn Không Chì Chứa Flux Nhựa Thông Hanxin 100g",
@@ -2420,16 +2681,19 @@ const products = [
 
     badge: "HOT",
 
-    description: "Dây thiếc hàn không chì bảo vệ sức khỏe người dùng, bóng thiếc và dễ bám dính nhờ có pha sẵn lõi nhựa thông trợ hàn bên trong.",
+    description:
+      "Dây thiếc hàn không chì bảo vệ sức khỏe người dùng, bóng thiếc và dễ bám dính nhờ có pha sẵn lõi nhựa thông trợ hàn bên trong.",
 
-    specs: ["Trọng lượng cuộn: 100 grams", "Đường kính dây thiếc: 0.8mm", "Thành phần hợp kim: Thiếc và Đồng"],
+    specs: [
+      "Trọng lượng cuộn: 100 grams",
+      "Đường kính dây thiếc: 0.8mm",
+      "Thành phần hợp kim: Thiếc và Đồng",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 83,
 
     name: "Nhíp Gắp Linh Kiện Điện Tử Dán SMD Chống Tĩnh Điện ESD-15",
@@ -2448,16 +2712,19 @@ const products = [
 
     badge: null,
 
-    description: "Nhíp thép gắp linh kiện dán siêu nhỏ đầu nhọn cong ESD-15, phủ lớp sơn tĩnh điện đen nhám chống nhiễm điện từ làm hỏng chip.",
+    description:
+      "Nhíp thép gắp linh kiện dán siêu nhỏ đầu nhọn cong ESD-15, phủ lớp sơn tĩnh điện đen nhám chống nhiễm điện từ làm hỏng chip.",
 
-    specs: ["Chất liệu chế tạo: Thép không gỉ", "Kiểu dáng đầu: Đầu nhọn cong ESD-15", "Tính năng bảo vệ: Chống tĩnh điện"],
+    specs: [
+      "Chất liệu chế tạo: Thép không gỉ",
+      "Kiểu dáng đầu: Đầu nhọn cong ESD-15",
+      "Tính năng bảo vệ: Chống tĩnh điện",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 84,
 
     name: "Bộ Module Thu Phát Sóng Vô Tuyến RF 433MHz Siêu Tái Sinh",
@@ -2476,16 +2743,19 @@ const products = [
 
     badge: null,
 
-    description: "Bộ module truyền nhận không dây qua sóng vô tuyến RF tần số 433MHz bao gồm 1 mạch truyền phát FS1000A và 1 mạch nhận tín hiệu.",
+    description:
+      "Bộ module truyền nhận không dây qua sóng vô tuyến RF tần số 433MHz bao gồm 1 mạch truyền phát FS1000A và 1 mạch nhận tín hiệu.",
 
-    specs: ["Tần số sóng hoạt động: 433.92 MHz", "Khoảng cách truyền nhận: 20m - 200m (tùy ăng ten)", "Điện áp cấp nuôi: 3.3V - 5V DC"],
+    specs: [
+      "Tần số sóng hoạt động: 433.92 MHz",
+      "Khoảng cách truyền nhận: 20m - 200m (tùy ăng ten)",
+      "Điện áp cấp nuôi: 3.3V - 5V DC",
+    ],
 
-    image: "iot"
-
+    image: "iot",
   },
 
   {
-
     id: 85,
 
     name: "Module RFID NFC Đọc Ghi Thẻ Từ Thông Minh PN532",
@@ -2504,16 +2774,19 @@ const products = [
 
     badge: "NEW",
 
-    description: "Module đọc ghi thẻ từ giao thức không tiếp xúc tầm gần NFC tần số 13.56MHz đa giao tiếp hỗ trợ kết nối nhanh với điện thoại.",
+    description:
+      "Module đọc ghi thẻ từ giao thức không tiếp xúc tầm gần NFC tần số 13.56MHz đa giao tiếp hỗ trợ kết nối nhanh với điện thoại.",
 
-    specs: ["Chip xử lý chính: NXP PN532", "Hỗ trợ chuẩn giao tiếp: I2C, SPI, UART HSU", "Khoảng cách đọc ghi tối đa: < 5cm"],
+    specs: [
+      "Chip xử lý chính: NXP PN532",
+      "Hỗ trợ chuẩn giao tiếp: I2C, SPI, UART HSU",
+      "Khoảng cách đọc ghi tối đa: < 5cm",
+    ],
 
-    image: "iot"
-
+    image: "iot",
   },
 
   {
-
     id: 86,
 
     name: "Mạch Phát Triển WiFi ESP8266 ESP-12F WeMos D1 Mini",
@@ -2532,16 +2805,20 @@ const products = [
 
     badge: null,
 
-    description: "Bo mạch kích thước siêu nhỏ gọn dựa trên chip WiFi ESP8266. Thích hợp cho các đồ án IoT mini, tiết kiệm không gian và chi phí.",
+    description:
+      "Bo mạch kích thước siêu nhỏ gọn dựa trên chip WiFi ESP8266. Thích hợp cho các đồ án IoT mini, tiết kiệm không gian và chi phí.",
 
-    specs: ["Chip chính: ESP8266EX ESP-12F", "Bộ nhớ Flash: 4MB", "Chân I/O: 11 chân GPIO (hỗ trợ Interrupt/PWM/I2C/1-Wire)", "Chân Analog Input: 1 cổng (Tối đa 3.2V)"],
+    specs: [
+      "Chip chính: ESP8266EX ESP-12F",
+      "Bộ nhớ Flash: 4MB",
+      "Chân I/O: 11 chân GPIO (hỗ trợ Interrupt/PWM/I2C/1-Wire)",
+      "Chân Analog Input: 1 cổng (Tối đa 3.2V)",
+    ],
 
-    image: "wemos"
-
+    image: "wemos",
   },
 
   {
-
     id: 87,
 
     name: "Mạch Nạp Bootloader Cho STM8 STM32 ST-Link V2 Mini",
@@ -2560,16 +2837,19 @@ const products = [
 
     badge: null,
 
-    description: "Mạch nạp nhỏ gọn hỗ trợ giao tiếp debug SWD nạp chương trình cho dòng vi điều khiển STM32 và giao tiếp SWIM cho dòng STM8.",
+    description:
+      "Mạch nạp nhỏ gọn hỗ trợ giao tiếp debug SWD nạp chương trình cho dòng vi điều khiển STM32 và giao tiếp SWIM cho dòng STM8.",
 
-    specs: ["Giao tiếp nạp: SWD / SWIM", "Điện áp ra: 3.3V và 5V DC (chân cấp nguồn)", "Hỗ trợ cầu chì tự phục hồi chống quá dòng bảo vệ cổng USB"],
+    specs: [
+      "Giao tiếp nạp: SWD / SWIM",
+      "Điện áp ra: 3.3V và 5V DC (chân cấp nguồn)",
+      "Hỗ trợ cầu chì tự phục hồi chống quá dòng bảo vệ cổng USB",
+    ],
 
-    image: "stlink"
-
+    image: "stlink",
   },
 
   {
-
     id: 88,
 
     name: "Mạch Phát Triển LGT8F328P Type-C (Tương Thích Arduino Nano)",
@@ -2588,16 +2868,20 @@ const products = [
 
     badge: "NEW",
 
-    description: "Mạch tương thích chân kết nối với Arduino Nano nhưng sử dụng MCU LGT8F328P cho tốc độ tính toán gấp đôi và tích hợp sẵn bộ chuyển đổi DAC nội.",
+    description:
+      "Mạch tương thích chân kết nối với Arduino Nano nhưng sử dụng MCU LGT8F328P cho tốc độ tính toán gấp đôi và tích hợp sẵn bộ chuyển đổi DAC nội.",
 
-    specs: ["Vi điều khiển chính: LGT8F328P (nhân AVR 8-bit)", "Tần số thạch anh: 32MHz", "Cổng kết nối nạp code: USB Type-C", "Tích hợp sẵn DAC 8-bit nội"],
+    specs: [
+      "Vi điều khiển chính: LGT8F328P (nhân AVR 8-bit)",
+      "Tần số thạch anh: 32MHz",
+      "Cổng kết nối nạp code: USB Type-C",
+      "Tích hợp sẵn DAC 8-bit nội",
+    ],
 
-    image: "arduino_nano"
-
+    image: "arduino_nano",
   },
 
   {
-
     id: 89,
 
     name: "Cảm Biến Áp Suất Khí Quyển & Độ Cao BMP180",
@@ -2616,16 +2900,20 @@ const products = [
 
     badge: null,
 
-    description: "Cảm biến đo áp suất khí quyển áp dụng thuật toán tính toán độ cao tương đối so với mực nước biển, độ chính xác cao độ ồn cực thấp.",
+    description:
+      "Cảm biến đo áp suất khí quyển áp dụng thuật toán tính toán độ cao tương đối so với mực nước biển, độ chính xác cao độ ồn cực thấp.",
 
-    specs: ["Chuẩn giao tiếp: I2C", "Dải đo áp suất khí quyển: 300 - 1100 hPa", "Độ cao tối đa đo được: 9000m so với mực nước biển", "Tích hợp cảm biến đo nhiệt độ môi trường"],
+    specs: [
+      "Chuẩn giao tiếp: I2C",
+      "Dải đo áp suất khí quyển: 300 - 1100 hPa",
+      "Độ cao tối đa đo được: 9000m so với mực nước biển",
+      "Tích hợp cảm biến đo nhiệt độ môi trường",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 90,
 
     name: "Cảm Biến Cường Độ Ánh Sáng BH1750 Lux I2C",
@@ -2644,16 +2932,20 @@ const products = [
 
     badge: null,
 
-    description: "Cảm biến đo cường độ ánh sáng kỹ thuật số với dải đo rộng đơn vị đo Lux tiêu chuẩn, không phụ thuộc vào nguồn sáng và phổ nhiệt màu xung quanh.",
+    description:
+      "Cảm biến đo cường độ ánh sáng kỹ thuật số với dải đo rộng đơn vị đo Lux tiêu chuẩn, không phụ thuộc vào nguồn sáng và phổ nhiệt màu xung quanh.",
 
-    specs: ["Chip đo chính: BH1750FVI", "Chuẩn giao tiếp: I2C", "Dải cường độ đo: 1 - 65535 lx", "Không yêu cầu linh kiện tính toán cân chỉnh bên ngoài"],
+    specs: [
+      "Chip đo chính: BH1750FVI",
+      "Chuẩn giao tiếp: I2C",
+      "Dải cường độ đo: 1 - 65535 lx",
+      "Không yêu cầu linh kiện tính toán cân chỉnh bên ngoài",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 91,
 
     name: "Cảm Biến Đo Khoảng Cách Bằng Laser VL53L0X Time-of-Flight",
@@ -2672,16 +2964,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Cảm biến đo khoảng cách dựa trên nguyên lý đo thời gian bay (Time-of-Flight) của chùm tia laser hồng ngoại cực kỳ chính xác không bị ảnh hưởng bởi màu sắc vật cản.",
+    description:
+      "Cảm biến đo khoảng cách dựa trên nguyên lý đo thời gian bay (Time-of-Flight) của chùm tia laser hồng ngoại cực kỳ chính xác không bị ảnh hưởng bởi màu sắc vật cản.",
 
-    specs: ["Chuẩn giao tiếp: I2C", "Khoảng cách đo tối đa: 2 mét (chế độ trong nhà)", "Bước sóng laser hoạt động: 940nm (an toàn cho mắt)", "Dòng điện hoạt động: 10mA"],
+    specs: [
+      "Chuẩn giao tiếp: I2C",
+      "Khoảng cách đo tối đa: 2 mét (chế độ trong nhà)",
+      "Bước sóng laser hoạt động: 940nm (an toàn cho mắt)",
+      "Dòng điện hoạt động: 10mA",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 92,
 
     name: "Cảm Biến Nhận Diện Màu Sắc Vật Thể TCS3200",
@@ -2700,16 +2996,20 @@ const products = [
 
     badge: null,
 
-    description: "Cảm biến chuyển đổi cường độ ánh sáng màu sắc phản xạ RGB sang tần số tín hiệu để vi điều khiển phân tích và nhận biết màu của bề mặt vật thể.",
+    description:
+      "Cảm biến chuyển đổi cường độ ánh sáng màu sắc phản xạ RGB sang tần số tín hiệu để vi điều khiển phân tích và nhận biết màu của bề mặt vật thể.",
 
-    specs: ["Chip cảm biến chính: TCS3200", "Đèn chiếu sáng tích hợp: 4 bóng LED trắng siêu sáng", "Đầu ra tín hiệu: Tần số xung tương ứng tỷ lệ màu RGB", "Điện áp hoạt động: 3V - 5V DC"],
+    specs: [
+      "Chip cảm biến chính: TCS3200",
+      "Đèn chiếu sáng tích hợp: 4 bóng LED trắng siêu sáng",
+      "Đầu ra tín hiệu: Tần số xung tương ứng tỷ lệ màu RGB",
+      "Điện áp hoạt động: 3V - 5V DC",
+    ],
 
-    image: "sensor"
-
+    image: "sensor",
   },
 
   {
-
     id: 93,
 
     name: "Màn Hình LCD Character 20x4 Đèn Nền Xanh Dương",
@@ -2728,16 +3028,20 @@ const products = [
 
     badge: null,
 
-    description: "Màn hình tinh thể lỏng hiển thị ký tự cỡ lớn với 4 dòng, mỗi dòng hiển thị tối đa 20 ký tự chữ số. Thích hợp cho các trạm giám sát thông số lớn.",
+    description:
+      "Màn hình tinh thể lỏng hiển thị ký tự cỡ lớn với 4 dòng, mỗi dòng hiển thị tối đa 20 ký tự chữ số. Thích hợp cho các trạm giám sát thông số lớn.",
 
-    specs: ["Độ phân giải hiển thị: 20 ký tự x 4 dòng", "Điện áp hoạt động: 5V DC", "Đèn nền màu: Xanh dương chữ trắng", "Hỗ trợ kết nối song song 8-bit hoặc 4-bit thông dụng"],
+    specs: [
+      "Độ phân giải hiển thị: 20 ký tự x 4 dòng",
+      "Điện áp hoạt động: 5V DC",
+      "Đèn nền màu: Xanh dương chữ trắng",
+      "Hỗ trợ kết nối song song 8-bit hoặc 4-bit thông dụng",
+    ],
 
-    image: "lcd2004"
-
+    image: "lcd2004",
   },
 
   {
-
     id: 94,
 
     name: "Màn Hình Màu TFT 1.8 inch SPI ST7735 128x160",
@@ -2756,16 +3060,20 @@ const products = [
 
     badge: null,
 
-    description: "Màn hình màu TFT LCD giá tốt giao tiếp bus SPI tốc độ cao, hỗ trợ vẽ hình học cơ bản hiển thị văn bản màu sắc sinh động.",
+    description:
+      "Màn hình màu TFT LCD giá tốt giao tiếp bus SPI tốc độ cao, hỗ trợ vẽ hình học cơ bản hiển thị văn bản màu sắc sinh động.",
 
-    specs: ["Chip Driver điều khiển: ST7735", "Chuẩn giao tiếp: SPI (tiết kiệm chân cắm)", "Độ phân giải: 128x160 pixel", "Hỗ trợ khe cắm thẻ nhớ SD ở mặt sau màn hình"],
+    specs: [
+      "Chip Driver điều khiển: ST7735",
+      "Chuẩn giao tiếp: SPI (tiết kiệm chân cắm)",
+      "Độ phân giải: 128x160 pixel",
+      "Hỗ trợ khe cắm thẻ nhớ SD ở mặt sau màn hình",
+    ],
 
-    image: "tft18"
-
+    image: "tft18",
   },
 
   {
-
     id: 95,
 
     name: "Khối Hiển Thị Led Báo Số 7 Đoạn 4 Số TM1637",
@@ -2784,16 +3092,20 @@ const products = [
 
     badge: null,
 
-    description: "Khối hiển thị LED 7 đoạn gồm 4 ký số tích hợp sẵn dấu hai chấm ở giữa, chuyên dùng làm đồng hồ số đo thời gian đếm ngược hoặc bộ đếm sản phẩm.",
+    description:
+      "Khối hiển thị LED 7 đoạn gồm 4 ký số tích hợp sẵn dấu hai chấm ở giữa, chuyên dùng làm đồng hồ số đo thời gian đếm ngược hoặc bộ đếm sản phẩm.",
 
-    specs: ["Chip IC quét LED chính: TM1637", "Số chân giao tiếp: 2 chân (DIO, CLK)", "Màu sắc hiển thị: Led đỏ nổi bật", "Điện áp hoạt động: 3.3V - 5V DC"],
+    specs: [
+      "Chip IC quét LED chính: TM1637",
+      "Số chân giao tiếp: 2 chân (DIO, CLK)",
+      "Màu sắc hiển thị: Led đỏ nổi bật",
+      "Điện áp hoạt động: 3.3V - 5V DC",
+    ],
 
-    image: "led7"
-
+    image: "led7",
   },
 
   {
-
     id: 96,
 
     name: "Mạch Tăng Áp DC-DC Boost Converter XL6009",
@@ -2812,16 +3124,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch nguồn tăng áp DC sang DC sử dụng biến trở vi chỉnh để nâng điện áp nguồn thấp lên điện áp đích hoạt động cực kỳ ổn định hiệu suất cao.",
+    description:
+      "Mạch nguồn tăng áp DC sang DC sử dụng biến trở vi chỉnh để nâng điện áp nguồn thấp lên điện áp đích hoạt động cực kỳ ổn định hiệu suất cao.",
 
-    specs: ["Chip biến đổi chính: XL6009", "Điện áp đầu vào: 3V - 32V DC", "Điện áp đầu ra điều chỉnh: 5V - 35V DC", "Dòng tải tối đa liên tục: 3A (cần tản nhiệt nếu tải nặng)"],
+    specs: [
+      "Chip biến đổi chính: XL6009",
+      "Điện áp đầu vào: 3V - 32V DC",
+      "Điện áp đầu ra điều chỉnh: 5V - 35V DC",
+      "Dòng tải tối đa liên tục: 3A (cần tản nhiệt nếu tải nặng)",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 97,
 
     name: "Mạch Hạ Áp DC-DC Mini Đa Năng 3A Siêu Nhỏ",
@@ -2840,16 +3156,20 @@ const products = [
 
     badge: "NEW",
 
-    description: "Mạch hạ áp biến đổi DC-DC kích thước siêu mini tích hợp biến trở chỉnh nguồn đầu ra hoặc có thể hàn trực tiếp chân cố định nguồn.",
+    description:
+      "Mạch hạ áp biến đổi DC-DC kích thước siêu mini tích hợp biến trở chỉnh nguồn đầu ra hoặc có thể hàn trực tiếp chân cố định nguồn.",
 
-    specs: ["Điện áp đầu vào: 4.5V - 24V DC", "Điện áp đầu ra thiết lập sẵn: 1.8V, 2.5V, 3.3V, 5V, 9V, 12V", "Dòng tải ra tối đa liên tục: 1.5A (đỉnh ngắn hạn 3A)", "Tần số chuyển mạch: 1.5MHz"],
+    specs: [
+      "Điện áp đầu vào: 4.5V - 24V DC",
+      "Điện áp đầu ra thiết lập sẵn: 1.8V, 2.5V, 3.3V, 5V, 9V, 12V",
+      "Dòng tải ra tối đa liên tục: 1.5A (đỉnh ngắn hạn 3A)",
+      "Tần số chuyển mạch: 1.5MHz",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 98,
 
     name: "Module Sạc Pin Lithium 18650 Tích Hợp Tăng Áp 5V/9V/12V",
@@ -2868,16 +3188,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Module 2 trong 1 vừa sạc pin Lithium 18650 vừa kích tăng áp nguồn ngõ ra có công tắc chọn nguồn, giải pháp nguồn lưu điện UPS mini dự phòng.",
+    description:
+      "Module 2 trong 1 vừa sạc pin Lithium 18650 vừa kích tăng áp nguồn ngõ ra có công tắc chọn nguồn, giải pháp nguồn lưu điện UPS mini dự phòng.",
 
-    specs: ["Chip quản lý sạc: TP4056 tích hợp bảo vệ pin", "Cổng nạp nguồn vào: Type-C", "Điện áp đầu ra tùy chỉnh: 5V / 9V / 12V DC thông qua mối hàn", "Dòng sạc tối đa cho pin: 1A"],
+    specs: [
+      "Chip quản lý sạc: TP4056 tích hợp bảo vệ pin",
+      "Cổng nạp nguồn vào: Type-C",
+      "Điện áp đầu ra tùy chỉnh: 5V / 9V / 12V DC thông qua mối hàn",
+      "Dòng sạc tối đa cho pin: 1A",
+    ],
 
-    image: "power"
-
+    image: "power",
   },
 
   {
-
     id: 99,
 
     name: "Cánh Tay Robot Acrylic 4 Bậc Tự Do Cho Servo SG90",
@@ -2896,16 +3220,20 @@ const products = [
 
     badge: null,
 
-    description: "Bộ khung cánh tay robot mini bằng chất liệu mica acrylic đen bền đẹp cắt laser chính xác hỗ trợ xoay gắp góc tự do (chưa kèm các động cơ servo).",
+    description:
+      "Bộ khung cánh tay robot mini bằng chất liệu mica acrylic đen bền đẹp cắt laser chính xác hỗ trợ xoay gắp góc tự do (chưa kèm các động cơ servo).",
 
-    specs: ["Chất liệu khung vỏ: Nhựa Acrylic đen dày 3mm", "Số bậc tự do: 4 trục chuyển động độc lập", "Động cơ tương thích: 4x Động cơ Servo SG90 / MG90S", "Bộ sản phẩm bao gồm: Ốc vít và linh kiện cơ khí"],
+    specs: [
+      "Chất liệu khung vỏ: Nhựa Acrylic đen dày 3mm",
+      "Số bậc tự do: 4 trục chuyển động độc lập",
+      "Động cơ tương thích: 4x Động cơ Servo SG90 / MG90S",
+      "Bộ sản phẩm bao gồm: Ốc vít và linh kiện cơ khí",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 100,
 
     name: "Khung Xe Robot 3 Bánh Tròn Mica Thông Minh",
@@ -2924,16 +3252,19 @@ const products = [
 
     badge: null,
 
-    description: "Khung xe robot 3 bánh gồm 2 tầng mica tròn đầy đủ động cơ giảm tốc bánh xe và bánh xe mắt trâu xoay chiều, cơ bản cho robot tự hành tránh vật cản.",
+    description:
+      "Khung xe robot 3 bánh gồm 2 tầng mica tròn đầy đủ động cơ giảm tốc bánh xe và bánh xe mắt trâu xoay chiều, cơ bản cho robot tự hành tránh vật cản.",
 
-    specs: ["Động cơ đi kèm: 2x Động cơ DC bánh vàng có bánh xe 65mm", "Bánh xe điều hướng: 1x Bánh xe mắt trâu kim loại", "Mặt đế: 2 tầng Mica tròn đường kính 140mm"],
+    specs: [
+      "Động cơ đi kèm: 2x Động cơ DC bánh vàng có bánh xe 65mm",
+      "Bánh xe điều hướng: 1x Bánh xe mắt trâu kim loại",
+      "Mặt đế: 2 tầng Mica tròn đường kính 140mm",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 101,
 
     name: "Mạch Điều Khiển Động Cơ Bước A4988 Kèm Tản Nhiệt Nhôm",
@@ -2952,16 +3283,20 @@ const products = [
 
     badge: null,
 
-    description: "Mạch driver cắm module điều khiển động cơ bước thông dụng, hỗ trợ chỉnh dòng giới hạn tối đa và nhiều chế độ vi bước để động cơ chuyển động êm ái.",
+    description:
+      "Mạch driver cắm module điều khiển động cơ bước thông dụng, hỗ trợ chỉnh dòng giới hạn tối đa và nhiều chế độ vi bước để động cơ chuyển động êm ái.",
 
-    specs: ["Dòng điện tải ra tối đa: 2A", "Điện áp hoạt động cho động cơ: 8V - 35V DC", "Chế độ vi bước tối đa: 1/16 bước", "Tích hợp sẵn nhôm tản nhiệt màu xanh dương"],
+    specs: [
+      "Dòng điện tải ra tối đa: 2A",
+      "Điện áp hoạt động cho động cơ: 8V - 35V DC",
+      "Chế độ vi bước tối đa: 1/16 bước",
+      "Tích hợp sẵn nhôm tản nhiệt màu xanh dương",
+    ],
 
-    image: "robotics"
-
+    image: "robotics",
   },
 
   {
-
     id: 102,
 
     name: "Keo Tản Nhiệt CPU Arctic Cooling MX-4 Xịn 4g",
@@ -2980,16 +3315,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Dòng keo tản nhiệt máy tính phân khúc cao cấp giúp tối ưu hóa hiệu quả tản nhiệt cho chíp xử lý CPU/GPU của laptop, PC để hoạt động mát mẻ.",
+    description:
+      "Dòng keo tản nhiệt máy tính phân khúc cao cấp giúp tối ưu hóa hiệu quả tản nhiệt cho chíp xử lý CPU/GPU của laptop, PC để hoạt động mát mẻ.",
 
-    specs: ["Trọng lượng keo: 4 gram", "Độ dẫn nhiệt lý thuyết: 8.5 W/(mK)", "Độ nhớt chuẩn: 870 poise", "Không chứa thành phần kim loại (an toàn tuyệt đối không dẫn điện)"],
+    specs: [
+      "Trọng lượng keo: 4 gram",
+      "Độ dẫn nhiệt lý thuyết: 8.5 W/(mK)",
+      "Độ nhớt chuẩn: 870 poise",
+      "Không chứa thành phần kim loại (an toàn tuyệt đối không dẫn điện)",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 103,
 
     name: "Quạt Tản Nhiệt Case Máy Tính LED RGB 12cm Siêu Êm",
@@ -3008,16 +3347,20 @@ const products = [
 
     badge: null,
 
-    description: "Quạt làm mát vỏ thùng máy PC kích thước tissue 120mm trang bị dải đèn Led xoay màu RGB cố định, đệm cao su giảm chấn hạn chế ồn rung.",
+    description:
+      "Quạt làm mát vỏ thùng máy PC kích thước tissue 120mm trang bị dải đèn Led xoay màu RGB cố định, đệm cao su giảm chấn hạn chế ồn rung.",
 
-    specs: ["Kích thước khung quạt: 120 x 120 x 25 mm", "Tốc độ vòng quay tối đa: 1200 RPM", "Lưu lượng khí làm mát: 38 CFM", "Đầu kết nối nguồn: 4-pin Molex cắm trực tiếp nguồn PC"],
+    specs: [
+      "Kích thước khung quạt: 120 x 120 x 25 mm",
+      "Tốc độ vòng quay tối đa: 1200 RPM",
+      "Lưu lượng khí làm mát: 38 CFM",
+      "Đầu kết nối nguồn: 4-pin Molex cắm trực tiếp nguồn PC",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 104,
 
     name: "Bộ Đầu Đổi Nguồn Sạc USB Type-C Sang Jack DC 5.5x2.1mm",
@@ -3036,16 +3379,20 @@ const products = [
 
     badge: null,
 
-    description: "Đầu adapter chuyển đổi nguồn từ dây sạc điện thoại USB Type-C sang cổng tròn DC kích thước 5.5x2.1mm thông dụng cấp điện cho các mạch dự án.",
+    description:
+      "Đầu adapter chuyển đổi nguồn từ dây sạc điện thoại USB Type-C sang cổng tròn DC kích thước 5.5x2.1mm thông dụng cấp điện cho các mạch dự án.",
 
-    specs: ["Điện áp chịu tải tối đa: 20V DC", "Dòng tải tối đa khuyên dùng: 5A", "Chất liệu vỏ ngoài: Nhựa đúc bọc cao su chống đứt gãy", "Kích thước đầu ra: Tròn ngoài 5.5mm / Kim trong 2.1mm"],
+    specs: [
+      "Điện áp chịu tải tối đa: 20V DC",
+      "Dòng tải tối đa khuyên dùng: 5A",
+      "Chất liệu vỏ ngoài: Nhựa đúc bọc cao su chống đứt gãy",
+      "Kích thước đầu ra: Tròn ngoài 5.5mm / Kim trong 2.1mm",
+    ],
 
-    image: "computer"
-
+    image: "computer",
   },
 
   {
-
     id: 105,
 
     name: "Hộp Linh Kiện Nhựa Đa Năng 15 Ngăn Trong Suốt",
@@ -3064,16 +3411,19 @@ const products = [
 
     badge: null,
 
-    description: "Hộp đựng linh kiện cơ bản phân chia làm 15 ngăn nhỏ giúp phân nhóm dễ dàng các linh kiện nhỏ như điện trở, led, tụ điện không bị thất lạc.",
+    description:
+      "Hộp đựng linh kiện cơ bản phân chia làm 15 ngăn nhỏ giúp phân nhóm dễ dàng các linh kiện nhỏ như điện trở, led, tụ điện không bị thất lạc.",
 
-    specs: ["Số ngăn chia: 15 ngăn (có vách ngăn nhựa tháo rời điều chỉnh được)", "Kích thước hộp ngoài: 17.4 x 9.8 x 2.2 cm", "Chất liệu nhựa: PP trong suốt dày dặn cứng cáp"],
+    specs: [
+      "Số ngăn chia: 15 ngăn (có vách ngăn nhựa tháo rời điều chỉnh được)",
+      "Kích thước hộp ngoài: 17.4 x 9.8 x 2.2 cm",
+      "Chất liệu nhựa: PP trong suốt dày dặn cứng cáp",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 106,
 
     name: "Bộ Còi Chip Còi Báo Buzzer 12V Thạch Anh Có Sẵn Màng Rung",
@@ -3092,16 +3442,20 @@ const products = [
 
     badge: null,
 
-    description: "Còi báo động phát tiếng bíp bíp liên tục khi được cấp điện áp 12V trực tiếp không cần xung tạo tần số bên ngoài như loa gốm piezo.",
+    description:
+      "Còi báo động phát tiếng bíp bíp liên tục khi được cấp điện áp 12V trực tiếp không cần xung tạo tần số bên ngoài như loa gốm piezo.",
 
-    specs: ["Điện áp hoạt động: 9V - 15V DC", "Tần số âm thanh phát ra: 2300 Hz (+/- 300Hz)", "Mức cường độ âm lượng phát ra: > 85dB ở khoảng cách 10cm", "Đường kính loa còi: 12mm"],
+    specs: [
+      "Điện áp hoạt động: 9V - 15V DC",
+      "Tần số âm thanh phát ra: 2300 Hz (+/- 300Hz)",
+      "Mức cường độ âm lượng phát ra: > 85dB ở khoảng cách 10cm",
+      "Đường kính loa còi: 12mm",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 107,
 
     name: "Hàng Rào Đực Đơn Pin Header 2.54mm 40 Chân (10 Sợi)",
@@ -3120,16 +3474,19 @@ const products = [
 
     badge: null,
 
-    description: "Bộ 10 sợi hàng rào đực đơn bước chân tiêu chuẩn 2.54mm dài 40 chân đồng mạ thiếc, dễ dàng bẻ ngắn theo nhu cầu để hàn vào mạch in PCB.",
+    description:
+      "Bộ 10 sợi hàng rào đực đơn bước chân tiêu chuẩn 2.54mm dài 40 chân đồng mạ thiếc, dễ dàng bẻ ngắn theo nhu cầu để hàn vào mạch in PCB.",
 
-    specs: ["Khoảng cách chân cắm: 2.54mm", "Số chân trên 1 sợi: 40 chân đực thẳng", "Kiểu chân: Chân đồng thẳng dẹt mạ thiếc tiếp xúc dẫn điện tốt"],
+    specs: [
+      "Khoảng cách chân cắm: 2.54mm",
+      "Số chân trên 1 sợi: 40 chân đực thẳng",
+      "Kiểu chân: Chân đồng thẳng dẹt mạ thiếc tiếp xúc dẫn điện tốt",
+    ],
 
-    image: "components"
-
+    image: "components",
   },
 
   {
-
     id: 108,
 
     name: "Kìm Cắt Chân Linh Kiện Điện Tử Plato 170 Cầm Tay Nhỏ",
@@ -3148,16 +3505,20 @@ const products = [
 
     badge: "HOT",
 
-    description: "Kìm cắt chuyên dụng với lưỡi cắt góc chéo nhọn sắc giúp người dùng dễ dàng bấm sát bề mặt cắt gọn các chân linh kiện thừa sau khi hàn mạch.",
+    description:
+      "Kìm cắt chuyên dụng với lưỡi cắt góc chéo nhọn sắc giúp người dùng dễ dàng bấm sát bề mặt cắt gọn các chân linh kiện thừa sau khi hàn mạch.",
 
-    specs: ["Thương hiệu: Plato (Model 170)", "Khả năng cắt dây đồng tối đa: 1mm", "Chất liệu tay cầm: Bọc nhựa cao su chống trượt êm tay", "Chiều dài kìm cắt: 130mm"],
+    specs: [
+      "Thương hiệu: Plato (Model 170)",
+      "Khả năng cắt dây đồng tối đa: 1mm",
+      "Chất liệu tay cầm: Bọc nhựa cao su chống trượt êm tay",
+      "Chiều dài kìm cắt: 130mm",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 109,
 
     name: "Thiết Bị Hút Thiếc Bơm Hút Chì Hàn Nhôm Nhựa Cầm Tay",
@@ -3176,16 +3537,19 @@ const products = [
 
     badge: null,
 
-    description: "Bơm hút thiếc hàn cầm tay với lực hút lò xo mạnh giúp thu gom sạch thiếc hàn nóng chảy trên các lỗ mạch in PCB khi tháo rã tháo gỡ linh kiện.",
+    description:
+      "Bơm hút thiếc hàn cầm tay với lực hút lò xo mạnh giúp thu gom sạch thiếc hàn nóng chảy trên các lỗ mạch in PCB khi tháo rã tháo gỡ linh kiện.",
 
-    specs: ["Chất liệu vỏ thân: Nhựa cứng bọc ống nhôm gia cường", "Lực hút chân không: Mạnh bằng cơ cấu nhấn lò xo thả phanh", "Đầu hút thiếc: Nhựa Teflon chịu nhiệt độ cao không chảy"],
+    specs: [
+      "Chất liệu vỏ thân: Nhựa cứng bọc ống nhôm gia cường",
+      "Lực hút chân không: Mạnh bằng cơ cấu nhấn lò xo thả phanh",
+      "Đầu hút thiếc: Nhựa Teflon chịu nhiệt độ cao không chảy",
+    ],
 
-    image: "tools"
-
+    image: "tools",
   },
 
   {
-
     id: 110,
 
     name: "Mạch Chuyển Đổi Giao Tiếp USB Sang TTL UART CP2102",
@@ -3204,15 +3568,18 @@ const products = [
 
     badge: null,
 
-    description: "Module chuyển đổi nạp code giao tiếp cổng USB máy tính sang giao thức nối tiếp mức TTL UART để giao tiếp gỡ lỗi nạp code cho vi điều khiển ESP8266, STM32.",
+    description:
+      "Module chuyển đổi nạp code giao tiếp cổng USB máy tính sang giao thức nối tiếp mức TTL UART để giao tiếp gỡ lỗi nạp code cho vi điều khiển ESP8266, STM32.",
 
-    specs: ["Chip điều khiển chính: CP2102 của hãng Silicon Labs", "Ngõ ra giao tiếp: 3.3V, 5V, TXD, RXD, GND, DTR", "Tích hợp sẵn đèn LED chỉ báo luồng truyền dữ liệu RX/TX"],
+    specs: [
+      "Chip điều khiển chính: CP2102 của hãng Silicon Labs",
+      "Ngõ ra giao tiếp: 3.3V, 5V, TXD, RXD, GND, DTR",
+      "Tích hợp sẵn đèn LED chỉ báo luồng truyền dữ liệu RX/TX",
+    ],
 
-    image: "iot"
-
-  }];
-
-
+    image: "iot",
+  },
+];
 
 // ==========================================
 
@@ -3221,84 +3588,54 @@ const products = [
 // ==========================================
 
 class ThemeManager {
-
   constructor() {
+    this.themeToggle = document.getElementById("theme-toggle");
 
-    this.themeToggle = document.getElementById('theme-toggle');
-
-    this.themeToggleThumb = document.getElementById('theme-toggle-thumb');
+    this.themeToggleThumb = document.getElementById("theme-toggle-thumb");
 
     this.root = document.documentElement;
 
-
-
     // Load theme
 
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = localStorage.getItem("theme") || "dark";
 
     this.applyTheme(savedTheme);
-
-
 
     // Event Listener
 
     if (this.themeToggle) {
-
-      this.themeToggle.addEventListener('click', () => this.toggleTheme());
-
+      this.themeToggle.addEventListener("click", () => this.toggleTheme());
     }
-
   }
 
-
-
   applyTheme(theme) {
+    this.root.setAttribute("data-theme", theme);
 
-    this.root.setAttribute('data-theme', theme);
-
-    localStorage.setItem('theme', theme);
-
-
+    localStorage.setItem("theme", theme);
 
     // Update Icon inside Thumb
 
     if (this.themeToggleThumb) {
-
-      const icon = this.themeToggleThumb.querySelector('i');
+      const icon = this.themeToggleThumb.querySelector("i");
 
       if (icon) {
-
-        if (theme === 'light') {
-
-          icon.className = 'fa-solid fa-sun';
-
+        if (theme === "light") {
+          icon.className = "fa-solid fa-sun";
         } else {
-
-          icon.className = 'fa-solid fa-moon';
-
+          icon.className = "fa-solid fa-moon";
         }
-
       }
-
     }
-
   }
-
-
 
   toggleTheme() {
+    const currentTheme = this.root.getAttribute("data-theme") || "dark";
 
-    const currentTheme = this.root.getAttribute('data-theme') || 'dark';
-
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
 
     this.applyTheme(newTheme);
-
   }
-
 }
-
-
 
 // ==========================================
 
@@ -3307,36 +3644,24 @@ class ThemeManager {
 // ==========================================
 
 class ToastManager {
-
   constructor() {
-
-    this.container = document.getElementById('toast-container');
-
+    this.container = document.getElementById("toast-container");
   }
 
-
-
-  show(message, type = 'success', duration = 3000) {
-
+  show(message, type = "success", duration = 3000) {
     if (!this.container) return;
 
-
-
-    const toast = document.createElement('div');
+    const toast = document.createElement("div");
 
     toast.className = `toast toast-${type}`;
 
+    let iconClass = "fa-solid fa-circle-check";
 
+    if (type === "error") iconClass = "fa-solid fa-circle-xmark";
 
-    let iconClass = 'fa-solid fa-circle-check';
+    if (type === "warning") iconClass = "fa-solid fa-circle-exclamation";
 
-    if (type === 'error') iconClass = 'fa-solid fa-circle-xmark';
-
-    if (type === 'warning') iconClass = 'fa-solid fa-circle-exclamation';
-
-    if (type === 'info') iconClass = 'fa-solid fa-circle-info';
-
-
+    if (type === "info") iconClass = "fa-solid fa-circle-info";
 
     toast.innerHTML = `
 
@@ -3350,65 +3675,41 @@ class ToastManager {
 
     `;
 
-
-
     // Progress bar animation time
 
-    const progressBar = toast.querySelector('.toast-progress');
+    const progressBar = toast.querySelector(".toast-progress");
 
     if (progressBar) {
-
       progressBar.style.animationDuration = `${duration}ms`;
-
     }
 
-
-
     this.container.appendChild(toast);
-
-
 
     // Auto Dismiss Timer
 
     const dismissTimer = setTimeout(() => {
-
       this.removeToast(toast);
-
     }, duration);
-
-
 
     // Close Button click
 
-    const closeBtn = toast.querySelector('.toast-close');
+    const closeBtn = toast.querySelector(".toast-close");
 
-    closeBtn.addEventListener('click', () => {
-
+    closeBtn.addEventListener("click", () => {
       clearTimeout(dismissTimer);
 
       this.removeToast(toast);
-
     });
-
   }
-
-
 
   removeToast(toast) {
+    toast.classList.add("removing");
 
-    toast.classList.add('removing');
-
-    toast.addEventListener('animationend', () => {
-
+    toast.addEventListener("animationend", () => {
       toast.remove();
-
     });
-
   }
-
 }
-
-
 
 // ==========================================
 
@@ -3417,124 +3718,88 @@ class ToastManager {
 // ==========================================
 
 class CartManager {
-
   constructor(toastManager) {
-
     this.toastManager = toastManager;
-
-    
 
     // Load cart safely
 
     try {
-
-      const savedCart = localStorage.getItem('ts_cart');
+      const savedCart = localStorage.getItem("ts_cart");
 
       this.cart = savedCart ? JSON.parse(savedCart) : [];
 
       if (!Array.isArray(this.cart)) this.cart = [];
-
     } catch (e) {
-
-      console.error('Error parsing ts_cart from localStorage:', e);
+      console.error("Error parsing ts_cart from localStorage:", e);
 
       this.cart = [];
-
     }
-
-    
 
     // Sidebar elements
 
-    this.cartSidebar = document.getElementById('cart-sidebar');
+    this.cartSidebar = document.getElementById("cart-sidebar");
 
-    this.cartOverlay = document.getElementById('cart-sidebar-overlay');
+    this.cartOverlay = document.getElementById("cart-sidebar-overlay");
 
-    this.cartItemsContainer = document.getElementById('cart-items-container');
+    this.cartItemsContainer = document.getElementById("cart-items-container");
 
-    this.cartTotalValue = document.getElementById('cart-total-value');
-
-    
+    this.cartTotalValue = document.getElementById("cart-total-value");
 
     this.initListeners();
 
     this.updateBadges();
 
     this.renderCartUI();
-
   }
 
-
-
   initListeners() {
-
     // Open sidebar triggers
 
-    const cartBtnNav = document.getElementById('cart-btn-nav');
+    const cartBtnNav = document.getElementById("cart-btn-nav");
 
     if (cartBtnNav) {
-
-      cartBtnNav.addEventListener('click', () => this.openCart());
-
+      cartBtnNav.addEventListener("click", () => this.openCart());
     }
-
-
 
     // Close triggers
 
-    const closeBtn = document.getElementById('cart-close-btn');
+    const closeBtn = document.getElementById("cart-close-btn");
 
     if (closeBtn) {
-
-      closeBtn.addEventListener('click', () => this.closeCart());
-
+      closeBtn.addEventListener("click", () => this.closeCart());
     }
 
     if (this.cartOverlay) {
-
-      this.cartOverlay.addEventListener('click', () => this.closeCart());
-
+      this.cartOverlay.addEventListener("click", () => this.closeCart());
     }
 
-
-
-    const continueBtn = document.getElementById('cart-continue-btn');
+    const continueBtn = document.getElementById("cart-continue-btn");
 
     if (continueBtn) {
-
-      continueBtn.addEventListener('click', () => this.closeCart());
-
+      continueBtn.addEventListener("click", () => this.closeCart());
     }
-
-
 
     // Checkout button
 
-    const checkoutBtn = document.getElementById('cart-checkout-btn');
+    const checkoutBtn = document.getElementById("cart-checkout-btn");
 
     if (checkoutBtn) {
-
-      checkoutBtn.addEventListener('click', () => {
-
+      checkoutBtn.addEventListener("click", () => {
         if (this.cart.length === 0) {
-
           this.toastManager.show("Giỏ hàng của bạn đang trống!", "warning");
 
           return;
-
         }
-
-        
 
         checkoutBtn.innerHTML = `<span class="spinner"></span> Đang tạo đơn...`;
 
         checkoutBtn.disabled = true;
 
-
-
         setTimeout(() => {
-
-          this.toastManager.show("Đặt hàng thành công! Nhân viên TechStore sẽ gọi điện xác nhận đơn cho bạn.", "success");
+          this.toastManager.show(
+            "Đặt hàng thành công! Nhân viên TechStore sẽ gọi điện xác nhận đơn cho bạn.",
+            "success",
+          );
 
           this.clearCart();
 
@@ -3543,82 +3808,67 @@ class CartManager {
           checkoutBtn.innerHTML = `<i class="fa-solid fa-credit-card"></i> Tiến Hành Đặt Hàng`;
 
           checkoutBtn.disabled = false;
-
         }, 1500);
-
       });
-
     }
-
   }
-
-
 
   openCart() {
+    if (this.cartSidebar) this.cartSidebar.classList.add("open");
 
-    if (this.cartSidebar) this.cartSidebar.classList.add('open');
-
-    if (this.cartOverlay) this.cartOverlay.classList.add('open');
-
+    if (this.cartOverlay) this.cartOverlay.classList.add("open");
   }
-
-
 
   closeCart() {
+    if (this.cartSidebar) this.cartSidebar.classList.remove("open");
 
-    if (this.cartSidebar) this.cartSidebar.classList.remove('open');
-
-    if (this.cartOverlay) this.cartOverlay.classList.remove('open');
-
+    if (this.cartOverlay) this.cartOverlay.classList.remove("open");
   }
 
-
-
   addItem(productId, qty = 1, silent = false) {
-
-    const product = products.find(p => p.id === productId);
+    const product = products.find((p) => p.id === productId);
 
     if (!product) return;
 
-
-
     if (product.stock === 0) {
-
-      if (!silent) this.toastManager.show(`Sản phẩm "${product.name}" hiện tại đã hết hàng.`, 'error');
+      if (!silent)
+        this.toastManager.show(
+          `Sản phẩm "${product.name}" hiện tại đã hết hàng.`,
+          "error",
+        );
 
       return;
-
     }
 
-
-
-    const existingItem = this.cart.find(item => item.id === productId);
+    const existingItem = this.cart.find((item) => item.id === productId);
 
     if (existingItem) {
-
       if (existingItem.qty + qty > product.stock) {
-
-        if (!silent) this.toastManager.show(`Vượt quá số lượng tồn kho của chúng tôi (Tối đa: ${product.stock}).`, 'warning');
+        if (!silent)
+          this.toastManager.show(
+            `Vượt quá số lượng tồn kho của chúng tôi (Tối đa: ${product.stock}).`,
+            "warning",
+          );
 
         existingItem.qty = product.stock;
-
       } else {
-
         existingItem.qty += qty;
 
-        if (!silent) this.toastManager.show(`Đã cộng thêm ${qty}x ${product.name} vào giỏ hàng.`, 'success');
-
+        if (!silent)
+          this.toastManager.show(
+            `Đã cộng thêm ${qty}x ${product.name} vào giỏ hàng.`,
+            "success",
+          );
       }
-
     } else {
-
       this.cart.push({ id: productId, qty: qty });
 
-      if (!silent) this.toastManager.show(`Đã thêm ${product.name} vào giỏ hàng thành công.`, 'success');
-
+      if (!silent)
+        this.toastManager.show(
+          `Đã thêm ${product.name} vào giỏ hàng thành công.`,
+          "success",
+        );
     }
-
-
 
     this.saveCart();
 
@@ -3627,17 +3877,12 @@ class CartManager {
     this.renderCartUI();
 
     this.animateCartIcon();
-
   }
 
-
-
   removeItem(productId) {
-
-    const index = this.cart.findIndex(item => item.id === productId);
+    const index = this.cart.findIndex((item) => item.id === productId);
 
     if (index !== -1) {
-
       this.cart.splice(index, 1);
 
       this.saveCart();
@@ -3647,45 +3892,32 @@ class CartManager {
       this.renderCartUI();
 
       this.toastManager.show("Đã xóa sản phẩm khỏi giỏ hàng.", "info");
-
     }
-
   }
 
-
-
   updateQuantity(productId, qty) {
-
-    const product = products.find(p => p.id === productId);
+    const product = products.find((p) => p.id === productId);
 
     if (!product) return;
 
-
-
     if (qty <= 0) {
-
       this.removeItem(productId);
 
       return;
-
     }
-
-
 
     if (qty > product.stock) {
-
-      this.toastManager.show(`Số lượng vượt quá tồn kho (Tối đa: ${product.stock}).`, 'warning');
+      this.toastManager.show(
+        `Số lượng vượt quá tồn kho (Tối đa: ${product.stock}).`,
+        "warning",
+      );
 
       qty = product.stock;
-
     }
 
-
-
-    const item = this.cart.find(item => item.id === productId);
+    const item = this.cart.find((item) => item.id === productId);
 
     if (item) {
-
       item.qty = qty;
 
       this.saveCart();
@@ -3693,15 +3925,10 @@ class CartManager {
       this.updateBadges();
 
       this.renderCartUI();
-
     }
-
   }
 
-
-
   clearCart() {
-
     this.cart = [];
 
     this.saveCart();
@@ -3709,67 +3936,46 @@ class CartManager {
     this.updateBadges();
 
     this.renderCartUI();
-
   }
-
-
 
   saveCart() {
-
-    localStorage.setItem('ts_cart', JSON.stringify(this.cart));
-
+    localStorage.setItem("ts_cart", JSON.stringify(this.cart));
   }
 
-
-
   updateBadges() {
-
     const totalQty = this.cart.reduce((sum, item) => sum + item.qty, 0);
 
-    const countBadge = document.getElementById('cart-count');
+    const countBadge = document.getElementById("cart-count");
 
-    const sidebarCountBadge = document.getElementById('cart-count-sidebar');
-
-    
+    const sidebarCountBadge = document.getElementById("cart-count-sidebar");
 
     if (countBadge) countBadge.textContent = totalQty;
 
     if (sidebarCountBadge) sidebarCountBadge.textContent = totalQty;
-
   }
-
-
 
   animateCartIcon() {
-
-    const cartBtnNav = document.getElementById('cart-btn-nav');
+    const cartBtnNav = document.getElementById("cart-btn-nav");
 
     if (cartBtnNav) {
+      cartBtnNav.style.animation = "cartBounce 0.4s ease";
 
-      cartBtnNav.style.animation = 'cartBounce 0.4s ease';
-
-      cartBtnNav.addEventListener('animationend', () => {
-
-        cartBtnNav.style.animation = '';
-
-      }, { once: true });
-
+      cartBtnNav.addEventListener(
+        "animationend",
+        () => {
+          cartBtnNav.style.animation = "";
+        },
+        { once: true },
+      );
     }
-
   }
 
-
-
   renderCartUI() {
-
     if (!this.cartItemsContainer) return;
 
-    this.cartItemsContainer.innerHTML = '';
-
-
+    this.cartItemsContainer.innerHTML = "";
 
     if (this.cart.length === 0) {
-
       this.cartItemsContainer.innerHTML = `
 
         <div class="cart-empty">
@@ -3782,33 +3988,23 @@ class CartManager {
 
       `;
 
-      if (this.cartTotalValue) this.cartTotalValue.textContent = '0đ';
+      if (this.cartTotalValue) this.cartTotalValue.textContent = "0đ";
 
       return;
-
     }
-
-
 
     let subtotal = 0;
 
-
-
-    this.cart.forEach(cartItem => {
-
-      const product = products.find(p => p.id === cartItem.id);
+    this.cart.forEach((cartItem) => {
+      const product = products.find((p) => p.id === cartItem.id);
 
       if (!product) return;
 
-
-
       subtotal += product.price * cartItem.qty;
 
+      const itemElement = document.createElement("div");
 
-
-      const itemElement = document.createElement('div');
-
-      itemElement.className = 'cart-item';
+      itemElement.className = "cart-item";
 
       itemElement.innerHTML = `
 
@@ -3840,47 +4036,30 @@ class CartManager {
 
       `;
 
-
-
       // Gắn sự kiện tăng giảm số lượng bên trong giỏ hàng
 
-      itemElement.querySelector('.qty-minus').addEventListener('click', () => {
-
+      itemElement.querySelector(".qty-minus").addEventListener("click", () => {
         this.updateQuantity(product.id, cartItem.qty - 1);
-
       });
 
-      itemElement.querySelector('.qty-plus').addEventListener('click', () => {
-
+      itemElement.querySelector(".qty-plus").addEventListener("click", () => {
         this.updateQuantity(product.id, cartItem.qty + 1);
-
       });
 
-      itemElement.querySelector('.cart-item-remove').addEventListener('click', () => {
-
-        this.removeItem(product.id);
-
-      });
-
-
+      itemElement
+        .querySelector(".cart-item-remove")
+        .addEventListener("click", () => {
+          this.removeItem(product.id);
+        });
 
       this.cartItemsContainer.appendChild(itemElement);
-
     });
 
-
-
     if (this.cartTotalValue) {
-
       this.cartTotalValue.textContent = formatVND(subtotal);
-
     }
-
   }
-
 }
-
-
 
 // ==========================================
 
@@ -3889,281 +4068,205 @@ class CartManager {
 // ==========================================
 
 class WishlistManager {
-
   constructor(toastManager, cartManager) {
-
     this.toastManager = toastManager;
 
     this.cartManager = cartManager;
 
-    
-
     // Load wishlist safely
 
     try {
-
-      const savedWishlist = localStorage.getItem('ts_wishlist');
+      const savedWishlist = localStorage.getItem("ts_wishlist");
 
       this.wishlist = savedWishlist ? JSON.parse(savedWishlist) : [];
 
       if (!Array.isArray(this.wishlist)) this.wishlist = [];
-
     } catch (e) {
-
-      console.error('Error parsing ts_wishlist from localStorage:', e);
+      console.error("Error parsing ts_wishlist from localStorage:", e);
 
       this.wishlist = [];
-
     }
-
-    
 
     // Sidebar elements
 
-    this.wishlistSidebar = document.getElementById('wishlist-sidebar');
+    this.wishlistSidebar = document.getElementById("wishlist-sidebar");
 
-    this.wishlistOverlay = document.getElementById('wishlist-sidebar-overlay');
+    this.wishlistOverlay = document.getElementById("wishlist-sidebar-overlay");
 
-    this.wishlistItemsContainer = document.getElementById('wishlist-items-container');
+    this.wishlistItemsContainer = document.getElementById(
+      "wishlist-items-container",
+    );
 
-    this.wishlistCountSidebar = document.getElementById('wishlist-count-sidebar');
-
-
+    this.wishlistCountSidebar = document.getElementById(
+      "wishlist-count-sidebar",
+    );
 
     this.initListeners();
 
     this.updateBadge();
 
     this.renderWishlistUI();
-
   }
 
-
-
   initListeners() {
-
     // Open triggers
 
-    const wishlistBtnNav = document.getElementById('wishlist-btn-nav');
+    const wishlistBtnNav = document.getElementById("wishlist-btn-nav");
 
     if (wishlistBtnNav) {
-
-      wishlistBtnNav.addEventListener('click', () => this.openWishlist());
-
+      wishlistBtnNav.addEventListener("click", () => this.openWishlist());
     }
-
-
 
     // Close triggers
 
-    const closeBtn = document.getElementById('wishlist-close-btn');
+    const closeBtn = document.getElementById("wishlist-close-btn");
 
     if (closeBtn) {
-
-      closeBtn.addEventListener('click', () => this.closeWishlist());
-
+      closeBtn.addEventListener("click", () => this.closeWishlist());
     }
 
     if (this.wishlistOverlay) {
-
-      this.wishlistOverlay.addEventListener('click', () => this.closeWishlist());
-
+      this.wishlistOverlay.addEventListener("click", () =>
+        this.closeWishlist(),
+      );
     }
 
-
-
-    const continueBtn = document.getElementById('wishlist-continue-btn');
+    const continueBtn = document.getElementById("wishlist-continue-btn");
 
     if (continueBtn) {
-
-      continueBtn.addEventListener('click', () => this.closeWishlist());
-
+      continueBtn.addEventListener("click", () => this.closeWishlist());
     }
-
-
 
     // Add all to cart button
 
-    const addAllBtn = document.getElementById('wishlist-add-all-cart-btn');
+    const addAllBtn = document.getElementById("wishlist-add-all-cart-btn");
 
     if (addAllBtn) {
-
-      addAllBtn.addEventListener('click', () => {
-
+      addAllBtn.addEventListener("click", () => {
         if (this.wishlist.length === 0) {
-
           this.toastManager.show("Danh sách yêu thích đang trống!", "warning");
 
           return;
-
         }
-
-
 
         let addedCount = 0;
 
         const itemsToAdd = [...this.wishlist];
 
-        itemsToAdd.forEach(productId => {
-
-          const product = products.find(p => p.id === productId);
+        itemsToAdd.forEach((productId) => {
+          const product = products.find((p) => p.id === productId);
 
           if (product && product.stock > 0) {
-
             this.cartManager.addItem(productId, 1, true);
 
             addedCount++;
-
           }
-
         });
 
-
-
         if (addedCount > 0) {
-
-          this.toastManager.show(`Đã thêm tất cả ${addedCount} sản phẩm yêu thích vào giỏ hàng!`, "success");
+          this.toastManager.show(
+            `Đã thêm tất cả ${addedCount} sản phẩm yêu thích vào giỏ hàng!`,
+            "success",
+          );
 
           this.closeWishlist();
 
           this.cartManager.openCart();
-
         } else {
-
-          this.toastManager.show("Không có linh kiện nào còn hàng để thêm vào giỏ!", "warning");
-
+          this.toastManager.show(
+            "Không có linh kiện nào còn hàng để thêm vào giỏ!",
+            "warning",
+          );
         }
-
       });
-
     }
-
   }
-
-
 
   openWishlist() {
+    if (this.wishlistSidebar) this.wishlistSidebar.classList.add("open");
 
-    if (this.wishlistSidebar) this.wishlistSidebar.classList.add('open');
-
-    if (this.wishlistOverlay) this.wishlistOverlay.classList.add('open');
+    if (this.wishlistOverlay) this.wishlistOverlay.classList.add("open");
 
     this.renderWishlistUI();
-
   }
-
-
 
   closeWishlist() {
+    if (this.wishlistSidebar) this.wishlistSidebar.classList.remove("open");
 
-    if (this.wishlistSidebar) this.wishlistSidebar.classList.remove('open');
-
-    if (this.wishlistOverlay) this.wishlistOverlay.classList.remove('open');
-
+    if (this.wishlistOverlay) this.wishlistOverlay.classList.remove("open");
   }
 
-
-
   toggle(productId) {
-
-    const product = products.find(p => p.id === productId);
+    const product = products.find((p) => p.id === productId);
 
     if (!product) return;
-
-
 
     const index = this.wishlist.indexOf(productId);
 
     if (index !== -1) {
-
       this.wishlist.splice(index, 1);
 
-      this.toastManager.show(`Đã xóa ${product.name} khỏi danh sách yêu thích.`, 'info');
-
+      this.toastManager.show(
+        `Đã xóa ${product.name} khỏi danh sách yêu thích.`,
+        "info",
+      );
     } else {
-
       this.wishlist.push(productId);
 
-      this.toastManager.show(`Đã thêm ${product.name} vào mục yêu thích.`, 'success');
-
+      this.toastManager.show(
+        `Đã thêm ${product.name} vào mục yêu thích.`,
+        "success",
+      );
     }
 
-
-
-    localStorage.setItem('ts_wishlist', JSON.stringify(this.wishlist));
+    localStorage.setItem("ts_wishlist", JSON.stringify(this.wishlist));
 
     this.updateBadge();
 
     this.updateAllGridButtons();
 
     this.renderWishlistUI();
-
   }
-
-
 
   isWishlisted(productId) {
-
     return this.wishlist.includes(productId);
-
   }
 
-
-
   updateBadge() {
-
-    const badge = document.getElementById('wishlist-count');
+    const badge = document.getElementById("wishlist-count");
 
     if (badge) badge.textContent = this.wishlist.length;
 
-    if (this.wishlistCountSidebar) this.wishlistCountSidebar.textContent = this.wishlist.length;
-
+    if (this.wishlistCountSidebar)
+      this.wishlistCountSidebar.textContent = this.wishlist.length;
   }
-
-
 
   updateAllGridButtons() {
+    const buttons = document.querySelectorAll(".wishlist-btn");
 
-    const buttons = document.querySelectorAll('.wishlist-btn');
-
-    buttons.forEach(btn => {
-
-      const pid = parseInt(btn.getAttribute('data-id'));
+    buttons.forEach((btn) => {
+      const pid = parseInt(btn.getAttribute("data-id"));
 
       if (pid) {
-
         if (this.isWishlisted(pid)) {
-
-          btn.classList.add('active');
+          btn.classList.add("active");
 
           btn.innerHTML = `<i class="fa-solid fa-heart"></i>`;
-
         } else {
-
-          btn.classList.remove('active');
+          btn.classList.remove("active");
 
           btn.innerHTML = `<i class="fa-regular fa-heart"></i>`;
-
         }
-
       }
-
     });
-
   }
 
-
-
   renderWishlistUI() {
-
     if (!this.wishlistItemsContainer) return;
 
-    this.wishlistItemsContainer.innerHTML = '';
-
-
+    this.wishlistItemsContainer.innerHTML = "";
 
     if (this.wishlist.length === 0) {
-
       this.wishlistItemsContainer.innerHTML = `
 
         <div class="cart-empty">
@@ -4177,22 +4280,16 @@ class WishlistManager {
       `;
 
       return;
-
     }
 
-
-
-    this.wishlist.forEach(productId => {
-
-      const product = products.find(p => p.id === productId);
+    this.wishlist.forEach((productId) => {
+      const product = products.find((p) => p.id === productId);
 
       if (!product) return;
 
+      const itemElement = document.createElement("div");
 
-
-      const itemElement = document.createElement('div');
-
-      itemElement.className = 'cart-item';
+      itemElement.className = "cart-item";
 
       itemElement.innerHTML = `
 
@@ -4220,33 +4317,22 @@ class WishlistManager {
 
       `;
 
+      itemElement
+        .querySelector(".add-to-cart-btn")
+        .addEventListener("click", () => {
+          this.cartManager.addItem(product.id, 1);
+        });
 
-
-      itemElement.querySelector('.add-to-cart-btn').addEventListener('click', () => {
-
-        this.cartManager.addItem(product.id, 1);
-
-      });
-
-
-
-      itemElement.querySelector('.cart-item-remove').addEventListener('click', () => {
-
-        this.toggle(product.id);
-
-      });
-
-
+      itemElement
+        .querySelector(".cart-item-remove")
+        .addEventListener("click", () => {
+          this.toggle(product.id);
+        });
 
       this.wishlistItemsContainer.appendChild(itemElement);
-
     });
-
   }
-
 }
-
-
 
 // ==========================================
 
@@ -4255,307 +4341,219 @@ class WishlistManager {
 // ==========================================
 
 class FilterManager {
-
   constructor(productsList, cartManager, wishlistManager) {
-
     this.productsList = productsList;
 
     this.cartManager = cartManager;
 
     this.wishlistManager = wishlistManager;
 
-    
-
     // Grids
 
-    this.productsGrid = document.getElementById('products-grid');
-    this.featuredProductsGrid = document.getElementById('featured-products-grid');
-
-    
+    this.productsGrid = document.getElementById("products-grid");
+    this.featuredProductsGrid = document.getElementById(
+      "featured-products-grid",
+    );
 
     // Filters Inputs
 
-    this.catSelect = document.getElementById('filter-category');
+    this.catSelect = document.getElementById("filter-category");
 
-    this.priceSelect = document.getElementById('filter-price');
+    this.priceSelect = document.getElementById("filter-price");
 
-    this.brandSelect = document.getElementById('filter-brand');
+    this.brandSelect = document.getElementById("filter-brand");
 
-    this.availSelect = document.getElementById('filter-availability');
+    this.availSelect = document.getElementById("filter-availability");
 
-    this.ratingSelect = document.getElementById('filter-rating');
+    this.ratingSelect = document.getElementById("filter-rating");
 
-    this.sortSelect = document.getElementById('filter-sort');
+    this.sortSelect = document.getElementById("filter-sort");
 
-    this.resetBtn = document.getElementById('filter-reset-btn');
+    this.resetBtn = document.getElementById("filter-reset-btn");
 
-    
-
-    this.activeTab = 'all';
-
-
+    this.activeTab = "all";
 
     // Pagination / Load More variables
 
     this.visibleLimit = 20;
 
-    this.loadMoreContainer = document.getElementById('load-more-container');
+    this.loadMoreContainer = document.getElementById("load-more-container");
 
-    this.loadMoreBtn = document.getElementById('load-more-btn');
-
-
+    this.loadMoreBtn = document.getElementById("load-more-btn");
 
     this.initFilterEvents();
 
     this.initModalEvents();
 
     this.initLoadMoreEvents();
-
   }
 
-
-
   initFilterEvents() {
-
     const handleFilterChange = () => {
-
       this.visibleLimit = 20;
 
       this.renderFilteredProducts();
-
     };
 
+    if (this.catSelect)
+      this.catSelect.addEventListener("change", handleFilterChange);
 
+    if (this.priceSelect)
+      this.priceSelect.addEventListener("change", handleFilterChange);
 
-    if (this.catSelect) this.catSelect.addEventListener('change', handleFilterChange);
+    if (this.brandSelect)
+      this.brandSelect.addEventListener("change", handleFilterChange);
 
-    if (this.priceSelect) this.priceSelect.addEventListener('change', handleFilterChange);
+    if (this.availSelect)
+      this.availSelect.addEventListener("change", handleFilterChange);
 
-    if (this.brandSelect) this.brandSelect.addEventListener('change', handleFilterChange);
+    if (this.ratingSelect)
+      this.ratingSelect.addEventListener("change", handleFilterChange);
 
-    if (this.availSelect) this.availSelect.addEventListener('change', handleFilterChange);
-
-    if (this.ratingSelect) this.ratingSelect.addEventListener('change', handleFilterChange);
-
-    if (this.sortSelect) this.sortSelect.addEventListener('change', handleFilterChange);
-
-    
+    if (this.sortSelect)
+      this.sortSelect.addEventListener("change", handleFilterChange);
 
     if (this.resetBtn) {
+      this.resetBtn.addEventListener("click", () => {
+        if (this.catSelect) this.catSelect.value = "all";
 
-      this.resetBtn.addEventListener('click', () => {
+        if (this.priceSelect) this.priceSelect.value = "all";
 
-        if (this.catSelect) this.catSelect.value = 'all';
+        if (this.brandSelect) this.brandSelect.value = "all";
 
-        if (this.priceSelect) this.priceSelect.value = 'all';
+        if (this.availSelect) this.availSelect.value = "all";
 
-        if (this.brandSelect) this.brandSelect.value = 'all';
+        if (this.ratingSelect) this.ratingSelect.value = "all";
 
-        if (this.availSelect) this.availSelect.value = 'all';
-
-        if (this.ratingSelect) this.ratingSelect.value = 'all';
-
-        if (this.sortSelect) this.sortSelect.value = 'default';
+        if (this.sortSelect) this.sortSelect.value = "default";
 
         this.visibleLimit = 20;
 
         this.renderFilteredProducts();
-
       });
-
     }
-
-
 
     // Tabs
 
-    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabBtns = document.querySelectorAll(".tab-btn");
 
-    tabBtns.forEach(btn => {
+    tabBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach((b) => b.classList.remove("active"));
 
-      btn.addEventListener('click', () => {
+        btn.classList.add("active");
 
-        tabBtns.forEach(b => b.classList.remove('active'));
-
-        btn.classList.add('active');
-
-        this.activeTab = btn.getAttribute('data-tab');
+        this.activeTab = btn.getAttribute("data-tab");
 
         this.visibleLimit = 20;
 
         this.renderFilteredProducts();
-
       });
-
     });
-
   }
 
-
-
   initLoadMoreEvents() {
-
     if (this.loadMoreBtn) {
-
-      this.loadMoreBtn.addEventListener('click', () => {
-
+      this.loadMoreBtn.addEventListener("click", () => {
         this.visibleLimit += 20;
 
         this.renderFilteredProducts(true);
-
       });
-
     }
-
   }
-
-
 
   renderAll() {
-
     this.renderFilteredProducts();
-
   }
 
-
-
   renderFilteredProducts(appendOnly = false) {
-
-    if (!appendOnly && this.productsGrid) this.productsGrid.innerHTML = '';
-    if (!appendOnly && this.featuredProductsGrid) this.featuredProductsGrid.innerHTML = '';
-
-
+    if (!appendOnly && this.productsGrid) this.productsGrid.innerHTML = "";
+    if (!appendOnly && this.featuredProductsGrid)
+      this.featuredProductsGrid.innerHTML = "";
 
     let items = [...this.productsList];
 
-
-
     // Lọc theo danh mục
 
-    const catVal = this.catSelect ? this.catSelect.value : 'all';
+    const catVal = this.catSelect ? this.catSelect.value : "all";
 
-    if (catVal !== 'all') {
-
-      items = items.filter(p => p.category === catVal);
-
+    if (catVal !== "all") {
+      items = items.filter((p) => p.category === catVal);
     }
-
-
 
     // Lọc theo mức giá
 
-    const priceVal = this.priceSelect ? this.priceSelect.value : 'all';
+    const priceVal = this.priceSelect ? this.priceSelect.value : "all";
 
-    if (priceVal !== 'all') {
-
-      const [low, high] = priceVal.split('-');
+    if (priceVal !== "all") {
+      const [low, high] = priceVal.split("-");
 
       const lowNum = parseInt(low);
 
-      if (high === 'up') {
-
-        items = items.filter(p => p.price >= lowNum);
-
+      if (high === "up") {
+        items = items.filter((p) => p.price >= lowNum);
       } else {
-
         const highNum = parseInt(high);
 
-        items = items.filter(p => p.price >= lowNum && p.price <= highNum);
-
+        items = items.filter((p) => p.price >= lowNum && p.price <= highNum);
       }
-
     }
-
-
 
     // Lọc theo hãng sản xuất
 
-    const brandVal = this.brandSelect ? this.brandSelect.value : 'all';
+    const brandVal = this.brandSelect ? this.brandSelect.value : "all";
 
-    if (brandVal !== 'all') {
-
-      items = items.filter(p => p.brand === brandVal);
-
+    if (brandVal !== "all") {
+      items = items.filter((p) => p.brand === brandVal);
     }
-
-
 
     // Lọc theo tình trạng còn hàng
 
-    const availVal = this.availSelect ? this.availSelect.value : 'all';
+    const availVal = this.availSelect ? this.availSelect.value : "all";
 
-    if (availVal !== 'all') {
-
-      if (availVal === 'in-stock') {
-
-        items = items.filter(p => p.stock > 0);
-
-      } else if (availVal === 'out-of-stock') {
-
-        items = items.filter(p => p.stock === 0);
-
+    if (availVal !== "all") {
+      if (availVal === "in-stock") {
+        items = items.filter((p) => p.stock > 0);
+      } else if (availVal === "out-of-stock") {
+        items = items.filter((p) => p.stock === 0);
       }
-
     }
-
-
 
     // Lọc theo xếp hạng sao
 
-    const ratingVal = this.ratingSelect ? this.ratingSelect.value : 'all';
+    const ratingVal = this.ratingSelect ? this.ratingSelect.value : "all";
 
-    if (ratingVal !== 'all') {
-
+    if (ratingVal !== "all") {
       const minRating = parseFloat(ratingVal);
 
-      items = items.filter(p => p.rating >= minRating);
-
+      items = items.filter((p) => p.rating >= minRating);
     }
-
-
 
     // Lọc theo Tabs điều hướng nhanh
 
-    if (this.activeTab === 'best-sellers') {
-
-      items = items.filter(p => p.rating >= 4.8);
-
-    } else if (this.activeTab === 'new-arrivals') {
-
-      items = items.filter(p => p.badge === 'NEW');
-
-    } else if (this.activeTab === 'trending') {
-
-      items = items.filter(p => p.badge === 'HOT');
-
+    if (this.activeTab === "best-sellers") {
+      items = items.filter((p) => p.rating >= 4.8);
+    } else if (this.activeTab === "new-arrivals") {
+      items = items.filter((p) => p.badge === "NEW");
+    } else if (this.activeTab === "trending") {
+      items = items.filter((p) => p.badge === "HOT");
     }
-
-
 
     // Sắp xếp tăng giảm
 
-    const sortVal = this.sortSelect ? this.sortSelect.value : 'default';
+    const sortVal = this.sortSelect ? this.sortSelect.value : "default";
 
-    if (sortVal === 'price-asc') {
-
+    if (sortVal === "price-asc") {
       items.sort((a, b) => a.price - b.price);
-
-    } else if (sortVal === 'price-desc') {
-
+    } else if (sortVal === "price-desc") {
       items.sort((a, b) => b.price - a.price);
-
-    } else if (sortVal === 'rating-desc') {
-
+    } else if (sortVal === "rating-desc") {
       items.sort((a, b) => b.rating - a.rating);
-
     }
-
-
 
     // Trình bày kết quả lọc
 
     if (items.length === 0) {
-
       this.productsGrid.innerHTML = `
 
         <div class="no-results">
@@ -4568,20 +4566,17 @@ class FilterManager {
 
       `;
 
-      if (this.loadMoreContainer) this.loadMoreContainer.style.display = 'none';
+      if (this.loadMoreContainer) this.loadMoreContainer.style.display = "none";
 
       return;
-
     }
-
-
 
     const totalItems = items.length;
 
     if (appendOnly) {
       const prevLimit = this.visibleLimit - 20;
       const newItems = items.slice(prevLimit, this.visibleLimit);
-      newItems.forEach(product => {
+      newItems.forEach((product) => {
         if (this.productsGrid) {
           const card = this.generateCardHTML(product);
           this.productsGrid.appendChild(card);
@@ -4590,7 +4585,7 @@ class FilterManager {
     } else {
       const itemsToRender = items.slice(0, this.visibleLimit);
 
-      itemsToRender.forEach(product => {
+      itemsToRender.forEach((product) => {
         if (this.productsGrid) {
           const card = this.generateCardHTML(product);
           this.productsGrid.appendChild(card);
@@ -4598,73 +4593,53 @@ class FilterManager {
       });
 
       if (this.featuredProductsGrid) {
-        const limit = parseInt(this.featuredProductsGrid.getAttribute('data-limit') || 8);
-        items.slice(0, limit).forEach(product => {
+        const limit = parseInt(
+          this.featuredProductsGrid.getAttribute("data-limit") || 8,
+        );
+        items.slice(0, limit).forEach((product) => {
           const card = this.generateCardHTML(product);
           this.featuredProductsGrid.appendChild(card);
         });
       }
     }
 
-
-
     // Hiện / ẩn nút Xem Thêm
 
     if (this.loadMoreContainer) {
-
       if (totalItems > this.visibleLimit) {
-
-        this.loadMoreContainer.style.display = 'flex';
-
+        this.loadMoreContainer.style.display = "flex";
       } else {
-
-        this.loadMoreContainer.style.display = 'none';
-
+        this.loadMoreContainer.style.display = "none";
       }
-
     }
-
   }
 
-
-
   generateCardHTML(product) {
+    const card = document.createElement("div");
 
-    const card = document.createElement('div');
+    card.className = "product-card";
 
-    card.className = 'product-card';
+    card.setAttribute("data-category", product.category);
 
-    card.setAttribute('data-category', product.category);
+    card.setAttribute("data-price", product.price);
 
-    card.setAttribute('data-price', product.price);
-
-    card.setAttribute('data-rating', product.rating);
-
-
+    card.setAttribute("data-rating", product.rating);
 
     const isWish = this.wishlistManager.isWishlisted(product.id);
 
-
-
-    let badgesHTML = '';
+    let badgesHTML = "";
 
     if (product.badge) {
-
       let vnBadge = product.badge;
 
-      if (product.badge === 'NEW') vnBadge = 'MỚI';
+      if (product.badge === "NEW") vnBadge = "MỚI";
 
-      if (product.badge === 'HOT') vnBadge = 'BÁN CHẠY';
+      if (product.badge === "HOT") vnBadge = "BÁN CHẠY";
 
       badgesHTML += `<span class="badge-chip badge-${product.badge.toLowerCase()}">${vnBadge}</span>`;
-
     }
 
-
-
     const isOutOfStock = product.stock === 0;
-
-
 
     card.innerHTML = `
 
@@ -4678,9 +4653,9 @@ class FilterManager {
 
         </div>
 
-        <button class="wishlist-btn ${isWish ? 'active' : ''}" data-id="${product.id}" aria-label="Thêm vào yêu thích">
+        <button class="wishlist-btn ${isWish ? "active" : ""}" data-id="${product.id}" aria-label="Thêm vào yêu thích">
 
-          <i class="${isWish ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+          <i class="${isWish ? "fa-solid" : "fa-regular"} fa-heart"></i>
 
         </button>
 
@@ -4706,11 +4681,11 @@ class FilterManager {
 
         </div>
 
-        <div class="product-stock" style="color: ${isOutOfStock ? 'var(--accent-pink)' : 'var(--accent-green)'}">
+        <div class="product-stock" style="color: ${isOutOfStock ? "var(--accent-pink)" : "var(--accent-green)"}">
 
-          <div class="stock-dot" style="background: ${isOutOfStock ? 'var(--accent-pink)' : 'var(--accent-green)'}"></div> 
+          <div class="stock-dot" style="background: ${isOutOfStock ? "var(--accent-pink)" : "var(--accent-green)"}"></div> 
 
-          ${isOutOfStock ? 'Hết hàng tạm thời' : `Còn hàng (${product.stock})`}
+          ${isOutOfStock ? "Hết hàng tạm thời" : `Còn hàng (${product.stock})`}
 
         </div>
 
@@ -4718,9 +4693,9 @@ class FilterManager {
 
       <div class="product-actions">
 
-        <button class="add-to-cart-btn btn-add-cart-grid" data-id="${product.id}" ${isOutOfStock ? 'disabled style="opacity: 0.6; cursor: not-allowed;"' : ''}>
+        <button class="add-to-cart-btn btn-add-cart-grid" data-id="${product.id}" ${isOutOfStock ? 'disabled style="opacity: 0.6; cursor: not-allowed;"' : ""}>
 
-          <i class="fa-solid fa-cart-shopping"></i> ${isOutOfStock ? 'Hết hàng' : 'Thêm Giỏ Hàng'}
+          <i class="fa-solid fa-cart-shopping"></i> ${isOutOfStock ? "Hết hàng" : "Thêm Giỏ Hàng"}
 
         </button>
 
@@ -4734,107 +4709,69 @@ class FilterManager {
 
     `;
 
-
-
     // Gắn sự kiện click nút tim và giỏ hàng trực tiếp
 
-    card.querySelector('.wishlist-btn').addEventListener('click', (e) => {
-
+    card.querySelector(".wishlist-btn").addEventListener("click", (e) => {
       e.stopPropagation();
 
       this.wishlistManager.toggle(product.id);
-
     });
-
-
 
     if (!isOutOfStock) {
+      card
+        .querySelector(".btn-add-cart-grid")
+        .addEventListener("click", (e) => {
+          e.stopPropagation();
 
-      card.querySelector('.btn-add-cart-grid').addEventListener('click', (e) => {
+          this.cartManager.addItem(product.id, 1);
+        });
+    }
 
+    card
+      .querySelector(".btn-quick-view-grid")
+      .addEventListener("click", (e) => {
         e.stopPropagation();
 
-        this.cartManager.addItem(product.id, 1);
-
+        openQuickView(product.id, this.cartManager, this.wishlistManager);
       });
-
-    }
-
-
-
-    card.querySelector('.btn-quick-view-grid').addEventListener('click', (e) => {
-
-      e.stopPropagation();
-
-      openQuickView(product.id, this.cartManager, this.wishlistManager);
-
-    });
-
-
 
     return card;
-
   }
-
-
 
   initModalEvents() {
+    const modal = document.getElementById("product-modal");
 
-    const modal = document.getElementById('product-modal');
-
-    const closeBtn = document.getElementById('modal-close-btn');
+    const closeBtn = document.getElementById("modal-close-btn");
 
     if (modal && closeBtn) {
-
-      closeBtn.addEventListener('click', () => {
-
-        modal.classList.remove('open');
-
+      closeBtn.addEventListener("click", () => {
+        modal.classList.remove("open");
       });
 
-      modal.addEventListener('click', (e) => {
-
+      modal.addEventListener("click", (e) => {
         if (e.target === modal) {
-
-          modal.classList.remove('open');
-
+          modal.classList.remove("open");
         }
-
       });
-
     }
-
   }
 
-
-
   filterByCategory(cat) {
-
     if (this.catSelect) {
-
       this.catSelect.value = cat;
 
       this.visibleLimit = 20;
 
       this.renderFilteredProducts();
 
-      
-
-      const target = document.getElementById('products');
+      const target = document.getElementById("products");
 
       if (target) {
-
-        target.scrollIntoView({ behavior: 'smooth' });
-
+        target.scrollIntoView({ behavior: "smooth" });
       }
-
     }
-
   }
-
 }
-
-
 
 // ==========================================
 
@@ -4844,184 +4781,138 @@ class FilterManager {
 
 let currentModalQty = 1;
 
-
-
 function openQuickView(productId, cartManager, wishlistManager) {
+  const modal = document.getElementById("product-modal");
 
-  const modal = document.getElementById('product-modal');
-
-  const product = products.find(p => p.id === productId);
+  const product = products.find((p) => p.id === productId);
 
   if (!modal || !product) return;
 
-
-
   currentModalQty = 1;
-
-
 
   // Lắp dữ liệu vào Modal
 
-  document.getElementById('modal-product-cat').textContent = getVnCatName(product.category).toUpperCase();
+  document.getElementById("modal-product-cat").textContent = getVnCatName(
+    product.category,
+  ).toUpperCase();
 
-  document.getElementById('modal-product-name').textContent = product.name;
+  document.getElementById("modal-product-name").textContent = product.name;
 
-  document.getElementById('modal-product-price').textContent = formatVND(product.price);
+  document.getElementById("modal-product-price").textContent = formatVND(
+    product.price,
+  );
 
-
-
-  document.getElementById('modal-product-desc').textContent = product.description;
-
-  
+  document.getElementById("modal-product-desc").textContent =
+    product.description;
 
   // Stars đánh giá
 
-  document.getElementById('modal-product-stars').innerHTML = getStarIcons(product.rating);
+  document.getElementById("modal-product-stars").innerHTML = getStarIcons(
+    product.rating,
+  );
 
-  document.getElementById('modal-product-reviews').textContent = `(${product.reviews} lượt đánh giá thực tế)`;
-
-
+  document.getElementById("modal-product-reviews").textContent =
+    `(${product.reviews} lượt đánh giá thực tế)`;
 
   // Spec List danh sách thông số kỹ thuật
 
-  const specsList = document.getElementById('modal-product-specs-list');
+  const specsList = document.getElementById("modal-product-specs-list");
 
-  specsList.innerHTML = '';
+  specsList.innerHTML = "";
 
-  product.specs.forEach(spec => {
+  product.specs.forEach((spec) => {
+    const div = document.createElement("div");
 
-    const div = document.createElement('div');
-
-    div.className = 'spec-item';
+    div.className = "spec-item";
 
     div.innerHTML = `<div class="spec-dot"></div> <span>${spec}</span>`;
 
     specsList.appendChild(div);
-
   });
-
-
 
   // Reset lại bộ chọn số lượng
 
-  const qtyInput = document.getElementById('modal-qty-input');
+  const qtyInput = document.getElementById("modal-qty-input");
 
   if (qtyInput) qtyInput.value = currentModalQty;
 
-
-
   // Ảnh thay thế mạch điện tử
 
-  const imageContainer = document.getElementById('modal-image-container');
+  const imageContainer = document.getElementById("modal-image-container");
 
   if (imageContainer) {
-
     imageContainer.innerHTML = `<img src="images/${product.image}.png" alt="${product.name}" class="product-img" style="max-height: 280px; max-width: 100%; object-fit: contain;">`;
-
   }
-
-
 
   // Khởi tạo trạng thái yêu thích bên trong Modal
 
-  const wishlistBtn = document.getElementById('modal-wishlist-btn');
+  const wishlistBtn = document.getElementById("modal-wishlist-btn");
 
   if (wishlistBtn) {
-
     const updateWishlistBtnState = () => {
-
       if (wishlistManager.isWishlisted(product.id)) {
-
         wishlistBtn.innerHTML = `<i class="fa-solid fa-heart" style="color: var(--accent-pink);"></i>`;
-
       } else {
-
         wishlistBtn.innerHTML = `<i class="fa-regular fa-heart"></i>`;
-
       }
-
     };
 
     updateWishlistBtnState();
-
-    
 
     const newWishBtn = wishlistBtn.cloneNode(true);
 
     wishlistBtn.parentNode.replaceChild(newWishBtn, wishlistBtn);
 
-    newWishBtn.addEventListener('click', () => {
-
+    newWishBtn.addEventListener("click", () => {
       wishlistManager.toggle(product.id);
 
       updateWishlistBtnState();
-
     });
-
   }
-
-
 
   // Khởi tạo trạng thái nút Mua hàng
 
-  const addToCartBtn = document.getElementById('modal-add-to-cart-btn');
+  const addToCartBtn = document.getElementById("modal-add-to-cart-btn");
 
   const isOutOfStock = product.stock === 0;
 
-
-
   if (addToCartBtn) {
-
     const newCartBtn = addToCartBtn.cloneNode(true);
 
     addToCartBtn.parentNode.replaceChild(newCartBtn, addToCartBtn);
 
-    
-
     if (isOutOfStock) {
-
       newCartBtn.disabled = true;
 
-      newCartBtn.style.opacity = '0.6';
+      newCartBtn.style.opacity = "0.6";
 
-      newCartBtn.style.cursor = 'not-allowed';
+      newCartBtn.style.cursor = "not-allowed";
 
       newCartBtn.innerHTML = `<i class="fa-solid fa-circle-xmark"></i> Hết Hàng Tạm Thời`;
-
     } else {
-
       newCartBtn.disabled = false;
 
-      newCartBtn.style.opacity = '1';
+      newCartBtn.style.opacity = "1";
 
-      newCartBtn.style.cursor = 'pointer';
+      newCartBtn.style.cursor = "pointer";
 
       newCartBtn.innerHTML = `<i class="fa-solid fa-cart-plus"></i> Thêm Vào Giỏ Hàng`;
 
-      newCartBtn.addEventListener('click', () => {
-
+      newCartBtn.addEventListener("click", () => {
         cartManager.addItem(product.id, currentModalQty);
 
-        modal.classList.remove('open');
-
+        modal.classList.remove("open");
       });
-
     }
-
   }
-
-
 
   // Tăng giảm số lượng trong Modal
 
-  const btnMinus = document.getElementById('modal-qty-minus');
+  const btnMinus = document.getElementById("modal-qty-minus");
 
-  const btnPlus = document.getElementById('modal-qty-plus');
-
-  
+  const btnPlus = document.getElementById("modal-qty-plus");
 
   if (btnMinus && btnPlus && qtyInput) {
-
     const newMinus = btnMinus.cloneNode(true);
 
     const newPlus = btnPlus.cloneNode(true);
@@ -5030,51 +4921,29 @@ function openQuickView(productId, cartManager, wishlistManager) {
 
     btnPlus.parentNode.replaceChild(newPlus, btnPlus);
 
-
-
     if (isOutOfStock) {
-
-      qtyInput.value = '0';
-
+      qtyInput.value = "0";
     } else {
-
-      newMinus.addEventListener('click', () => {
-
+      newMinus.addEventListener("click", () => {
         if (currentModalQty > 1) {
-
           currentModalQty--;
 
           qtyInput.value = currentModalQty;
-
         }
-
       });
 
-
-
-      newPlus.addEventListener('click', () => {
-
+      newPlus.addEventListener("click", () => {
         if (currentModalQty < product.stock) {
-
           currentModalQty++;
 
           qtyInput.value = currentModalQty;
-
         }
-
       });
-
     }
-
   }
 
-
-
-  modal.classList.add('open');
-
+  modal.classList.add("open");
 }
-
-
 
 // ==========================================
 
@@ -5083,234 +4952,232 @@ function openQuickView(productId, cartManager, wishlistManager) {
 // ==========================================
 
 class SearchManager {
-
   constructor(productsList, filterManager) {
-
     this.productsList = productsList;
 
     this.filterManager = filterManager;
 
-    
+    this.triggerInput = document.getElementById("search-input-nav-trigger");
 
-    this.triggerInput = document.getElementById('search-input-nav-trigger');
+    this.overlay = document.getElementById("search-overlay");
 
-    this.overlay = document.getElementById('search-overlay');
+    this.overlayInput = document.getElementById("search-overlay-input");
 
-    this.overlayInput = document.getElementById('search-overlay-input');
+    this.closeBtn = document.getElementById("search-close-btn");
 
-    this.closeBtn = document.getElementById('search-close-btn');
-
-    this.resultsContainer = document.getElementById('search-results');
-
-
+    this.resultsContainer = document.getElementById("search-results");
 
     this.initEvents();
-
   }
-
-
 
   initEvents() {
-
+    // Ẩn overlayInput vì ta sẽ gõ trực tiếp trên triggerInput
     if (this.triggerInput) {
-
-      this.triggerInput.addEventListener('click', () => this.openOverlay());
-
-    }
-
-
-
-    if (this.closeBtn) {
-
-      this.closeBtn.addEventListener('click', () => this.closeOverlay());
-
-    }
-
-
-
-    if (this.overlay) {
-
-      this.overlay.addEventListener('click', (e) => {
-
-        if (e.target === this.overlay) this.closeOverlay();
-
+      this.triggerInput.addEventListener("focus", () => this.openOverlay());
+      
+      // Ấn ESC để đóng
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && this.overlay && this.overlay.classList.contains("open")) {
+          this.closeOverlay();
+        }
       });
 
+      // Gõ vào input chính
+      let timeout = null;
+      this.triggerInput.addEventListener("input", () => {
+        if (!this.overlay.classList.contains("open")) {
+          this.openOverlay();
+        }
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          this.performSearch(this.triggerInput.value);
+        }, 300);
+      });
     }
 
-
-
-    // Ấn ESC để đóng khung tìm kiếm nhanh
-
-    window.addEventListener('keydown', (e) => {
-
-      if (e.key === 'Escape' && this.overlay && this.overlay.classList.contains('open')) {
-
+    // Click ra ngoài thì đóng
+    document.addEventListener("click", (e) => {
+      if (
+        this.overlay && 
+        this.overlay.classList.contains("open") &&
+        !this.overlay.contains(e.target) &&
+        e.target !== this.triggerInput
+      ) {
         this.closeOverlay();
-
       }
-
     });
 
-
-
-    // Thao tác gõ ký tự kết hợp debounce (300ms) để không bị đơ trình duyệt
-
-    let timeout = null;
-
-    if (this.overlayInput) {
-
-      this.overlayInput.addEventListener('input', () => {
-
-        clearTimeout(timeout);
-
-        timeout = setTimeout(() => {
-
-          this.performSearch(this.overlayInput.value);
-
-        }, 300);
-
-      });
-
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener("click", () => this.closeOverlay());
     }
-
   }
-
-
 
   openOverlay() {
-
-    if (this.overlay) this.overlay.classList.add('open');
-
-    if (this.overlayInput) {
-
-      this.overlayInput.value = '';
-
-      setTimeout(() => this.overlayInput.focus(), 100);
-
-    }
-
-    this.performSearch('');
-
+    if (this.overlay) this.overlay.classList.add("open");
+    // Khi vừa focus (hoặc mở) -> hiển thị kết quả luôn
+    this.performSearch(this.triggerInput ? this.triggerInput.value : "");
   }
-
-
 
   closeOverlay() {
-
-    if (this.overlay) this.overlay.classList.remove('open');
-
+    if (this.overlay) this.overlay.classList.remove("open");
   }
 
-
-
   performSearch(query) {
-
     if (!this.resultsContainer) return;
-
-    this.resultsContainer.innerHTML = '';
-
-
+    this.resultsContainer.innerHTML = "";
 
     const cleanQuery = query.toLowerCase().trim();
 
-    let filtered = this.productsList;
-
-
-
-    if (cleanQuery !== '') {
-
-      filtered = this.productsList.filter(p => 
-
-        p.name.toLowerCase().includes(cleanQuery) || 
-
-        p.category.toLowerCase().includes(cleanQuery) ||
-
-        p.brand.toLowerCase().includes(cleanQuery)
-
-      );
-
+    // ── 1. LỌC SẢN PHẨM (giống VLAPTOP: name + category + brand) ──
+    let filtered;
+    if (cleanQuery === "") {
+      // Chưa gõ gì → gợi ý 6 sản phẩm nổi bật (HOT badge trước)
+      filtered = [...this.productsList]
+        .sort((a, b) => (b.badge === "HOT" ? 1 : 0) - (a.badge === "HOT" ? 1 : 0))
+        .slice(0, 6);
     } else {
-
-      // Gợi ý tạm 5 sản phẩm nổi bật ban đầu khi chưa gõ gì
-
-      filtered = this.productsList.slice(0, 5);
-
+      filtered = this.productsList.filter(p =>
+        p.name.toLowerCase().includes(cleanQuery) ||
+        p.category.toLowerCase().includes(cleanQuery) ||
+        p.brand.toLowerCase().includes(cleanQuery)
+      );
     }
 
-
-
+    // ── 2. KHÔNG CÓ KẾT QUẢ ──
     if (filtered.length === 0) {
-
       this.resultsContainer.innerHTML = `
-
-        <div style="text-align: center; color: var(--text-muted); padding: 32px;">
-
-          <p><i class="fa-solid fa-magnifying-glass" style="font-size: 24px; margin-bottom: 8px;"></i></p>
-
-          <p>Không tìm thấy linh kiện nào khớp với từ khóa "${query}".</p>
-
-        </div>
-
-      `;
-
+        <div style="text-align:center;padding:40px 20px;color:var(--text-muted)">
+          <i class="fa-solid fa-magnifying-glass" style="font-size:28px;margin-bottom:10px;display:block;opacity:.4"></i>
+          <p style="margin:0;font-size:14px">Không tìm thấy linh kiện nào khớp với</p>
+          <p style="margin:6px 0 0;font-weight:600;color:var(--accent-blue)">"${query}"</p>
+        </div>`;
       return;
-
     }
 
-
-
-    filtered.forEach(p => {
-
-      const item = document.createElement('div');
-
-      item.className = 'search-result-item';
-
-      item.innerHTML = `
-
-        <div class="search-result-img" style="width: 36px; height: 36px; border-radius: var(--radius-sm); overflow: hidden; background: var(--bg-card); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-right: 12px;">
-
-          <img src="images/${p.image}.png" alt="${p.name}" style="width: 100%; height: 100%; object-fit: cover;">
-
-        </div>
-
-        <div style="flex: 1;">
-
-          <div style="font-weight: 600; font-size: 14px;">${p.name}</div>
-
-          <div style="font-size: 11px; color: var(--text-muted); text-transform: uppercase;">${getVnCatName(p.category)} | ${p.brand}</div>
-
-        </div>
-
-        <div style="font-family: 'Orbitron', sans-serif; font-size: 14px; font-weight: 700; color: var(--accent-blue);">
-
-          ${formatVND(p.price)}
-
-        </div>
-
-      `;
-
-
-
-      item.addEventListener('click', () => {
-
-        this.closeOverlay();
-
-        openQuickView(p.id, this.filterManager.cartManager, this.filterManager.wishlistManager);
-
-      });
-
-
-
-      this.resultsContainer.appendChild(item);
-
+    // ── 3. NHÓM THEO DANH MỤC (tham khảo từ VLAPTOP keyword grouping) ──
+    const grouped = {};
+    filtered.slice(0, 12).forEach(p => {
+      const cat = getVnCatName(p.category);
+      if (!grouped[cat]) grouped[cat] = [];
+      grouped[cat].push(p);
     });
 
+    // ── 4. RENDER KẾT QUẢ ──
+    Object.entries(grouped).forEach(([catName, items]) => {
+      // Header nhóm danh mục
+      const header = document.createElement("div");
+      header.style.cssText = `
+        padding: 8px 16px 4px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-muted);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+      `;
+      header.textContent = catName;
+      this.resultsContainer.appendChild(header);
+
+      items.forEach(p => {
+        const item = document.createElement("div");
+        item.className = "search-result-item";
+        item.style.cssText = `
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 10px 16px;
+          cursor: pointer;
+          transition: background .15s;
+          border-bottom: 1px solid rgba(255,255,255,0.04);
+        `;
+        item.addEventListener("mouseenter", () => item.style.background = "var(--bg-card)");
+        item.addEventListener("mouseleave", () => item.style.background = "");
+
+        // Badge tình trạng kho (tham khảo VLAPTOP cart-count badge)
+        const inStock = p.stock > 0;
+        const stockBadge = `
+          <span style="
+            font-size: 9px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 20px;
+            background: ${inStock ? "rgba(0,255,136,0.15)" : "rgba(255,70,70,0.15)"};
+            color: ${inStock ? "var(--accent-green)" : "#ff4646"};
+            flex-shrink: 0;
+          ">${inStock ? "Còn hàng" : "Hết hàng"}</span>`;
+
+        // Highlight từ khóa (tham khảo VLAPTOP highlightText)
+        const highlightName = cleanQuery
+          ? p.name.replace(new RegExp(`(${cleanQuery})`, "gi"),
+              '<mark style="background:rgba(0,212,255,0.25);color:var(--accent-blue);border-radius:2px;padding:0 1px">$1</mark>')
+          : p.name;
+
+        item.innerHTML = `
+          <div style="
+            width: 44px; height: 44px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-card);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+          ">
+            <img src="images/${p.image}.png" alt="${p.name}"
+              style="width:100%;height:100%;object-fit:cover"
+              onerror="this.style.display='none';this.parentNode.innerHTML='<i class=\\'fa-solid fa-microchip\\' style=\\'font-size:20px;opacity:.3\\'></i>'">
+          </div>
+          <div style="flex:1;min-width:0">
+            <div style="font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">
+              ${highlightName}
+            </div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px">
+              ${p.brand}
+              ${p.badge ? `<span style="margin-left:4px;background:var(--accent-blue);color:#000;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700">${p.badge}</span>` : ""}
+            </div>
+          </div>
+          ${stockBadge}
+          <div style="
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent-blue);
+            flex-shrink: 0;
+          ">${formatVND(p.price)}</div>`;
+
+        // Click → mở Quick View (giữ nguyên hành vi cũ)
+        item.addEventListener("click", () => {
+          this.closeOverlay();
+          openQuickView(p.id, this.filterManager.cartManager, this.filterManager.wishlistManager);
+        });
+
+        this.resultsContainer.appendChild(item);
+      });
+    });
+
+    // Footer: tổng số kết quả + nút xem tất cả
+    if (filtered.length > 12) {
+      const footer = document.createElement("div");
+      footer.style.cssText = `
+        padding: 12px 16px;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.08);
+      `;
+      footer.innerHTML = `
+        <button style="
+          background: none; border: 1px solid var(--accent-blue);
+          color: var(--accent-blue); padding: 6px 20px;
+          border-radius: 20px; font-size: 12px; cursor: pointer;
+          font-family: 'Orbitron', sans-serif; letter-spacing: .5px;
+        " onclick="
+          document.getElementById('search-close-btn').click();
+          document.getElementById('filter-category').value='all';
+          document.querySelector('.filter-btn').click();
+        ">
+          Xem tất cả ${filtered.length} kết quả
+        </button>`;
+      this.resultsContainer.appendChild(footer);
+    }
   }
-
 }
-
-
 
 // ==========================================
 
@@ -5319,17 +5186,11 @@ class SearchManager {
 // ==========================================
 
 function formatVND(value) {
-
-  return value.toLocaleString('vi-VN') + 'đ';
-
+  return value.toLocaleString("vi-VN") + "đ";
 }
 
-
-
 function getVnCatName(category) {
-
   const mapping = {
-
     microcontrollers: "Vi Điều Khiển",
 
     sensors: "Cảm Biến",
@@ -5346,51 +5207,31 @@ function getVnCatName(category) {
 
     tools: "Dụng Cụ Thiết Bị",
 
-    iot: "IoT & Không Dây"
-
+    iot: "IoT & Không Dây",
   };
 
   return mapping[category] || category;
-
 }
 
-
-
 function getStarIcons(rating) {
-
-  let stars = '';
+  let stars = "";
 
   const fullStars = Math.floor(rating);
 
   const hasHalf = rating % 1 >= 0.4;
 
-  
-
   for (let i = 0; i < 5; i++) {
-
     if (i < fullStars) {
-
       stars += '<i class="fa-solid fa-star"></i>';
-
     } else if (i === fullStars && hasHalf) {
-
       stars += '<i class="fa-solid fa-star-half-stroke"></i>';
-
     } else {
-
       stars += '<i class="fa-regular fa-star"></i>';
-
     }
-
   }
 
   return stars;
-
 }
-
-
-
-
 
 // ==========================================
 
@@ -5399,27 +5240,26 @@ function getStarIcons(rating) {
 // ==========================================
 
 function initNavbar(cartManager, wishlistManager) {
+  const navbar = document.getElementById("navbar");
 
-  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById("hamburger-menu");
 
-  const hamburger = document.getElementById('hamburger-menu');
+  const mobileMenu = document.getElementById("mobile-menu");
 
-  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById("mobile-menu-overlay");
 
-  const overlay = document.getElementById('mobile-menu-overlay');
-
-  const stickyWrapper = document.querySelector('.sticky-filter-wrapper');
+  const stickyWrapper = document.querySelector(".sticky-filter-wrapper");
   let lastScrollY = window.scrollY;
   let isToggling = false;
 
   // Thêm viền mờ khi trượt trang
-  window.addEventListener('scroll', () => {
+  window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
-    
+
     if (currentScrollY > 50) {
-      if (navbar) navbar.classList.add('scrolled');
+      if (navbar) navbar.classList.add("scrolled");
     } else {
-      if (navbar) navbar.classList.remove('scrolled');
+      if (navbar) navbar.classList.remove("scrolled");
     }
 
     // Tự động thu gọn thanh bộ lọc khi cuộn trang xuống (cách ly sự kiện cuộn tự động của trình duyệt)
@@ -5428,18 +5268,31 @@ function initNavbar(cartManager, wishlistManager) {
         lastScrollY = currentScrollY;
       } else {
         if (Math.abs(currentScrollY - lastScrollY) > 10) {
-          if (stickyWrapper.getBoundingClientRect().top <= 61 && currentScrollY > 300) {
-            if (currentScrollY > lastScrollY && !stickyWrapper.classList.contains('compact')) {
-              stickyWrapper.classList.add('compact');
+          if (
+            stickyWrapper.getBoundingClientRect().top <= 61 &&
+            currentScrollY > 300
+          ) {
+            if (
+              currentScrollY > lastScrollY &&
+              !stickyWrapper.classList.contains("compact")
+            ) {
+              stickyWrapper.classList.add("compact");
               isToggling = true;
-              setTimeout(() => { isToggling = false; }, 400);
-            } else if (currentScrollY < lastScrollY && stickyWrapper.classList.contains('compact')) {
-              stickyWrapper.classList.remove('compact');
+              setTimeout(() => {
+                isToggling = false;
+              }, 400);
+            } else if (
+              currentScrollY < lastScrollY &&
+              stickyWrapper.classList.contains("compact")
+            ) {
+              stickyWrapper.classList.remove("compact");
               isToggling = true;
-              setTimeout(() => { isToggling = false; }, 400);
+              setTimeout(() => {
+                isToggling = false;
+              }, 400);
             }
           } else if (currentScrollY <= 300) {
-            stickyWrapper.classList.remove('compact');
+            stickyWrapper.classList.remove("compact");
           }
           lastScrollY = currentScrollY;
         }
@@ -5447,121 +5300,84 @@ function initNavbar(cartManager, wishlistManager) {
     }
   });
 
-
-
   // Đóng mở menu trên điện thoại
 
   if (hamburger && mobileMenu && overlay) {
-
     const toggleMenu = () => {
+      hamburger.classList.toggle("open");
 
-      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle("open");
 
-      mobileMenu.classList.toggle('open');
-
-      overlay.classList.toggle('open');
-
+      overlay.classList.toggle("open");
     };
 
+    hamburger.addEventListener("click", toggleMenu);
 
+    overlay.addEventListener("click", toggleMenu);
 
-    hamburger.addEventListener('click', toggleMenu);
+    const mLinks = mobileMenu.querySelectorAll(".mobile-nav-link");
 
-    overlay.addEventListener('click', toggleMenu);
-
-
-
-    const mLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
-
-    mLinks.forEach(link => {
-
-      link.addEventListener('click', () => {
-
-        if (mobileMenu.classList.contains('open')) toggleMenu();
-
+    mLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (mobileMenu.classList.contains("open")) toggleMenu();
       });
-
     });
-
   }
-
-
 
   // Kết nối sự kiện nhấp chuột vào danh mục
 
   const setupCatClicks = (selector) => {
-
     const items = document.querySelectorAll(selector);
 
-    items.forEach(item => {
-
-      item.addEventListener('click', () => {
-
-        const cat = item.getAttribute('data-category');
+    items.forEach((item) => {
+      item.addEventListener("click", () => {
+        const cat = item.getAttribute("data-category");
 
         if (cat) {
-
-          const catDropdown = document.getElementById('filter-category');
+          const catDropdown = document.getElementById("filter-category");
 
           if (catDropdown) {
-
             catDropdown.value = cat;
 
-            catDropdown.dispatchEvent(new Event('change'));
+            catDropdown.dispatchEvent(new Event("change"));
 
-            
-
-                        const gridEl = document.getElementById('products');
+            const gridEl = document.getElementById("products");
             if (gridEl) {
-              const y = gridEl.getBoundingClientRect().top + window.scrollY - 80;
-              window.scrollTo({ top: y, behavior: 'smooth' });
+              const y =
+                gridEl.getBoundingClientRect().top + window.scrollY - 80;
+              window.scrollTo({ top: y, behavior: "smooth" });
             }
-
           }
-
         }
-
       });
-
     });
-
   };
 
+  setupCatClicks(".mega-cat-item");
 
+  setupCatClicks(".mega-cat-item-mobile");
 
-  setupCatClicks('.mega-cat-item');
+  setupCatClicks(".mega-cat-item-footer");
 
-  setupCatClicks('.mega-cat-item-mobile');
-
-  setupCatClicks('.mega-cat-item-footer');
-
-  setupCatClicks('.category-card');
-
+  setupCatClicks(".category-card");
 }
-
-
 
 // Tạo hạt bay bay trên Banner Hero
 
 function initHeroParticles() {
-
-  const container = document.getElementById('hero-particles');
+  const container = document.getElementById("hero-particles");
 
   if (!container) return;
 
-
-
-  const particleIcons = ['🤖', '⚡', '🔋', '⚙️', '📶', '🔌'];
-
-  
+  const particleIcons = ["🤖", "⚡", "🔋", "⚙️", "📶", "🔌"];
 
   for (let i = 0; i < 15; i++) {
+    const p = document.createElement("div");
 
-    const p = document.createElement('div');
+    p.className = "particle";
 
-    p.className = 'particle';
-
-    p.textContent = particleIcons[Math.floor(Math.random() * particleIcons.length)];
+    p.textContent =
+      particleIcons[Math.floor(Math.random() * particleIcons.length)];
 
     p.style.left = `${Math.random() * 100}%`;
 
@@ -5573,29 +5389,19 @@ function initHeroParticles() {
 
     p.style.animationDelay = `${Math.random() * 5}s`;
 
-    
-
     container.appendChild(p);
-
   }
-
 }
-
-
 
 // Bộ đếm tăng tự động các số liệu thống kê
 
 function initStatsCounter() {
-
   // Fix selector to target correct stats elements in index.html
 
-  const stats = document.querySelectorAll('.stat-value');
-
-  
+  const stats = document.querySelectorAll(".stat-value");
 
   const countUp = (el) => {
-
-    const targetAttr = el.getAttribute('data-target');
+    const targetAttr = el.getAttribute("data-target");
 
     if (!targetAttr) return;
 
@@ -5603,43 +5409,30 @@ function initStatsCounter() {
 
     if (isNaN(target)) return;
 
-
-
     let count = 0;
 
     const speed = target / 100;
 
-
-
     const update = () => {
-
       count += speed;
 
       if (count < target) {
-
-        el.textContent = Math.floor(count).toLocaleString('vi-VN') + (target === 99 ? '%' : '+');
+        el.textContent =
+          Math.floor(count).toLocaleString("vi-VN") +
+          (target === 99 ? "%" : "+");
 
         requestAnimationFrame(update);
-
       } else {
-
-        el.textContent = target.toLocaleString('vi-VN') + (target === 99 ? '%' : '+');
-
+        el.textContent =
+          target.toLocaleString("vi-VN") + (target === 99 ? "%" : "+");
       }
-
     };
 
     update();
-
   };
 
-
-
-  stats.forEach(stat => countUp(stat));
-
+  stats.forEach((stat) => countUp(stat));
 }
-
-
 
 // ==========================================
 
@@ -5648,120 +5441,78 @@ function initStatsCounter() {
 // ==========================================
 
 function initHeroSlider() {
+  const slides = document.querySelectorAll(".hero-slide");
 
-  const slides = document.querySelectorAll('.hero-slide');
+  const indicators = document.querySelectorAll(".indicator");
 
-  const indicators = document.querySelectorAll('.indicator');
+  const prevBtn = document.getElementById("slider-prev");
 
-  const prevBtn = document.getElementById('slider-prev');
-
-  const nextBtn = document.getElementById('slider-next');
-
-  
+  const nextBtn = document.getElementById("slider-next");
 
   if (slides.length === 0) return;
-
-  
 
   let currentSlide = 0;
 
   let autoPlayTimer = null;
 
-  
-
   const showSlide = (index) => {
+    slides.forEach((slide) => slide.classList.remove("active"));
 
-    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach((ind) => ind.classList.remove("active"));
 
-    indicators.forEach(ind => ind.classList.remove('active'));
+    slides[index].classList.add("active");
 
-    
-
-    slides[index].classList.add('active');
-
-    indicators[index].classList.add('active');
+    indicators[index].classList.add("active");
 
     currentSlide = index;
-
   };
 
-  
-
   const nextSlide = () => {
-
     let next = currentSlide + 1;
 
     if (next >= slides.length) next = 0;
 
     showSlide(next);
-
   };
 
-  
-
   const prevSlide = () => {
-
     let prev = currentSlide - 1;
 
     if (prev < 0) prev = slides.length - 1;
 
     showSlide(prev);
-
   };
 
-  
-
   const resetTimer = () => {
-
     clearInterval(autoPlayTimer);
 
     autoPlayTimer = setInterval(nextSlide, 5000);
-
   };
 
-  
-
   if (prevBtn && nextBtn) {
-
-    prevBtn.addEventListener('click', () => {
-
+    prevBtn.addEventListener("click", () => {
       prevSlide();
 
       resetTimer();
-
     });
 
-    nextBtn.addEventListener('click', () => {
-
+    nextBtn.addEventListener("click", () => {
       nextSlide();
 
       resetTimer();
-
     });
-
   }
 
-  
-
   indicators.forEach((ind, i) => {
-
-    ind.addEventListener('click', () => {
-
+    ind.addEventListener("click", () => {
       showSlide(i);
 
       resetTimer();
-
     });
-
   });
 
-  
-
   autoPlayTimer = setInterval(nextSlide, 5000);
-
 }
-
-
 
 // ==========================================
 
@@ -5769,14 +5520,8 @@ function initHeroSlider() {
 
 // ==========================================
 
-
-
-
-
 const projectDatabase = {
-
   smarthome: {
-
     title: "Hệ Thống Nhà Thông Minh IoT",
 
     difficulty: "Trung Bình",
@@ -5786,7 +5531,6 @@ const projectDatabase = {
     components: [3, 8, 12, 15, 48],
 
     wiring: [
-
       { from: "DHT22 Chân Data", to: "ESP32 Chân GPIO 23" },
 
       { from: "Cảm Biến MQ-2 Chân AO", to: "ESP32 Chân GPIO 34 (ADC1)" },
@@ -5795,8 +5539,7 @@ const projectDatabase = {
 
       { from: "OLED Chân SCL", to: "ESP32 Chân GPIO 22" },
 
-      { from: "Relay Chân tín hiệu IN", to: "ESP32 Chân GPIO 18" }
-
+      { from: "Relay Chân tín hiệu IN", to: "ESP32 Chân GPIO 18" },
     ],
 
     code: `
@@ -5851,12 +5594,10 @@ void loop() {
 
   delay(2000);
 
-}`
-
+}`,
   },
 
   robotcar: {
-
     title: "Xe Robot Tự Hành Tránh Vật Cản",
 
     difficulty: "Nâng Cao",
@@ -5866,7 +5607,6 @@ void loop() {
     components: [1, 9, 29, 26, 30],
 
     wiring: [
-
       { from: "HC-SR04 Chân Trig", to: "Arduino Chân D12" },
 
       { from: "HC-SR04 Chân Echo", to: "Arduino Chân D11" },
@@ -5875,8 +5615,7 @@ void loop() {
 
       { from: "L298N Chân IN1, IN2", to: "Arduino Chân D5, D6" },
 
-      { from: "L298N Chân IN3, IN4", to: "Arduino Chân D7, D8" }
-
+      { from: "L298N Chân IN3, IN4", to: "Arduino Chân D7, D8" },
     ],
 
     code: `
@@ -5943,12 +5682,10 @@ void loop() {
 
   }
 
-}`
-
+}`,
   },
 
   weather: {
-
     title: "Trạm Giám Sát Thời Tiết WiFi Mini",
 
     difficulty: "Cơ Bản",
@@ -5958,13 +5695,11 @@ void loop() {
     components: [4, 8, 61, 50],
 
     wiring: [
-
       { from: "DHT22 Chân Data", to: "ESP8266 Chân D4" },
 
       { from: "BMP280 Chân SDA", to: "ESP8266 Chân D2" },
 
-      { from: "BMP280 Chân SCL", to: "ESP8266 Chân D1" }
-
+      { from: "BMP280 Chân SCL", to: "ESP8266 Chân D1" },
     ],
 
     code: `
@@ -6001,12 +5736,10 @@ void loop() {
 
   delay(15000);
 
-}`
-
+}`,
   },
 
   security: {
-
     title: "Khóa Cửa RFID & Mật Mã Không Tiếp Xúc",
 
     difficulty: "Trung Bình",
@@ -6016,7 +5749,6 @@ void loop() {
     components: [4, 60, 26, 16, 50],
 
     wiring: [
-
       { from: "RC522 RFID SDA", to: "NodeMCU D8" },
 
       { from: "RC522 RFID SCK", to: "NodeMCU D5" },
@@ -6029,8 +5761,7 @@ void loop() {
 
       { from: "LCD 16x2 I2C SDA", to: "NodeMCU D2" },
 
-      { from: "LCD 16x2 I2C SCL", to: "NodeMCU D1" }
-
+      { from: "LCD 16x2 I2C SCL", to: "NodeMCU D1" },
     ],
 
     code: `
@@ -6113,12 +5844,10 @@ void loop() {
 
   }
 
-}`
-
+}`,
   },
 
   plantmonitor: {
-
     title: "Hệ Thống Tưới Cây Tự Động Thông Minh",
 
     difficulty: "Cơ Bản",
@@ -6128,13 +5857,11 @@ void loop() {
     components: [1, 8, 13, 48],
 
     wiring: [
-
       { from: "DHT22 Chân Data", to: "Arduino Uno D2" },
 
       { from: "Cảm Biến Ánh Sáng A0", to: "Arduino Uno A0" },
 
-      { from: "Module Relay IN", to: "Arduino Uno D8" }
-
+      { from: "Module Relay IN", to: "Arduino Uno D8" },
     ],
 
     code: `
@@ -6189,12 +5916,10 @@ void loop() {
 
   delay(10000);
 
-}`
-
+}`,
   },
 
   industrial: {
-
     title: "Bộ Điều Khiển Giám Sát Thiết Bị Công Nghiệp",
 
     difficulty: "Nâng Cao",
@@ -6204,15 +5929,13 @@ void loop() {
     components: [5, 48, 12, 15],
 
     wiring: [
-
       { from: "OLED SDA", to: "STM32 PB7" },
 
       { from: "OLED SCL", to: "STM32 PB6" },
 
       { from: "Relay IN", to: "STM32 PA1" },
 
-      { from: "Cảm biến MQ-2 AO", to: "STM32 PA0 (ADC)" }
-
+      { from: "Cảm biến MQ-2 AO", to: "STM32 PA0 (ADC)" },
     ],
 
     code: `
@@ -6277,91 +6000,64 @@ void loop() {
 
   delay(1000);
 
-}`
-
-  }
-
+}`,
+  },
 };
 
-
-
 function initProjects(toastManager, cartManager) {
+  const buttons = document.querySelectorAll(".tutorial-btn");
 
-  const buttons = document.querySelectorAll('.tutorial-btn');
+  const modal = document.getElementById("tutorial-modal");
 
-  const modal = document.getElementById('tutorial-modal');
-
-  const closeBtn = document.getElementById('tutorial-modal-close-btn');
-
-  
+  const closeBtn = document.getElementById("tutorial-modal-close-btn");
 
   if (!modal) return;
 
-  
-
   if (closeBtn) {
-
-    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
-
+    closeBtn.addEventListener("click", () => modal.classList.remove("open"));
   }
 
-  modal.addEventListener('click', (e) => {
-
-    if (e.target === modal) modal.classList.remove('open');
-
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.classList.remove("open");
   });
 
-  
-
-  buttons.forEach(btn => {
-
-    btn.addEventListener('click', () => {
-
-      const projId = btn.getAttribute('data-project');
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const projId = btn.getAttribute("data-project");
 
       const proj = projectDatabase[projId];
 
       if (!proj) return;
 
-      
-
-      const diffTag = document.getElementById('tutorial-proj-difficulty');
+      const diffTag = document.getElementById("tutorial-proj-difficulty");
 
       if (diffTag) {
-
         diffTag.textContent = proj.difficulty;
 
-        diffTag.className = `section-tag difficulty-${proj.difficulty === 'Cơ Bản' ? 'beginner' : proj.difficulty === 'Trung Bình' ? 'intermediate' : 'advanced'}`;
-
+        diffTag.className = `section-tag difficulty-${proj.difficulty === "Cơ Bản" ? "beginner" : proj.difficulty === "Trung Bình" ? "intermediate" : "advanced"}`;
       }
 
-      
+      document.getElementById("tutorial-proj-title").textContent = proj.title;
 
-      document.getElementById('tutorial-proj-title').textContent = proj.title;
-
-      document.getElementById('tutorial-proj-desc').textContent = proj.desc;
-
-      
+      document.getElementById("tutorial-proj-desc").textContent = proj.desc;
 
       // Hiển thị danh sách linh kiện thực tế vào #tutorial-proj-components-list
 
-      const listContainer = document.getElementById('tutorial-proj-components-list');
+      const listContainer = document.getElementById(
+        "tutorial-proj-components-list",
+      );
 
       if (listContainer) {
+        listContainer.innerHTML = "";
 
-        listContainer.innerHTML = '';
-
-        proj.components.forEach(productId => {
-
-          const product = products.find(p => p.id === productId);
+        proj.components.forEach((productId) => {
+          const product = products.find((p) => p.id === productId);
 
           if (!product) return;
 
-          
+          const row = document.createElement("div");
 
-          const row = document.createElement('div');
-
-          row.className = 'tutorial-component-row';
+          row.className = "tutorial-component-row";
 
           row.innerHTML = `
 
@@ -6387,78 +6083,61 @@ function initProjects(toastManager, cartManager) {
 
           `;
 
-          
-
-          row.querySelector('.tutorial-component-btn').addEventListener('click', () => {
-
-            cartManager.addItem(product.id, 1);
-
-          });
-
-          
+          row
+            .querySelector(".tutorial-component-btn")
+            .addEventListener("click", () => {
+              cartManager.addItem(product.id, 1);
+            });
 
           listContainer.appendChild(row);
-
         });
-
       }
-
-      
 
       // Cấu hình nút "Thêm Tất Cả Linh Kiện Vào Giỏ Hàng"
 
-      const addAllBtn = document.getElementById('tutorial-add-all-cart-btn');
+      const addAllBtn = document.getElementById("tutorial-add-all-cart-btn");
 
       if (addAllBtn) {
-
         const newAddAllBtn = addAllBtn.cloneNode(true);
 
         addAllBtn.parentNode.replaceChild(newAddAllBtn, addAllBtn);
 
-        newAddAllBtn.addEventListener('click', () => {
-
+        newAddAllBtn.addEventListener("click", () => {
           let addedCount = 0;
 
-          proj.components.forEach(productId => {
-
-            const product = products.find(p => p.id === productId);
+          proj.components.forEach((productId) => {
+            const product = products.find((p) => p.id === productId);
 
             if (product && product.stock > 0) {
-
               cartManager.addItem(productId, 1, true);
 
               addedCount++;
-
             }
-
           });
 
           if (addedCount > 0) {
+            toastManager.show(
+              `Đã thêm tất cả ${addedCount} linh kiện của đồ án vào giỏ hàng!`,
+              "success",
+            );
 
-            toastManager.show(`Đã thêm tất cả ${addedCount} linh kiện của đồ án vào giỏ hàng!`, 'success');
-
-            modal.classList.remove('open');
+            modal.classList.remove("open");
 
             cartManager.openCart();
-
           } else {
-
-            toastManager.show("Không có linh kiện nào còn hàng để thêm vào giỏ!", "warning");
-
+            toastManager.show(
+              "Không có linh kiện nào còn hàng để thêm vào giỏ!",
+              "warning",
+            );
           }
-
         });
-
       }
-
-      
 
       // Sơ đồ chân nối dây
 
-      const wiringTable = document.getElementById('tutorial-wiring-table');
+      const wiringTable = document.getElementById("tutorial-wiring-table");
 
       if (wiringTable) {
-
         wiringTable.innerHTML = `
 
           <tr>
@@ -6471,9 +6150,8 @@ function initProjects(toastManager, cartManager) {
 
         `;
 
-        proj.wiring.forEach(w => {
-
-          const tr = document.createElement('tr');
+        proj.wiring.forEach((w) => {
+          const tr = document.createElement("tr");
 
           tr.innerHTML = `
 
@@ -6484,68 +6162,48 @@ function initProjects(toastManager, cartManager) {
           `;
 
           wiringTable.appendChild(tr);
-
         });
-
       }
-
-      
 
       // Đoạn mã nạp
 
-      const codeBlock = document.getElementById('tutorial-code-block');
+      const codeBlock = document.getElementById("tutorial-code-block");
 
       if (codeBlock) {
-
         codeBlock.textContent = proj.code.trim();
-
       }
-
-      
 
       // Tải xuống zip giả lập
 
-      const downloadBtn = document.getElementById('tutorial-download-code-btn');
+      const downloadBtn = document.getElementById("tutorial-download-code-btn");
 
       if (downloadBtn) {
-
         const newDownloadBtn = downloadBtn.cloneNode(true);
 
         downloadBtn.parentNode.replaceChild(newDownloadBtn, downloadBtn);
 
-        newDownloadBtn.addEventListener('click', () => {
-
+        newDownloadBtn.addEventListener("click", () => {
           newDownloadBtn.innerHTML = `<span class="spinner"></span> Đang nén file...`;
 
           newDownloadBtn.disabled = true;
 
-          
-
           setTimeout(() => {
-
-            toastManager.show(`Tải xuống tài liệu đồ án "${proj.title}" hoàn tất!`, 'success');
+            toastManager.show(
+              `Tải xuống tài liệu đồ án "${proj.title}" hoàn tất!`,
+              "success",
+            );
 
             newDownloadBtn.innerHTML = `<i class="fa-solid fa-download"></i> Tải Toàn Bộ Code & Sơ Đồ Mạch (.zip)`;
 
             newDownloadBtn.disabled = false;
-
           }, 1200);
-
         });
-
       }
 
-      
-
-      modal.classList.add('open');
-
+      modal.classList.add("open");
     });
-
   });
-
 }
-
-
 
 // ==========================================
 
@@ -6554,62 +6212,50 @@ function initProjects(toastManager, cartManager) {
 // ==========================================
 
 function initForms(toastManager) {
-
-  const newsForm = document.getElementById('newsletter-form');
+  const newsForm = document.getElementById("newsletter-form");
 
   if (newsForm) {
-
-    newsForm.addEventListener('submit', (e) => {
-
+    newsForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      const input = newsForm.querySelector('input');
+      const input = newsForm.querySelector("input");
 
-      toastManager.show(`Đã đăng ký Email nhận tin tức linh kiện thành công cho: ${input.value}!`, 'success');
+      toastManager.show(
+        `Đã đăng ký Email nhận tin tức linh kiện thành công cho: ${input.value}!`,
+        "success",
+      );
 
-      input.value = '';
-
+      input.value = "";
     });
-
   }
 
+  const contactForm = document.getElementById("contact-form");
 
-
-  const contactForm = document.getElementById('contact-form');
-
-  const contactBtn = document.getElementById('contact-submit-btn');
+  const contactBtn = document.getElementById("contact-submit-btn");
 
   if (contactForm && contactBtn) {
-
-    contactForm.addEventListener('submit', (e) => {
-
+    contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
 
       contactBtn.innerHTML = `<span class="spinner"></span> Đang gửi...`;
 
       contactBtn.disabled = true;
 
-
-
       setTimeout(() => {
-
-        toastManager.show("Lời nhắn đã gửi! Kỹ thuật viên của TechStore VN sẽ phản hồi email cho bạn sớm nhất.", "success");
+        toastManager.show(
+          "Lời nhắn đã gửi! Kỹ thuật viên của TechStore VN sẽ phản hồi email cho bạn sớm nhất.",
+          "success",
+        );
 
         contactForm.reset();
 
         contactBtn.innerHTML = `Gửi Lời Nhắn <i class="fa-solid fa-paper-plane"></i>`;
 
         contactBtn.disabled = false;
-
       }, 1500);
-
     });
-
   }
-
 }
-
-
 
 // ==========================================
 
@@ -6618,38 +6264,22 @@ function initForms(toastManager) {
 // ==========================================
 
 function initScrollTop() {
-
-  const btn = document.getElementById('scroll-top-btn');
+  const btn = document.getElementById("scroll-top-btn");
 
   if (!btn) return;
 
-
-
-  window.addEventListener('scroll', () => {
-
+  window.addEventListener("scroll", () => {
     if (window.scrollY > 400) {
-
-      btn.classList.add('visible');
-
+      btn.classList.add("visible");
     } else {
-
-      btn.classList.remove('visible');
-
+      btn.classList.remove("visible");
     }
-
   });
 
-
-
-  btn.addEventListener('click', () => {
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
-
 }
-
-
 
 // ==========================================
 
@@ -6657,81 +6287,63 @@ function initScrollTop() {
 
 // ==========================================
 
-const revealElements = document.querySelectorAll('.reveal');
+const revealElements = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.1 },
+);
 
-  entries.forEach(entry => {
-
-    if (entry.isIntersecting) {
-
-      entry.target.classList.add('visible');
-
-    }
-
-  });
-
-}, { threshold: 0.1 });
-
-
-
-revealElements.forEach(el => observer.observe(el));
+revealElements.forEach((el) => observer.observe(el));
 
 // Global Escape keydown listener to close all overlays/modals
 
-window.addEventListener('keydown', (e) => {
-
-  if (e.key === 'Escape') {
-
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
     // Close Product Modal
 
-    const productModal = document.getElementById('product-modal');
+    const productModal = document.getElementById("product-modal");
 
-    if (productModal && productModal.classList.contains('open')) {
-
-      productModal.classList.remove('open');
-
+    if (productModal && productModal.classList.contains("open")) {
+      productModal.classList.remove("open");
     }
 
     // Close Tutorial Modal
 
-    const tutorialModal = document.getElementById('tutorial-modal');
+    const tutorialModal = document.getElementById("tutorial-modal");
 
-    if (tutorialModal && tutorialModal.classList.contains('open')) {
-
-      tutorialModal.classList.remove('open');
-
+    if (tutorialModal && tutorialModal.classList.contains("open")) {
+      tutorialModal.classList.remove("open");
     }
 
     // Close Wishlist Drawer
 
-    const wishlistSidebar = document.getElementById('wishlist-sidebar');
+    const wishlistSidebar = document.getElementById("wishlist-sidebar");
 
-    const wishlistOverlay = document.getElementById('wishlist-sidebar-overlay');
+    const wishlistOverlay = document.getElementById("wishlist-sidebar-overlay");
 
-    if (wishlistSidebar && wishlistSidebar.classList.contains('open')) {
+    if (wishlistSidebar && wishlistSidebar.classList.contains("open")) {
+      wishlistSidebar.classList.remove("open");
 
-      wishlistSidebar.classList.remove('open');
-
-      wishlistOverlay.classList.remove('open');
-
+      wishlistOverlay.classList.remove("open");
     }
 
     // Close Cart Drawer
 
-    const cartSidebar = document.getElementById('cart-sidebar');
+    const cartSidebar = document.getElementById("cart-sidebar");
 
-    const cartOverlay = document.getElementById('cart-sidebar-overlay');
+    const cartOverlay = document.getElementById("cart-sidebar-overlay");
 
-    if (cartSidebar && cartSidebar.classList.contains('open')) {
+    if (cartSidebar && cartSidebar.classList.contains("open")) {
+      cartSidebar.classList.remove("open");
 
-      cartSidebar.classList.remove('open');
-
-      cartOverlay.classList.remove('open');
-
+      cartOverlay.classList.remove("open");
     }
-
   }
-
 });
-
