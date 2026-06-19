@@ -1,214 +1,169 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi" data-theme="dark">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="VoltGear - Kênh cung cấp linh kiện điện tử, phần cứng máy tính, thiết bị IoT, module robotics và dụng cụ kỹ thuật hàng đầu Việt Nam dành cho sinh viên và kỹ sư phát triển."
-    />
-    <title>VoltGear - Cửa Hàng Linh Kiện Điện Tử & Thiết Bị Phần Cứng</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="VoltGear - Kênh cung cấp linh kiện điện tử, phần cứng máy tính, thiết bị IoT, module robotics và dụng cụ kỹ thuật hàng đầu Việt Nam dành cho sinh viên và kỹ sư phát triển." />
+  <title>VoltGear - Cửa Hàng Linh Kiện Điện Tử & Thiết Bị Phần Cứng</title>
 
-    <!-- CSS Stylesheet -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="navbar" id="navbar">
-      <div class="container navbar-inner">
-        <!-- Logo -->
-        <a href="#" data-view="home" class="navbar-logo">
-          <div class="logo-icon">
-            <i class="fa-solid fa-microchip"></i>
-          </div>
-          <div class="logo-text">
-            <span class="logo-main">VoltGear</span>
-            <span class="logo-sub">IoT & Hardware Hub</span>
-          </div>
-        </a>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-        <!-- Menu Điều Hướng -->
-        <nav class="navbar-nav">
-          <div class="nav-item">
-            <a href="#" class="nav-link">Trang Chủ</a>
-          </div>
-          <div class="nav-item">
-            <a href="#categories" class="nav-link"
-              >Danh Mục
-              <i class="fa-solid fa-chevron-down" style="font-size: 10px"></i
-            ></a>
-            <!-- Mega Dropdown -->
-            <div class="mega-dropdown">
-              <div class="mega-dropdown-grid">
-                <div class="mega-cat-item" data-category="microcontrollers">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <!-- Logo -->
+      <a href="#" data-view="home" class="navbar-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">VoltGear</span>
+          <span class="logo-sub">IoT & Hardware Hub</span>
+        </div>
+      </a>
+
+      <!-- Menu Điều Hướng -->
+      <nav class="navbar-nav">
+        <div class="nav-item">
+          <a href="#" class="nav-link">Trang Chủ</a>
+        </div>
+        <div class="nav-item">
+          <a href="#categories" class="nav-link">Danh Mục
+            <i class="fa-solid fa-chevron-down" style="font-size: 10px"></i></a>
+          <!-- Mega Dropdown -->
+          <div class="mega-dropdown">
+            <div class="mega-dropdown-grid">
+              <div class="mega-cat-item" data-category="microcontrollers">
+                <div class="mega-cat-icon" style="
                       background: rgba(0, 212, 255, 0.1);
                       color: var(--accent-blue);
-                    "
-                  >
-                    <i class="fa-solid fa-microchip"></i>
-                  </div>
-                  <span>Vi Điều Khiển & Dev Board</span>
+                    ">
+                  <i class="fa-solid fa-microchip"></i>
                 </div>
-                <div class="mega-cat-item" data-category="sensors">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Vi Điều Khiển & Dev Board</span>
+              </div>
+              <div class="mega-cat-item" data-category="sensors">
+                <div class="mega-cat-icon" style="
                       background: rgba(124, 58, 237, 0.1);
                       color: var(--accent-purple);
-                    "
-                  >
-                    <i class="fa-solid fa-wave-square"></i>
-                  </div>
-                  <span>Cảm Biến & Thiết Bị Đo</span>
+                    ">
+                  <i class="fa-solid fa-wave-square"></i>
                 </div>
-                <div class="mega-cat-item" data-category="displays">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Cảm Biến & Thiết Bị Đo</span>
+              </div>
+              <div class="mega-cat-item" data-category="displays">
+                <div class="mega-cat-icon" style="
                       background: rgba(247, 37, 133, 0.1);
                       color: var(--accent-pink);
-                    "
-                  >
-                    <i class="fa-solid fa-tv"></i>
-                  </div>
-                  <span>Màn Hình Hiển Thị</span>
+                    ">
+                  <i class="fa-solid fa-tv"></i>
                 </div>
-                <div class="mega-cat-item" data-category="power">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Màn Hình Hiển Thị</span>
+              </div>
+              <div class="mega-cat-item" data-category="power">
+                <div class="mega-cat-icon" style="
                       background: rgba(0, 255, 136, 0.1);
                       color: var(--accent-green);
-                    "
-                  >
-                    <i class="fa-solid fa-battery-three-quarters"></i>
-                  </div>
-                  <span>Bộ Nguồn & Pin Sạc</span>
+                    ">
+                  <i class="fa-solid fa-battery-three-quarters"></i>
                 </div>
-                <div class="mega-cat-item" data-category="robotics">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Bộ Nguồn & Pin Sạc</span>
+              </div>
+              <div class="mega-cat-item" data-category="robotics">
+                <div class="mega-cat-icon" style="
                       background: rgba(255, 107, 53, 0.1);
                       color: var(--accent-orange);
-                    "
-                  >
-                    <i class="fa-solid fa-robot"></i>
-                  </div>
-                  <span>Robotics & Động Cơ</span>
+                    ">
+                  <i class="fa-solid fa-robot"></i>
                 </div>
-                <div class="mega-cat-item" data-category="computer">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Robotics & Động Cơ</span>
+              </div>
+              <div class="mega-cat-item" data-category="computer">
+                <div class="mega-cat-icon" style="
                       background: rgba(255, 214, 10, 0.1);
                       color: var(--accent-yellow);
-                    "
-                  >
-                    <i class="fa-solid fa-memory"></i>
-                  </div>
-                  <span>Linh Kiện Máy Tính</span>
+                    ">
+                  <i class="fa-solid fa-memory"></i>
                 </div>
-                <div class="mega-cat-item" data-category="components">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Linh Kiện Máy Tính</span>
+              </div>
+              <div class="mega-cat-item" data-category="components">
+                <div class="mega-cat-icon" style="
                       background: rgba(0, 212, 255, 0.1);
                       color: var(--accent-blue);
-                    "
-                  >
-                    <i class="fa-solid fa-gears"></i>
-                  </div>
-                  <span>Linh Kiện Cơ Bản</span>
+                    ">
+                  <i class="fa-solid fa-gears"></i>
                 </div>
-                <div class="mega-cat-item" data-category="tools">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Linh Kiện Cơ Bản</span>
+              </div>
+              <div class="mega-cat-item" data-category="tools">
+                <div class="mega-cat-icon" style="
                       background: rgba(124, 58, 237, 0.1);
                       color: var(--accent-purple);
-                    "
-                  >
-                    <i class="fa-solid fa-screwdriver-wrench"></i>
-                  </div>
-                  <span>Thiết Bị & Dụng Cụ</span>
+                    ">
+                  <i class="fa-solid fa-screwdriver-wrench"></i>
                 </div>
-                <div class="mega-cat-item" data-category="iot">
-                  <div
-                    class="mega-cat-icon"
-                    style="
+                <span>Thiết Bị & Dụng Cụ</span>
+              </div>
+              <div class="mega-cat-item" data-category="iot">
+                <div class="mega-cat-icon" style="
                       background: rgba(247, 37, 133, 0.1);
                       color: var(--accent-pink);
-                    "
-                  >
-                    <i class="fa-solid fa-wifi"></i>
-                  </div>
-                  <span>DIY & IoT Wireless</span>
+                    ">
+                  <i class="fa-solid fa-wifi"></i>
                 </div>
+                <span>DIY & IoT Wireless</span>
               </div>
             </div>
           </div>
-          <div class="nav-item">
-            <a href="#products" class="nav-link">Sản Phẩm</a>
-          </div>
-          <div class="nav-item">
-            <a href="#projects" class="nav-link">Thư Viện Đồ Án</a>
-          </div>
-          <div class="nav-item">
-            <a href="#reviews" class="nav-link">Đánh Giá</a>
-          </div>
-          <div class="nav-item">
-            <a href="#contact" class="nav-link">Liên Hệ</a>
-          </div>
-        </nav>
+        </div>
+        <div class="nav-item">
+          <a href="#products" class="nav-link">Sản Phẩm</a>
+        </div>
+        <div class="nav-item">
+          <a href="#projects" class="nav-link">Thư Viện Đồ Án</a>
+        </div>
+        <div class="nav-item">
+          <a href="#reviews" class="nav-link">Đánh Giá</a>
+        </div>
+        <div class="nav-item">
+          <a href="#contact" class="nav-link">Liên Hệ</a>
+        </div>
+      </nav>
 
-        <!-- Thanh Tìm Kiếm Trực Tiếp -->
-        <div class="navbar-search">
-          <i class="fa-solid fa-magnifying-glass search-icon-nav"></i>
-          <input
-            type="text"
-            placeholder="Tìm nhanh linh kiện, mạch nạp..."
-            class="search-input-nav"
-            id="search-input-nav-trigger"
-            autocomplete="off"
-          />
-          <!-- Dropdown tìm kiếm inline -->
-          <div class="search-dropdown" id="search-overlay">
-            <div
-              class="search-keywords-quick"
-              style="
+      <!-- Thanh Tìm Kiếm Trực Tiếp -->
+      <div class="navbar-search">
+        <i class="fa-solid fa-magnifying-glass search-icon-nav"></i>
+        <input type="text" placeholder="Tìm nhanh linh kiện, mạch nạp..." class="search-input-nav"
+          id="search-input-nav-trigger" autocomplete="off" />
+        <!-- Dropdown tìm kiếm inline -->
+        <div class="search-dropdown" id="search-overlay">
+          <div class="search-keywords-quick" style="
                 display: flex;
                 flex-wrap: wrap;
                 gap: 8px;
                 padding: 16px;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-              "
-            >
-              <span
-                style="
+              ">
+            <span style="
                   font-size: 12px;
                   color: var(--text-muted);
                   align-self: center;
-                "
-                >Gợi ý:</span
-              >
-              <button
-                onclick="
+                ">Gợi ý:</span>
+            <button onclick="
                   document.getElementById('search-input-nav-trigger').value =
                     'Arduino';
                   document
                     .getElementById('search-input-nav-trigger')
                     .dispatchEvent(new Event('input'));
-                "
-                style="
+                " style="
                   background: var(--bg-card);
                   border: 1px solid rgba(255, 255, 255, 0.1);
                   color: var(--text-muted);
@@ -216,19 +171,16 @@
                   border-radius: 20px;
                   font-size: 12px;
                   cursor: pointer;
-                "
-              >
-                Arduino
-              </button>
-              <button
-                onclick="
+                ">
+              Arduino
+            </button>
+            <button onclick="
                   document.getElementById('search-input-nav-trigger').value =
                     'ESP32';
                   document
                     .getElementById('search-input-nav-trigger')
                     .dispatchEvent(new Event('input'));
-                "
-                style="
+                " style="
                   background: var(--bg-card);
                   border: 1px solid rgba(255, 255, 255, 0.1);
                   color: var(--text-muted);
@@ -236,19 +188,16 @@
                   border-radius: 20px;
                   font-size: 12px;
                   cursor: pointer;
-                "
-              >
-                ESP32
-              </button>
-              <button
-                onclick="
+                ">
+              ESP32
+            </button>
+            <button onclick="
                   document.getElementById('search-input-nav-trigger').value =
                     'cảm biến';
                   document
                     .getElementById('search-input-nav-trigger')
                     .dispatchEvent(new Event('input'));
-                "
-                style="
+                " style="
                   background: var(--bg-card);
                   border: 1px solid rgba(255, 255, 255, 0.1);
                   color: var(--text-muted);
@@ -256,19 +205,16 @@
                   border-radius: 20px;
                   font-size: 12px;
                   cursor: pointer;
-                "
-              >
-                Cảm biến
-              </button>
-              <button
-                onclick="
+                ">
+              Cảm biến
+            </button>
+            <button onclick="
                   document.getElementById('search-input-nav-trigger').value =
                     'servo';
                   document
                     .getElementById('search-input-nav-trigger')
                     .dispatchEvent(new Event('input'));
-                "
-                style="
+                " style="
                   background: var(--bg-card);
                   border: 1px solid rgba(255, 255, 255, 0.1);
                   color: var(--text-muted);
@@ -276,874 +222,575 @@
                   border-radius: 20px;
                   font-size: 12px;
                   cursor: pointer;
-                "
-              >
-                Servo
-              </button>
-            </div>
-            <div class="search-results" id="search-results">
-              <!-- populated dynamically -->
-            </div>
+                ">
+              Servo
+            </button>
+          </div>
+          <div class="search-results" id="search-results">
+            <!-- populated dynamically -->
           </div>
         </div>
-
-        <!-- Action Icons -->
-        <div class="navbar-actions">
-          <!-- Nút Đội Theme Giao Diện -->
-          <button
-            class="theme-toggle"
-            id="theme-toggle"
-            aria-label="Đội giao diện"
-          >
-            <div class="theme-toggle-thumb" id="theme-toggle-thumb">
-              <i class="fa-solid fa-moon"></i>
-            </div>
-          </button>
-
-          <!-- Mục Yêu Thích -->
-          <button
-            class="action-btn"
-            id="wishlist-btn-nav"
-            aria-label="Danh sách yêu thích"
-          >
-            <i class="fa-regular fa-heart"></i>
-            <span class="badge" id="wishlist-count">0</span>
-          </button>
-
-          <!-- Giỏ Hàng -->
-          <button class="action-btn" id="cart-btn-nav" aria-label="Giỏ hàng">
-            <i class="fa-solid fa-cart-shopping"></i>
-            <span class="badge" id="cart-count">0</span>
-          </button>
-
-          <!-- Menu Hamburger Trên Mobile -->
-          <button
-            class="hamburger"
-            id="hamburger-menu"
-            aria-label="Mở menu điện thoại"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-        </div>
       </div>
-    </header>
 
-    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
-    <div class="mobile-menu" id="mobile-menu">
-      <a href="#" class="mobile-nav-link"
-        ><i class="fa-solid fa-house"></i> Trang Chủ</a
-      >
-      <div class="mobile-divider"></div>
-      <div
-        style="
+      <!-- Action Icons -->
+      <div class="navbar-actions">
+        <!-- Nút Đội Theme Giao Diện -->
+        <button class="theme-toggle" id="theme-toggle" aria-label="Đội giao diện">
+          <div class="theme-toggle-thumb" id="theme-toggle-thumb">
+            <i class="fa-solid fa-moon"></i>
+          </div>
+        </button>
+
+        <!-- Mục Yêu Thích -->
+        <button class="action-btn" id="wishlist-btn-nav" aria-label="Danh sách yêu thích">
+          <i class="fa-regular fa-heart"></i>
+          <span class="badge" id="wishlist-count">0</span>
+        </button>
+
+        <!-- Giỏ Hàng -->
+        <button class="action-btn" id="cart-btn-nav" aria-label="Giỏ hàng">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge" id="cart-count">0</span>
+        </button>
+
+        <!-- Menu Hamburger Trên Mobile -->
+        <button class="hamburger" id="hamburger-menu" aria-label="Mở menu điện thoại">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#" class="mobile-nav-link"><i class="fa-solid fa-house"></i> Trang Chủ</a>
+    <div class="mobile-divider"></div>
+    <div style="
           padding: 10px 16px;
           font-size: 11px;
           font-weight: 700;
           color: var(--text-muted);
           text-transform: uppercase;
-        "
-      >
-        Danh Mục Linh Kiện
-      </div>
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="microcontrollers"
-        ><i class="fa-solid fa-microchip"></i> Vi Điều Khiển</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="sensors"
-        ><i class="fa-solid fa-wave-square"></i> Cảm Biến</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="displays"
-        ><i class="fa-solid fa-tv"></i> Màn Hình Hiển Thị</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="power"
-        ><i class="fa-solid fa-battery-three-quarters"></i> Nguồn & Pin</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="robotics"
-        ><i class="fa-solid fa-robot"></i> Động Cơ & Robotics</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="computer"
-        ><i class="fa-solid fa-memory"></i> Phần Cứng PC</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="components"
-        ><i class="fa-solid fa-gears"></i> Linh Kiện Cơ Bản</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="tools"
-        ><i class="fa-solid fa-screwdriver-wrench"></i> Dụng Cụ Kỹ Thuật</a
-      >
-      <a
-        href="#products"
-        class="mobile-nav-link mega-cat-item-mobile"
-        data-category="iot"
-        ><i class="fa-solid fa-wifi"></i> IoT & Kết Nối Không Dây</a
-      >
-      <div class="mobile-divider"></div>
-      <a href="#products" class="mobile-nav-link"
-        ><i class="fa-solid fa-box-open"></i> Tất Cả Linh Kiện</a
-      >
-      <a href="#projects" class="mobile-nav-link"
-        ><i class="fa-solid fa-graduation-cap"></i> Thư Viện Đồ Án</a
-      >
-      <a href="#reviews" class="mobile-nav-link"
-        ><i class="fa-solid fa-star"></i> Đánh Giá</a
-      >
-      <a href="#contact" class="mobile-nav-link"
-        ><i class="fa-solid fa-envelope"></i> Liên Hệ Hỗ Trợ</a
-      >
+        ">
+      Danh Mục Linh Kiện
     </div>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="microcontrollers"><i
+        class="fa-solid fa-microchip"></i> Vi Điều Khiển</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="sensors"><i
+        class="fa-solid fa-wave-square"></i> Cảm Biến</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="displays"><i
+        class="fa-solid fa-tv"></i> Màn Hình Hiển Thị</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="power"><i
+        class="fa-solid fa-battery-three-quarters"></i> Nguồn & Pin</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="robotics"><i
+        class="fa-solid fa-robot"></i> Động Cơ & Robotics</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="computer"><i
+        class="fa-solid fa-memory"></i> Phần Cứng PC</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="components"><i
+        class="fa-solid fa-gears"></i> Linh Kiện Cơ Bản</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="tools"><i
+        class="fa-solid fa-screwdriver-wrench"></i> Dụng Cụ Kỹ Thuật</a>
+    <a href="#products" class="mobile-nav-link mega-cat-item-mobile" data-category="iot"><i
+        class="fa-solid fa-wifi"></i> IoT & Kết Nối Không Dây</a>
+    <div class="mobile-divider"></div>
+    <a href="#products" class="mobile-nav-link"><i class="fa-solid fa-box-open"></i> Tất Cả Linh Kiện</a>
+    <a href="#projects" class="mobile-nav-link"><i class="fa-solid fa-graduation-cap"></i> Thư Viện Đồ Án</a>
+    <a href="#reviews" class="mobile-nav-link"><i class="fa-solid fa-star"></i> Đánh Giá</a>
+    <a href="#contact" class="mobile-nav-link"><i class="fa-solid fa-envelope"></i> Liên Hệ Hỗ Trợ</a>
+  </div>
 
-    <!-- ==========================================
+  <!-- ==========================================
        HERO SLIDER SECTION (BANER DYNAMIC)
        ========================================== -->
 
-    <section class="hero">
-      <div class="hero-bg-grid"></div>
-      <div class="hero-bg-glow">
-        <div class="hero-glow-1"></div>
-        <div class="hero-glow-2"></div>
-      </div>
-      <div class="hero-particles" id="hero-particles"></div>
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-bg-glow">
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+    </div>
+    <div class="hero-particles" id="hero-particles"></div>
 
-      <div class="container">
-        <div class="hero-slider" id="hero-slider">
-          <!-- Slide 1: IoT -->
-          <div class="hero-slide active">
-            <div class="hero-content">
-              <div class="hero-text">
-                <div class="hero-badge">
-                  Trung Tâm IoT & Hệ Thống Thông Minh
-                </div>
-                <h1 class="hero-title">
-                  Cảm Biến & <br /><span class="highlight"
-                    >Vi Điều Khiển Cao Cấp</span
-                  >
-                </h1>
-                <p class="hero-subtitle">
-                  Cung cấp bo mạch Arduino, ESP32, STM32 và Raspberry Pi chính
-                  hãng. Được kiểm định thông số kỹ thuật chuẩn xác, hỗ trợ tối
-                  ưu cho các đồ án tốt nghiệp.
-                </p>
-                <div class="hero-actions">
-                  <a href="#products" class="hero-btn-primary"
-                    ><i class="fa-solid fa-rocket"></i> Xem Kho Linh Kiện</a
-                  >
-                  <a href="#projects" class="hero-btn-secondary"
-                    ><i class="fa-solid fa-graduation-cap"></i> Bộ Linh Kiện Đồ
-                    Án</a
-                  >
-                </div>
+    <div class="container">
+      <div class="hero-slider" id="hero-slider">
+        <!-- Slide 1: IoT -->
+        <div class="hero-slide active">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="hero-badge">
+                Trung Tâm IoT & Hệ Thống Thông Minh
               </div>
-              <div class="hero-visual">
-                <div class="hero-circuit-board">
-                  <svg
-                    viewBox="0 0 500 500"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="50"
-                      y="50"
-                      width="400"
-                      height="400"
-                      rx="30"
-                      fill="#12121a"
-                      stroke="url(#circuit-grad-1)"
-                      stroke-width="6"
-                    />
-                    <path
-                      d="M100 100 H250 V200 H150 V300 H350"
-                      stroke="#00d4ff"
-                      stroke-width="2"
-                      stroke-dasharray="4 4"
-                    />
-                    <path
-                      d="M400 400 H250 V300 H350 V200 H150"
-                      stroke="#7c3aed"
-                      stroke-width="2"
-                    />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="8"
-                      fill="#00d4ff"
-                      filter="drop-shadow(0 0 8px #00d4ff)"
-                    />
-                    <circle
-                      cx="350"
-                      cy="300"
-                      r="8"
-                      fill="#00d4ff"
-                      filter="drop-shadow(0 0 8px #00d4ff)"
-                    />
-                    <rect
-                      x="180"
-                      y="180"
-                      width="140"
-                      height="140"
-                      rx="16"
-                      fill="#1a1a2e"
-                      stroke="#00d4ff"
-                      stroke-width="4"
-                      filter="drop-shadow(0 0 15px rgba(0,212,255,0.4))"
-                    />
-                    <rect
-                      x="220"
-                      y="220"
-                      width="60"
-                      height="60"
-                      rx="6"
-                      fill="#00d4ff"
-                      opacity="0.8"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="circuit-grad-1"
-                        x1="0"
-                        y1="0"
-                        x2="500"
-                        y2="500"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#00d4ff" />
-                        <stop offset="0.5" stop-color="#7c3aed" />
-                        <stop offset="1" stop-color="#f72585" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
+              <h1 class="hero-title">
+                Cảm Biến & <br /><span class="highlight">Vi Điều Khiển Cao Cấp</span>
+              </h1>
+              <p class="hero-subtitle">
+                Cung cấp bo mạch Arduino, ESP32, STM32 và Raspberry Pi chính
+                hãng. Được kiểm định thông số kỹ thuật chuẩn xác, hỗ trợ tối
+                ưu cho các đồ án tốt nghiệp.
+              </p>
+              <div class="hero-actions">
+                <a href="#products" class="hero-btn-primary"><i class="fa-solid fa-rocket"></i> Xem Kho Linh Kiện</a>
+                <a href="#projects" class="hero-btn-secondary"><i class="fa-solid fa-graduation-cap"></i> Bộ Linh Kiện
+                  Đồ
+                  Án</a>
               </div>
             </div>
-          </div>
-
-          <!-- Slide 2: Robotics -->
-          <div class="hero-slide">
-            <div class="hero-content">
-              <div class="hero-text">
-                <div class="hero-badge">Robotics & Cơ Điện Tử</div>
-                <h1 class="hero-title">
-                  Động Cơ & <br /><span class="highlight"
-                    >Mạch Điều Khiển Động Cơ</span
-                  >
-                </h1>
-                <p class="hero-subtitle">
-                  Đầy đủ các loại động cơ bước NEMA, servo micro đến chịu tải và
-                  mạch cầu H điều khiển. Giải pháp hoàn hảo giúp các khớp nối
-                  robot chuyển động mượt mà.
-                </p>
-                <div class="hero-actions">
-                  <a href="#products" class="hero-btn-primary"
-                    ><i class="fa-solid fa-gears"></i> Xem Động Cơ</a
-                  >
-                  <a href="#categories" class="hero-btn-secondary"
-                    ><i class="fa-solid fa-list"></i> Danh Mục Linh Kiện</a
-                  >
-                </div>
-              </div>
-              <div class="hero-visual">
-                <div class="hero-circuit-board">
-                  <svg
-                    viewBox="0 0 500 500"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="50"
-                      y="50"
-                      width="400"
-                      height="400"
-                      rx="30"
-                      fill="#12121a"
-                      stroke="url(#circuit-grad-2)"
-                      stroke-width="6"
-                    />
-                    <circle
-                      cx="250"
-                      cy="250"
-                      r="100"
-                      stroke="#7c3aed"
-                      stroke-width="8"
-                      stroke-dasharray="15 8"
-                    />
-                    <circle
-                      cx="250"
-                      cy="250"
-                      r="60"
-                      fill="#1a1a2e"
-                      stroke="#00ff88"
-                      stroke-width="4"
-                    />
-                    <circle cx="250" cy="250" r="20" fill="#00ff88" />
-                    <defs>
-                      <linearGradient
-                        id="circuit-grad-2"
-                        x1="0"
-                        y1="0"
-                        x2="500"
-                        y2="500"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#7c3aed" />
-                        <stop offset="0.5" stop-color="#00ff88" />
-                        <stop offset="1" stop-color="#ffd60a" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
+            <div class="hero-visual">
+              <div class="hero-circuit-board">
+                <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="50" y="50" width="400" height="400" rx="30" fill="#12121a" stroke="url(#circuit-grad-1)"
+                    stroke-width="6" />
+                  <path d="M100 100 H250 V200 H150 V300 H350" stroke="#00d4ff" stroke-width="2"
+                    stroke-dasharray="4 4" />
+                  <path d="M400 400 H250 V300 H350 V200 H150" stroke="#7c3aed" stroke-width="2" />
+                  <circle cx="100" cy="100" r="8" fill="#00d4ff" filter="drop-shadow(0 0 8px #00d4ff)" />
+                  <circle cx="350" cy="300" r="8" fill="#00d4ff" filter="drop-shadow(0 0 8px #00d4ff)" />
+                  <rect x="180" y="180" width="140" height="140" rx="16" fill="#1a1a2e" stroke="#00d4ff"
+                    stroke-width="4" filter="drop-shadow(0 0 15px rgba(0,212,255,0.4))" />
+                  <rect x="220" y="220" width="60" height="60" rx="6" fill="#00d4ff" opacity="0.8" />
+                  <defs>
+                    <linearGradient id="circuit-grad-1" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#00d4ff" />
+                      <stop offset="0.5" stop-color="#7c3aed" />
+                      <stop offset="1" stop-color="#f72585" />
+                    </linearGradient>
+                  </defs>
+                </svg>
               </div>
             </div>
-          </div>
-
-          <!-- Slide 3: PC Parts -->
-          <div class="hero-slide">
-            <div class="hero-content">
-              <div class="hero-text">
-                <div class="hero-badge">Phần Cứng & Hiệu Năng Cao</div>
-                <h1 class="hero-title">
-                  Bộ Vi Xử Lý <br /><span class="highlight"
-                    >CPUs, GPUs & RAM Nâng Cấp</span
-                  >
-                </h1>
-                <p class="hero-subtitle">
-                  Tăng tốc xử lý tính toán cho các mô hình AI Deep Learning,
-                  biên dịch thuật toán máy học và chạy mô phỏng CAD/Mechatronics
-                  đa luồng.
-                </p>
-                <div class="hero-actions">
-                  <a href="#products" class="hero-btn-primary"
-                    ><i class="fa-solid fa-memory"></i> Linh Kiện PC</a
-                  >
-                  <a href="#contact" class="hero-btn-secondary"
-                    ><i class="fa-solid fa-headset"></i> Liên Hệ Đặt Hàng</a
-                  >
-                </div>
-              </div>
-              <div class="hero-visual">
-                <div class="hero-circuit-board">
-                  <svg
-                    viewBox="0 0 500 500"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="50"
-                      y="50"
-                      width="400"
-                      height="400"
-                      rx="30"
-                      fill="#12121a"
-                      stroke="url(#circuit-grad-3)"
-                      stroke-width="6"
-                    />
-                    <rect
-                      x="120"
-                      y="150"
-                      width="260"
-                      height="80"
-                      rx="10"
-                      fill="#1a1a2e"
-                      stroke="#ffd60a"
-                      stroke-width="4"
-                    />
-                    <rect
-                      x="140"
-                      y="165"
-                      width="20"
-                      height="50"
-                      fill="#7c3aed"
-                    />
-                    <rect
-                      x="180"
-                      y="165"
-                      width="20"
-                      height="50"
-                      fill="#7c3aed"
-                    />
-                    <rect
-                      x="220"
-                      y="165"
-                      width="20"
-                      height="50"
-                      fill="#7c3aed"
-                    />
-                    <rect
-                      x="260"
-                      y="165"
-                      width="20"
-                      height="50"
-                      fill="#7c3aed"
-                    />
-                    <rect
-                      x="300"
-                      y="165"
-                      width="20"
-                      height="50"
-                      fill="#7c3aed"
-                    />
-                    <rect
-                      x="340"
-                      y="165"
-                      width="20"
-                      height="50"
-                      fill="#7c3aed"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="circuit-grad-3"
-                        x1="0"
-                        y1="0"
-                        x2="500"
-                        y2="500"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#ffd60a" />
-                        <stop offset="0.5" stop-color="#ff6b35" />
-                        <stop offset="1" stop-color="#00d4ff" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Slider Controls Buttons -->
-          <button
-            class="slider-control prev"
-            id="slider-prev"
-            aria-label="Slide trước"
-          >
-            <i class="fa-solid fa-chevron-left"></i>
-          </button>
-          <button
-            class="slider-control next"
-            id="slider-next"
-            aria-label="Slide sau"
-          >
-            <i class="fa-solid fa-chevron-right"></i>
-          </button>
-
-          <!-- Slider Indicators Dots -->
-          <div class="slider-indicators" id="slider-indicators">
-            <span class="indicator active" data-slide="0"></span>
-            <span class="indicator" data-slide="1"></span>
-            <span class="indicator" data-slide="2"></span>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ==========================================
+        <!-- Slide 2: Robotics -->
+        <div class="hero-slide">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="hero-badge">Robotics & Cơ Điện Tử</div>
+              <h1 class="hero-title">
+                Động Cơ & <br /><span class="highlight">Mạch Điều Khiển Động Cơ</span>
+              </h1>
+              <p class="hero-subtitle">
+                Đầy đủ các loại động cơ bước NEMA, servo micro đến chịu tải và
+                mạch cầu H điều khiển. Giải pháp hoàn hảo giúp các khớp nối
+                robot chuyển động mượt mà.
+              </p>
+              <div class="hero-actions">
+                <a href="#products" class="hero-btn-primary"><i class="fa-solid fa-gears"></i> Xem Động Cơ</a>
+                <a href="#categories" class="hero-btn-secondary"><i class="fa-solid fa-list"></i> Danh Mục Linh Kiện</a>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="hero-circuit-board">
+                <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="50" y="50" width="400" height="400" rx="30" fill="#12121a" stroke="url(#circuit-grad-2)"
+                    stroke-width="6" />
+                  <circle cx="250" cy="250" r="100" stroke="#7c3aed" stroke-width="8" stroke-dasharray="15 8" />
+                  <circle cx="250" cy="250" r="60" fill="#1a1a2e" stroke="#00ff88" stroke-width="4" />
+                  <circle cx="250" cy="250" r="20" fill="#00ff88" />
+                  <defs>
+                    <linearGradient id="circuit-grad-2" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7c3aed" />
+                      <stop offset="0.5" stop-color="#00ff88" />
+                      <stop offset="1" stop-color="#ffd60a" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: PC Parts -->
+        <div class="hero-slide">
+          <div class="hero-content">
+            <div class="hero-text">
+              <div class="hero-badge">Phần Cứng & Hiệu Năng Cao</div>
+              <h1 class="hero-title">
+                Bộ Vi Xử Lý <br /><span class="highlight">CPUs, GPUs & RAM Nâng Cấp</span>
+              </h1>
+              <p class="hero-subtitle">
+                Tăng tốc xử lý tính toán cho các mô hình AI Deep Learning,
+                biên dịch thuật toán máy học và chạy mô phỏng CAD/Mechatronics
+                đa luồng.
+              </p>
+              <div class="hero-actions">
+                <a href="#products" class="hero-btn-primary"><i class="fa-solid fa-memory"></i> Linh Kiện PC</a>
+                <a href="#contact" class="hero-btn-secondary"><i class="fa-solid fa-headset"></i> Liên Hệ Đặt Hàng</a>
+              </div>
+            </div>
+            <div class="hero-visual">
+              <div class="hero-circuit-board">
+                <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="50" y="50" width="400" height="400" rx="30" fill="#12121a" stroke="url(#circuit-grad-3)"
+                    stroke-width="6" />
+                  <rect x="120" y="150" width="260" height="80" rx="10" fill="#1a1a2e" stroke="#ffd60a"
+                    stroke-width="4" />
+                  <rect x="140" y="165" width="20" height="50" fill="#7c3aed" />
+                  <rect x="180" y="165" width="20" height="50" fill="#7c3aed" />
+                  <rect x="220" y="165" width="20" height="50" fill="#7c3aed" />
+                  <rect x="260" y="165" width="20" height="50" fill="#7c3aed" />
+                  <rect x="300" y="165" width="20" height="50" fill="#7c3aed" />
+                  <rect x="340" y="165" width="20" height="50" fill="#7c3aed" />
+                  <defs>
+                    <linearGradient id="circuit-grad-3" x1="0" y1="0" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#ffd60a" />
+                      <stop offset="0.5" stop-color="#ff6b35" />
+                      <stop offset="1" stop-color="#00d4ff" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slider Controls Buttons -->
+        <button class="slider-control prev" id="slider-prev" aria-label="Slide trước">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="slider-control next" id="slider-next" aria-label="Slide sau">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Slider Indicators Dots -->
+        <div class="slider-indicators" id="slider-indicators">
+          <span class="indicator active" data-slide="0"></span>
+          <span class="indicator" data-slide="1"></span>
+          <span class="indicator" data-slide="2"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
        TICKER SECTION (SCROLLING LOGOS)
        ========================================== -->
-    <section class="ticker-section">
-      <div class="ticker-track">
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          ARDUINO CO.
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          RASPBERRY PI
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          ESPRESSIF ESP32
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          STM32 CORTEX
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          ADAFRUIT INDUSTRIES
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          SPARKFUN ELECTRONICS
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          TEXAS INSTRUMENTS
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          GEARVN HARDWARE
-        </div>
-        <!-- Duplicate -->
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          ARDUINO CO.
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          RASPBERRY PI
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          ESPRESSIF ESP32
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          STM32 CORTEX
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          ADAFRUIT INDUSTRIES
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          SPARKFUN ELECTRONICS
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          TEXAS INSTRUMENTS
-        </div>
-        <div class="ticker-item">
-          <div class="ticker-dot"></div>
-          GEARVN HARDWARE
-        </div>
+  <section class="ticker-section">
+    <div class="ticker-track">
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        ARDUINO CO.
       </div>
-    </section>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        RASPBERRY PI
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        ESPRESSIF ESP32
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        STM32 CORTEX
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        ADAFRUIT INDUSTRIES
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        SPARKFUN ELECTRONICS
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        TEXAS INSTRUMENTS
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        GEARVN HARDWARE
+      </div>
+      <!-- Duplicate -->
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        ARDUINO CO.
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        RASPBERRY PI
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        ESPRESSIF ESP32
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        STM32 CORTEX
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        ADAFRUIT INDUSTRIES
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        SPARKFUN ELECTRONICS
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        TEXAS INSTRUMENTS
+      </div>
+      <div class="ticker-item">
+        <div class="ticker-dot"></div>
+        GEARVN HARDWARE
+      </div>
+    </div>
+  </section>
 
-    <!-- ==========================================
+  <!-- ==========================================
        PRODUCT CATEGORIES SECTION
        ========================================== -->
-    <section class="categories-section" id="categories">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Khám Phá Cửa Hàng</span>
-          <h2 class="section-title">Hệ Sinh Thái Linh Kiện</h2>
-          <p class="section-subtitle">
-            Tìm kiếm các thiết bị phần cứng, bo mạch phát triển, cảm biến điều
-            khiển và dụng cụ thực hành thí nghiệm.
-          </p>
-        </div>
+  <section class="categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Khám Phá Cửa Hàng</span>
+        <h2 class="section-title">Hệ Sinh Thái Linh Kiện</h2>
+        <p class="section-subtitle">
+          Tìm kiếm các thiết bị phần cứng, bo mạch phát triển, cảm biến điều
+          khiển và dụng cụ thực hành thí nghiệm.
+        </p>
+      </div>
 
-        <div class="categories-grid">
-          <!-- 1. Microcontrollers -->
-          <div class="category-card" data-category="microcontrollers">
-            <div
-              class="category-icon-wrap"
-              style="
+      <div class="categories-grid">
+        <!-- 1. Microcontrollers -->
+        <div class="category-card" data-category="microcontrollers">
+          <div class="category-icon-wrap" style="
                 background: rgba(0, 212, 255, 0.1);
                 color: var(--accent-blue);
-              "
-            >
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-            <h3 class="category-name">Vi Điều Khiển</h3>
-            <p class="category-count">245 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-microchip"></i>
           </div>
+          <h3 class="category-name">Vi Điều Khiển</h3>
+          <p class="category-count">245 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 2. Sensors -->
-          <div class="category-card" data-category="sensors">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 2. Sensors -->
+        <div class="category-card" data-category="sensors">
+          <div class="category-icon-wrap" style="
                 background: rgba(124, 58, 237, 0.1);
                 color: var(--accent-purple);
-              "
-            >
-              <i class="fa-solid fa-wave-square"></i>
-            </div>
-            <h3 class="category-name">Cảm Biến & Thiết Bị Đo</h3>
-            <p class="category-count">380 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-wave-square"></i>
           </div>
+          <h3 class="category-name">Cảm Biến & Thiết Bị Đo</h3>
+          <p class="category-count">380 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 3. Displays -->
-          <div class="category-card" data-category="displays">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 3. Displays -->
+        <div class="category-card" data-category="displays">
+          <div class="category-icon-wrap" style="
                 background: rgba(247, 37, 133, 0.1);
                 color: var(--accent-pink);
-              "
-            >
-              <i class="fa-solid fa-tv"></i>
-            </div>
-            <h3 class="category-name">Màn Hình Hiển Thị</h3>
-            <p class="category-count">120 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-tv"></i>
           </div>
+          <h3 class="category-name">Màn Hình Hiển Thị</h3>
+          <p class="category-count">120 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 4. Power Components -->
-          <div class="category-card" data-category="power">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 4. Power Components -->
+        <div class="category-card" data-category="power">
+          <div class="category-icon-wrap" style="
                 background: rgba(0, 255, 136, 0.1);
                 color: var(--accent-green);
-              "
-            >
-              <i class="fa-solid fa-battery-three-quarters"></i>
-            </div>
-            <h3 class="category-name">Nguồn & Pin Sạc</h3>
-            <p class="category-count">195 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-battery-three-quarters"></i>
           </div>
+          <h3 class="category-name">Nguồn & Pin Sạc</h3>
+          <p class="category-count">195 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 5. Robotics & Motors -->
-          <div class="category-card" data-category="robotics">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 5. Robotics & Motors -->
+        <div class="category-card" data-category="robotics">
+          <div class="category-icon-wrap" style="
                 background: rgba(255, 107, 53, 0.1);
                 color: var(--accent-orange);
-              "
-            >
-              <i class="fa-solid fa-robot"></i>
-            </div>
-            <h3 class="category-name">Robotics & Động Cơ</h3>
-            <p class="category-count">210 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-robot"></i>
           </div>
+          <h3 class="category-name">Robotics & Động Cơ</h3>
+          <p class="category-count">210 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 6. Computer Hardware -->
-          <div class="category-card" data-category="computer">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 6. Computer Hardware -->
+        <div class="category-card" data-category="computer">
+          <div class="category-icon-wrap" style="
                 background: rgba(255, 214, 10, 0.1);
                 color: var(--accent-yellow);
-              "
-            >
-              <i class="fa-solid fa-memory"></i>
-            </div>
-            <h3 class="category-name">Phần Cứng Máy Tính</h3>
-            <p class="category-count">165 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-memory"></i>
           </div>
+          <h3 class="category-name">Phần Cứng Máy Tính</h3>
+          <p class="category-count">165 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 7. Basic Components -->
-          <div class="category-card" data-category="components">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 7. Basic Components -->
+        <div class="category-card" data-category="components">
+          <div class="category-icon-wrap" style="
                 background: rgba(0, 212, 255, 0.1);
                 color: var(--accent-blue);
-              "
-            >
-              <i class="fa-solid fa-gears"></i>
-            </div>
-            <h3 class="category-name">Linh Kiện Cơ Bản</h3>
-            <p class="category-count">520 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-gears"></i>
           </div>
+          <h3 class="category-name">Linh Kiện Cơ Bản</h3>
+          <p class="category-count">520 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 8. Tools & Equipment -->
-          <div class="category-card" data-category="tools">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 8. Tools & Equipment -->
+        <div class="category-card" data-category="tools">
+          <div class="category-icon-wrap" style="
                 background: rgba(124, 58, 237, 0.1);
                 color: var(--accent-purple);
-              "
-            >
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-            </div>
-            <h3 class="category-name">Dụng Cụ Kỹ Thuật</h3>
-            <p class="category-count">145 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
           </div>
+          <h3 class="category-name">Dụng Cụ Kỹ Thuật</h3>
+          <p class="category-count">145 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </div>
 
-          <!-- 9. IoT & Wireless -->
-          <div class="category-card" data-category="iot">
-            <div
-              class="category-icon-wrap"
-              style="
+        <!-- 9. IoT & Wireless -->
+        <div class="category-card" data-category="iot">
+          <div class="category-icon-wrap" style="
                 background: rgba(247, 37, 133, 0.1);
                 color: var(--accent-pink);
-              "
-            >
-              <i class="fa-solid fa-wifi"></i>
-            </div>
-            <h3 class="category-name">IoT & Kết Nối Không Dây</h3>
-            <p class="category-count">175 Sản Phẩm</p>
-            <span class="category-arrow"
-              ><i class="fa-solid fa-arrow-right"></i
-            ></span>
+              ">
+            <i class="fa-solid fa-wifi"></i>
           </div>
+          <h3 class="category-name">IoT & Kết Nối Không Dây</h3>
+          <p class="category-count">175 Sản Phẩm</p>
+          <span class="category-arrow"><i class="fa-solid fa-arrow-right"></i></span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ==========================================
+  <!-- ==========================================
        PROJECT SHOWCASE SECTION
        ========================================== -->
-    <section class="products-section" id="products">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Kho Linh Kiện</span>
-          <h2 class="section-title">Danh Sách Linh Kiện Cửa Hàng</h2>
-          <p class="section-subtitle">
-            Lọc tìm nhanh linh kiện theo nhóm danh mục, thương hiệu, trạng thái
-            hàng trong kho hoặc sắp xếp theo mức giá.
-          </p>
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Kho Linh Kiện</span>
+        <h2 class="section-title">Danh Sách Linh Kiện Cửa Hàng</h2>
+        <p class="section-subtitle">
+          Lọc tìm nhanh linh kiện theo nhóm danh mục, thương hiệu, trạng thái
+          hàng trong kho hoặc sắp xếp theo mức giá.
+        </p>
+      </div>
+
+      <!-- Sticky Filter Wrapper -->
+      <div class="sticky-filter-wrapper">
+        <div class="filter-breadcrumb" id="filter-breadcrumb">
+          <i class="fa-solid fa-house"></i> <span>Trang Chủ</span>
+          <i class="fa-solid fa-chevron-right" style="font-size: 10px; margin: 0 5px"></i>
+          <span id="breadcrumb-current" style="font-weight: 600; color: var(--accent-blue)">Tất Cả Sản Phẩm</span>
         </div>
 
-        <!-- Sticky Filter Wrapper -->
-        <div class="sticky-filter-wrapper">
-          <div class="filter-breadcrumb" id="filter-breadcrumb">
-            <i class="fa-solid fa-house"></i> <span>Trang Chủ</span>
-            <i
-              class="fa-solid fa-chevron-right"
-              style="font-size: 10px; margin: 0 5px"
-            ></i>
-            <span
-              id="breadcrumb-current"
-              style="font-weight: 600; color: var(--accent-blue)"
-              >Tất Cả Sản Phẩm</span
-            >
-          </div>
+        <!-- Filters & Sorting (BỘ LỌC) -->
+        <div class="filter-bar">
+          <span class="filter-label"><i class="fa-solid fa-filter"></i> Bộ lọc:</span>
 
-          <!-- Filters & Sorting (BỘ LỌC) -->
-          <div class="filter-bar">
-            <span class="filter-label"
-              ><i class="fa-solid fa-filter"></i> Bộ lọc:</span
-            >
+          <!-- Category Filter -->
+          <select class="filter-select" id="filter-category">
+            <option value="all">Tất cả Danh Mục</option>
+            <option value="microcontrollers">Vi Điều Khiển</option>
+            <option value="sensors">Cảm Biến</option>
+            <option value="displays">Màn Hình</option>
+            <option value="power">Nguồn & Pin</option>
+            <option value="robotics">Robotics</option>
+            <option value="computer">Phần Cứng Máy Tính</option>
+            <option value="components">Linh Kiện Cơ Bản</option>
+            <option value="tools">Dụng Cụ Thực Hành</option>
+            <option value="iot">Module IoT</option>
+          </select>
 
-            <!-- Category Filter -->
-            <select class="filter-select" id="filter-category">
-              <option value="all">Tất cả Danh Mục</option>
-              <option value="microcontrollers">Vi Điều Khiển</option>
-              <option value="sensors">Cảm Biến</option>
-              <option value="displays">Màn Hình</option>
-              <option value="power">Nguồn & Pin</option>
-              <option value="robotics">Robotics</option>
-              <option value="computer">Phần Cứng Máy Tính</option>
-              <option value="components">Linh Kiện Cơ Bản</option>
-              <option value="tools">Dụng Cụ Thực Hành</option>
-              <option value="iot">Module IoT</option>
-            </select>
+          <!-- Price Filter -->
+          <select class="filter-select" id="filter-price">
+            <option value="all">Mọi mức giá</option>
+            <option value="0-50000">Dưới 50,000đ</option>
+            <option value="50000-200000">50,000đ - 200,000đ</option>
+            <option value="200000-1000000">200,000đ - 1,000,000đ</option>
+            <option value="1000000-up">Trên 1,000,000đ</option>
+          </select>
 
-            <!-- Price Filter -->
-            <select class="filter-select" id="filter-price">
-              <option value="all">Mọi mức giá</option>
-              <option value="0-50000">Dưới 50,000đ</option>
-              <option value="50000-200000">50,000đ - 200,000đ</option>
-              <option value="200000-1000000">200,000đ - 1,000,000đ</option>
-              <option value="1000000-up">Trên 1,000,000đ</option>
-            </select>
+          <!-- Brand Filter -->
+          <select class="filter-select" id="filter-brand">
+            <option value="all">Tất cả hãng sản xuất</option>
+            <option value="Arduino">Arduino</option>
+            <option value="Raspberry Pi">Raspberry Pi</option>
+            <option value="Espressif">Espressif</option>
+            <option value="STMicroelectronics">STMicroelectronics</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Intel">Intel</option>
+            <option value="NVIDIA">NVIDIA</option>
+            <option value="Kingston">Kingston</option>
+            <option value="Yihua">Yihua</option>
+            <option value="Generic">Khác / Không nhãn</option>
+          </select>
 
-            <!-- Brand Filter -->
-            <select class="filter-select" id="filter-brand">
-              <option value="all">Tất cả hãng sản xuất</option>
-              <option value="Arduino">Arduino</option>
-              <option value="Raspberry Pi">Raspberry Pi</option>
-              <option value="Espressif">Espressif</option>
-              <option value="STMicroelectronics">STMicroelectronics</option>
-              <option value="Samsung">Samsung</option>
-              <option value="Intel">Intel</option>
-              <option value="NVIDIA">NVIDIA</option>
-              <option value="Kingston">Kingston</option>
-              <option value="Yihua">Yihua</option>
-              <option value="Generic">Khác / Không nhãn</option>
-            </select>
+          <!-- Availability Filter -->
+          <select class="filter-select" id="filter-availability">
+            <option value="all">Tình trạng kho</option>
+            <option value="in-stock">Chỉ sản phẩm còn hàng</option>
+            <option value="out-of-stock">Sản phẩm hết hàng</option>
+          </select>
 
-            <!-- Availability Filter -->
-            <select class="filter-select" id="filter-availability">
-              <option value="all">Tình trạng kho</option>
-              <option value="in-stock">Chỉ sản phẩm còn hàng</option>
-              <option value="out-of-stock">Sản phẩm hết hàng</option>
-            </select>
+          <!-- Rating Filter -->
+          <select class="filter-select" id="filter-rating">
+            <option value="all">Mọi đánh giá</option>
+            <option value="4.5">Từ 4.5+ Sao</option>
+            <option value="4.0">Từ 4.0+ Sao</option>
+          </select>
 
-            <!-- Rating Filter -->
-            <select class="filter-select" id="filter-rating">
-              <option value="all">Mọi đánh giá</option>
-              <option value="4.5">Từ 4.5+ Sao</option>
-              <option value="4.0">Từ 4.0+ Sao</option>
-            </select>
+          <!-- Sorting -->
+          <select class="filter-select" id="filter-sort">
+            <option value="default">Sắp xếp mặc định</option>
+            <option value="price-asc">Giá: Thấp đến Cao</option>
+            <option value="price-desc">Giá: Cao đến Thấp</option>
+            <option value="rating-desc">Đánh giá tốt nhất</option>
+          </select>
 
-            <!-- Sorting -->
-            <select class="filter-select" id="filter-sort">
-              <option value="default">Sắp xếp mặc định</option>
-              <option value="price-asc">Giá: Thấp đến Cao</option>
-              <option value="price-desc">Giá: Cao đến Thấp</option>
-              <option value="rating-desc">Đánh giá tốt nhất</option>
-            </select>
-
-            <button class="filter-btn" id="filter-reset-btn">
-              <i class="fa-solid fa-rotate-left"></i> Reset bộ lọc
-            </button>
-          </div>
-
-          <!-- Tabs -->
-          <div class="product-tabs">
-            <button class="tab-btn active" data-tab="all">
-              Tất Cả Sản Phẩm
-            </button>
-            <button class="tab-btn" data-tab="best-sellers">
-              Bán Chạy Nhất
-            </button>
-            <button class="tab-btn" data-tab="new-arrivals">Hàng Mới Về</button>
-            <button class="tab-btn" data-tab="trending">
-              Nổi Bật / Xu Hướng
-            </button>
-          </div>
-        </div>
-        <!-- End Sticky Filter Wrapper -->
-
-        <div class="products-grid" id="products-grid" data-limit="16">
-          <!-- Rendered dynamically by script.js -->
+          <button class="filter-btn" id="filter-reset-btn">
+            <i class="fa-solid fa-rotate-left"></i> Reset bộ lọc
+          </button>
         </div>
 
-        <!-- Load More Button -->
-        <div
-          class="load-more-container"
-          id="load-more-container"
-          style="
+        <!-- Tabs -->
+        <div class="product-tabs">
+          <button class="tab-btn active" data-tab="all">
+            Tất Cả Sản Phẩm
+          </button>
+          <button class="tab-btn" data-tab="best-sellers">
+            Bán Chạy Nhất
+          </button>
+          <button class="tab-btn" data-tab="new-arrivals">Hàng Mới Về</button>
+          <button class="tab-btn" data-tab="trending">
+            Nổi Bật / Xu Hướng
+          </button>
+        </div>
+      </div>
+      <!-- End Sticky Filter Wrapper -->
+
+      <div class="products-grid" id="products-grid" data-limit="16">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+
+      <!-- Load More Button -->
+      <div class="load-more-container" id="load-more-container" style="
             display: flex;
             justify-content: center;
             margin-top: 40px;
             margin-bottom: 20px;
-          "
-        >
-          <button
-            id="load-more-btn"
-            class="filter-btn"
-            style="
+          ">
+        <button id="load-more-btn" class="filter-btn" style="
               padding: 12px 36px;
               font-size: 14px;
               font-weight: 600;
@@ -1157,906 +804,732 @@
               color: var(--text-light);
               background: var(--bg-card);
               box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-            "
-          >
-            Xem thêm sản phẩm <i class="fa-solid fa-arrow-down"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects-section reveal" id="projects">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Hỗ Trợ Làm Đồ Án</span>
-          <h2 class="section-title">Thư Viện Đồ Án Mẫu</h2>
-          <p class="section-subtitle">
-            Bạn đang thực hiện các dự án nghiên cứu hoặc đồ án tốt nghiệp? Tham
-            khảo ngay sơ đồ mạch đấu nối và code mẫu miễn phí.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="images/smarthome.png" alt="Hệ Thống Nhà Thông Minh" />
-            </div>
-            <div class="project-body">
-              <span class="project-difficulty difficulty-intermediate"
-                >Trung Bình</span
-              >
-              <h3 class="project-title">Hệ Thống Nhà Thông Minh IoT</h3>
-              <p class="project-desc">
-                Bộ điều khiển nhà thông minh đo nồng độ khí ga rò rỉ, nhiệt độ
-                phòng và tự động gửi cảnh báo lên dashboard web.
-              </p>
-              <div class="project-components">
-                <span class="component-tag">ESP32</span>
-                <span class="component-tag">DHT22</span>
-                <span class="component-tag">Cảm Biến MQ-2</span>
-                <span class="component-tag">Màn Hình OLED</span>
-              </div>
-              <button class="project-btn tutorial-btn" data-project="smarthome">
-                <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
-              </button>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="images/robotcar.png" alt="Xe Robot Tự Hành" />
-            </div>
-            <div class="project-body">
-              <span class="project-difficulty difficulty-advanced"
-                >Nâng Cao</span
-              >
-              <h3 class="project-title">Xe Robot Tự Hành Tránh Vật Cản</h3>
-              <p class="project-desc">
-                Hệ thống xe robot tránh chướng ngại vật sử dụng cảm biến siêu âm
-                gắn trên động cơ servo xoay quét góc.
-              </p>
-              <div class="project-components">
-                <span class="component-tag">Arduino Uno</span>
-                <span class="component-tag">HC-SR04</span>
-                <span class="component-tag">Mạch Cầu L298N</span>
-                <span class="component-tag">Servo SG90</span>
-              </div>
-              <button class="project-btn tutorial-btn" data-project="robotcar">
-                <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
-              </button>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="images/weather.png" alt="Trạm Thời Tiết" />
-            </div>
-            <div class="project-body">
-              <span class="project-difficulty difficulty-beginner">Cơ Bản</span>
-              <h3 class="project-title">Trạm Giám Sát Thời Tiết WiFi Mini</h3>
-              <p class="project-desc">
-                Hệ thống khí tượng đo nhiệt độ, độ ẩm và áp suất khí quyển, đồng
-                bộ lưu trữ trực tuyến qua mạng WiFi.
-              </p>
-              <div class="project-components">
-                <span class="component-tag">ESP8266</span>
-                <span class="component-tag">DHT22</span>
-                <span class="component-tag">Cảm Biến BMP280</span>
-                <span class="component-tag">Bộ Nguồn 18650</span>
-              </div>
-              <button class="project-btn tutorial-btn" data-project="weather">
-                <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
-              </button>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="images/security.png" alt="Khóa Cửa RFID" />
-            </div>
-            <div class="project-body">
-              <span class="project-difficulty difficulty-intermediate"
-                >Trung Bình</span
-              >
-              <h3 class="project-title">
-                Khóa Cửa RFID & Mật Mã Không Tiếp Xúc
-              </h3>
-              <p class="project-desc">
-                Mô hình khóa thông minh mở cửa bằng cách quẹt thẻ RFID tần số
-                13.56MHz hoặc nhập mật khẩu trên bàn phím hiển thị LCD.
-              </p>
-              <div class="project-components">
-                <span class="component-tag">ESP8266</span>
-                <span class="component-tag">MFRC522 RFID</span>
-                <span class="component-tag">Servo SG90</span>
-                <span class="component-tag">LCD 16x2 I2C</span>
-              </div>
-              <button class="project-btn tutorial-btn" data-project="security">
-                <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
-              </button>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="images/plantmonitor.png" alt="Hệ Thống Tưới Cây" />
-            </div>
-            <div class="project-body">
-              <span class="project-difficulty difficulty-beginner">Cơ Bản</span>
-              <h3 class="project-title">
-                Hệ Thống Tưới Cây Tự Động Thông Minh
-              </h3>
-              <p class="project-desc">
-                Trạm kiểm tra giám sát độ ẩm đất, nhiệt độ độ ẩm môi trường xung
-                quanh và tự động kích hoạt máy bơm tưới nước qua rơ-le.
-              </p>
-              <div class="project-components">
-                <span class="component-tag">Arduino Uno</span>
-                <span class="component-tag">DHT22</span>
-                <span class="component-tag">Cảm Biến Ánh Sáng</span>
-                <span class="component-tag">Relay 5V 1 Kênh</span>
-              </div>
-              <button
-                class="project-btn tutorial-btn"
-                data-project="plantmonitor"
-              >
-                <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
-              </button>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="project-card">
-            <div class="project-image">
-              <img src="images/industrial.png" alt="Giám Sát Thiết Bị" />
-            </div>
-            <div class="project-body">
-              <span class="project-difficulty difficulty-advanced"
-                >Nâng Cao</span
-              >
-              <h3 class="project-title">
-                Bộ Điều Khiển Giám Sát Thiết Bị Công Nghiệp
-              </h3>
-              <p class="project-desc">
-                Hệ thống điều khiển giám sát đóng ngắt động cơ công suất lớn từ
-                xa sử dụng chip ARM Cortex-M3 và cảm biến báo động an toàn khí
-                MQ-2.
-              </p>
-              <div class="project-components">
-                <span class="component-tag">STM32F103</span>
-                <span class="component-tag">Relay 5V 1 Kênh</span>
-                <span class="component-tag">Cảm Biến MQ-2</span>
-                <span class="component-tag">Màn Hình OLED</span>
-              </div>
-              <button
-                class="project-btn tutorial-btn"
-                data-project="industrial"
-              >
-                <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-       STATS COUNTER SECTION
-       ========================================== -->
-    <section class="stats-section reveal">
-      <div class="container stats-grid">
-        <div class="stat-item">
-          <span class="stat-value" id="stat-products" data-target="10000"
-            >0</span
-          >
-          <span class="stat-label">Mã Linh Kiện Điện Tử</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value" id="stat-projects-done" data-target="1500"
-            >0</span
-          >
-          <span class="stat-label">Đồ Án Tốt Nghiệp Được Hỗ Trợ</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value" id="stat-reviews-done" data-target="50000"
-            >0</span
-          >
-          <span class="stat-label">Sinh Viên & Kỹ Sư Tin Dùng</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-value" id="stat-satisfaction" data-target="99"
-            >0</span
-          >
-          <span class="stat-label">Độ Hài Lòng Về Kỹ Thuật</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-       WHY CHOOSE US SECTION (ƯU ĐI M)
-       ========================================== -->
-    <section class="features-section reveal">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Cam Kết Chất Lượng</span>
-          <h2 class="section-title">Đồng Hành Cùng Sinh Viên Kỹ Thuật</h2>
-          <p class="section-subtitle">
-            Lý do vì sao TechStore VN trở thành điểm đến mua sắm tin cậy của các
-            bạn sinh viên khối ngành kỹ thuật công nghệ.
-          </p>
-        </div>
-
-        <div class="features-grid">
-          <div class="feature-card">
-            <div
-              class="feature-icon"
-              style="
-                background: rgba(0, 212, 255, 0.1);
-                color: var(--accent-blue);
-              "
-            >
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <h3 class="feature-title">Linh Kiện Đã Kiểm Định</h3>
-            <p class="feature-desc">
-              Các loại chip bán dẫn, IC và module cảm biến đều được chạy thử
-              nghiệm chất lượng để hạn chế tối đa hỏng hóc do cắm nhầm dây.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div
-              class="feature-icon"
-              style="
-                background: rgba(124, 58, 237, 0.1);
-                color: var(--accent-purple);
-              "
-            >
-              <i class="fa-solid fa-headset"></i>
-            </div>
-            <h3 class="feature-title">Tư Vấn Kỹ Thuật Trực Tiếp</h3>
-            <p class="feature-desc">
-              Giải đáp sơ đồ kết nối chân tín hiệu, hướng dẫn cài đặt thư viện
-              và gỡ lỗi code Arduino/C++ hoàn toàn miễn phí.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div
-              class="feature-icon"
-              style="
-                background: rgba(247, 37, 133, 0.1);
-                color: var(--accent-pink);
-              "
-            >
-              <i class="fa-solid fa-truck-fast"></i>
-            </div>
-            <h3 class="feature-title">Giao Hàng Hỏa Tốc</h3>
-            <p class="feature-desc">
-              Hỗ trợ giao hàng hỏa tốc trong ngày tại các thành phố lớn để kịp
-              hạn chót báo cáo đồ án, thử nghiệm sản phẩm.
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div
-              class="feature-icon"
-              style="
-                background: rgba(0, 255, 136, 0.1);
-                color: var(--accent-green);
-              "
-            >
-              <i class="fa-solid fa-code"></i>
-            </div>
-            <h3 class="feature-title">Thư Viện & Code Mẫu Free</h3>
-            <p class="feature-desc">
-              Kho tài nguyên mã nguồn mở khộng lồ cho Arduino, ESP32 RTOS SDK và
-              STM32 HAL, giúp tiết kiệm thời gian phát triển code.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-       BRANDS SHOWCASE SECTION
-       ========================================== -->
-    <section class="brands-section reveal">
-      <div class="container">
-        <div class="brands-grid">
-          <div class="brand-card">ARDUINO</div>
-          <div class="brand-card">RASPBERRY PI</div>
-          <div class="brand-card">ESPRESSIF</div>
-          <div class="brand-card">STMICRO</div>
-          <div class="brand-card">ADAFRUIT</div>
-          <div class="brand-card">SPARKFUN</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-       CUSTOMER REVIEWS SECTION
-       ========================================== -->
-    <section class="reviews-section reveal" id="reviews">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Phản Hồi Sinh Viên</span>
-          <h2 class="section-title">Nhận Xét Từ Cộng Đồng</h2>
-          <p class="section-subtitle">
-            Lắng nghe ý kiến thực tế từ các sinh viên, nghiên cứu sinh và kỹ sư
-            nhúng trên toàn quốc.
-          </p>
-        </div>
-
-        <div class="reviews-grid">
-          <!-- Review 1 -->
-          <div class="review-card">
-            <div class="review-header">
-              <div
-                class="reviewer-avatar"
-                style="background: var(--gradient-blue)"
-              >
-                TL
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Trần Lâm</h4>
-                <span class="reviewer-role">Robotics Team Lead, HUST</span>
-              </div>
-              <span class="review-date">Tháng 5</span>
-            </div>
-            <div class="review-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="review-text">
-              "Module ESP32 và mạch điều khiển ở đây chạy rất bền. Mạch không bị
-              sụt áp đột ngột như các chỗ trôi nội khác. Đồ án của mình chạy ộn
-              định trong 4 ngày thuyết trình."
-            </p>
-            <div class="review-product">
-              <i class="fa-solid fa-microchip"></i>
-              <span>ESP32 Development Board</span>
-            </div>
-          </div>
-
-          <!-- Review 2 -->
-          <div class="review-card">
-            <div class="review-header">
-              <div
-                class="reviewer-avatar"
-                style="background: var(--gradient-purple)"
-              >
-                MH
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Mai Hương</h4>
-                <span class="reviewer-role">Đại học Bách Khoa TP.HCM</span>
-              </div>
-              <span class="review-date">Tháng 5</span>
-            </div>
-            <div class="review-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-            </div>
-            <p class="review-text">
-              "Giao hàng nhanh khủng khiếp, chiều nộp báo cáo mà trưa nay đặt
-              hàng vẫn nhận kịp. Màn hình OLED và cảm biến DHT22 bọc gói kỹ càng
-              trong xđp chđng tĩnh điện."
-            </p>
-            <div class="review-product">
-              <i class="fa-solid fa-tv"></i>
-              <span>Màn Hình OLED 0.96 inch</span>
-            </div>
-          </div>
-
-          <!-- Review 3 -->
-          <div class="review-card">
-            <div class="review-header">
-              <div
-                class="reviewer-avatar"
-                style="background: var(--gradient-fire)"
-              >
-                NQ
-              </div>
-              <div class="reviewer-info">
-                <h4 class="reviewer-name">Nguyễn Quđc</h4>
-                <span class="reviewer-role">Học viện Bưu chính Viễn thông</span>
-              </div>
-              <span class="review-date">Tháng 5</span>
-            </div>
-            <div class="review-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star-half-stroke"></i>
-            </div>
-            <p class="review-text">
-              "Mình mua trọn bộ trở vạch, tụ hóa và MOSFET ở đây để làm mạch thủ
-              công. Chân đồng dễ hàn thiếc, dẫn điện ộn định, mạch in thủ công
-              chạy rất mượt."
-            </p>
-            <div class="review-product">
-              <i class="fa-solid fa-gears"></i>
-              <span>Túi Trở Vạch 10k Ohm</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-       NEWSLETTER SECTION
-       ========================================== -->
-
-    <section class="newsletter-section reveal">
-      <div class="container">
-        <div class="newsletter-content">
-          <h2 class="newsletter-title">Đăng Ký Nhận Tin Tức Kỹ Thuật</h2>
-          <p class="newsletter-sub">
-            Nhận ngay hướng dẫn đấu nối vi mạch mới nhất, mã nguồn IoT mẫu và
-            thông tin cập nhật linh kiện mới hàng tuần.
-          </p>
-          <form class="newsletter-form" id="newsletter-form">
-            <input
-              type="email"
-              placeholder="Nhập địa chỉ Email của bạn"
-              class="newsletter-input"
-              required
-            />
-            <button type="submit" class="newsletter-btn">Đăng Ký Ngay</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-       CONTACT SECTION
-       ========================================== -->
-    <section class="contact-section reveal" id="contact">
-      <div class="container contact-grid">
-        <div>
-          <div
-            class="section-header"
-            style="text-align: left; margin-bottom: 24px"
-          >
-            <span class="section-tag">Liên Hệ Ngay</span>
-            <h2 class="section-title">Hỗ Trợ Khách Hàng</h2>
-            <p class="section-subtitle" style="margin-left: 0">
-              Bạn cần đặt in mạch PCB số lượng lớn hoặc tư vấn trọn bộ linh kiện
-              đồ án? Hãy gửi lời nhắn cho chúng tôi.
-            </p>
-          </div>
-
-          <form class="contact-form" id="contact-form">
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label">Tên của bạn</label>
-                <input
-                  type="text"
-                  placeholder="Họ và Tên"
-                  class="form-input"
-                  id="contact-name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label class="form-label">Email</label>
-                <input
-                  type="email"
-                  placeholder="địa chỉ email"
-                  class="form-input"
-                  id="contact-email"
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Tiêu đề hỗ trợ</label>
-              <input
-                type="text"
-                placeholder="Hỗ trợ linh kiện đồ án tốt nghiệp, yêu cầu báo giá..."
-                class="form-input"
-                id="contact-subject"
-                required
-              />
-            </div>
-            <div class="form-group">
-              <label class="form-label">Nội dung chi tiết</label>
-              <textarea
-                placeholder="Viết câu hỏi của bạn tại đây..."
-                class="form-input"
-                id="contact-message"
-                required
-              ></textarea>
-            </div>
-            <button type="submit" class="submit-btn" id="contact-submit-btn">
-              Gửi Lời Nhắn <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
-
-        <div class="contact-info-cards">
-          <div class="contact-info-card">
-            <div
-              class="contact-icon"
-              style="
-                background: rgba(0, 212, 255, 0.1);
-                color: var(--accent-blue);
-              "
-            >
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>Địa Chỉ Cửa Hàng</h4>
-              <p>470 Trần Đại Nghĩa, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng</p>
-            </div>
-          </div>
-
-          <div class="contact-info-card">
-            <div
-              class="contact-icon"
-              style="
-                background: rgba(124, 58, 237, 0.1);
-                color: var(--accent-purple);
-              "
-            >
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>Hotline Hỗ Trợ</h4>
-              <p>0236.3.667.117 (Hoạt động 08:00 - 21:00)</p>
-            </div>
-          </div>
-
-          <div class="contact-info-card">
-            <div
-              class="contact-icon"
-              style="
-                background: rgba(247, 37, 133, 0.1);
-                color: var(--accent-pink);
-              "
-            >
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="contact-detail">
-              <h4>Email Kỹ Thuật / Kinh Doanh</h4>
-              <p>info@vku.udn.vn</p>
-            </div>
-          </div>
-
-          <div class="social-links">
-            <a class="social-link social-fb" aria-label="Facebook"
-              ><i class="fa-brands fa-facebook-f"></i
-            ></a>
-            <a class="social-link social-tw" aria-label="Twitter"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
-            <a class="social-link social-ig" aria-label="Instagram"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a class="social-link social-yt" aria-label="Youtube"
-              ><i class="fa-brands fa-youtube"></i
-            ></a>
-            <a class="social-link social-li" aria-label="Linkedin"
-              ><i class="fa-brands fa-linkedin-in"></i
-            ></a>
-            <a class="social-link social-gh" aria-label="Github"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==========================================
-       FOOTER (CHÂN TRANG)
-       ========================================== -->
-    <footer class="footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <a href="#" class="navbar-logo">
-            <div class="logo-icon">
-              <i class="fa-solid fa-microchip"></i>
-            </div>
-            <div class="logo-text">
-              <span class="logo-main">TechStore VN</span>
-              <span class="logo-sub">IoT & Hardware Hub</span>
-            </div>
-          </a>
-          <p>
-            Thương hiệu cung cấp linh kiện điện tử bán dẫn, thiết bị cơ điện tử
-            STEM, phần cứng máy tính nâng cấp hiệu năng cao và giải pháp IoT học
-            tập hàng đầu Việt Nam.
-          </p>
-          <span style="font-size: 12px; color: var(--text-muted)"
-            ><i class="fa-solid fa-shield-halved"></i> SSL Mã Hóa Bảo Mật</span
-          >
-        </div>
-
-        <div class="footer-col">
-          <h4>Hệ Sinh Thái</h4>
-          <div class="footer-links">
-            <a
-              href="#products"
-              class="footer-link mega-cat-item-footer"
-              data-category="microcontrollers"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Vi Điều Khiển</a
-            >
-            <a
-              href="#products"
-              class="footer-link mega-cat-item-footer"
-              data-category="sensors"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Cảm Biến & Đo Đạc</a
-            >
-            <a
-              href="#products"
-              class="footer-link mega-cat-item-footer"
-              data-category="displays"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Màn Hình Hiển Thị</a
-            >
-            <a
-              href="#products"
-              class="footer-link mega-cat-item-footer"
-              data-category="robotics"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Hệ Thống Động Cơ</a
-            >
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Hỗ Trợ Khách Hàng</h4>
-          <div class="footer-links">
-            <a href="#projects" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Hướng Dẫn Đấu Nối</a
-            >
-            <a href="#contact" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Bản Đồ Đường Đi</a
-            >
-            <a href="#" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Chính Sách Giao Hàng</a
-            >
-            <a href="#" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Ưu Đãi Sinh Viên</a
-            >
-          </div>
-        </div>
-
-        <div class="footer-col">
-          <h4>Tài Nguyên Lập Trình</h4>
-          <div class="footer-links">
-            <a href="#" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Thư Viện Arduino</a
-            >
-            <a href="#" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Code Mẫu ESP32 Free</a
-            >
-            <a href="#" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              Cài Đặt OS Raspberry Pi</a
-            >
-            <a href="#" class="footer-link"
-              ><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
-              STM32 HAL Projects</a
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="container footer-bottom">
-        <p class="footer-copy">
-          &copy; 2026 Bản Quyền Thuộc TechStore VN. Đồng hành cùng sinh viên
-          khối kỹ thuật & khoa học công nghệ Việt Nam.
-        </p>
-        <div class="footer-bottom-links">
-          <a href="#" class="footer-bottom-link">Chính Sách Bảo Mật</a>
-          <a href="#" class="footer-bottom-link">Điều Khoản Dịch Vụ</a>
-        </div>
-      </div>
-    </footer>
-
-    <!-- ==========================================
-       PRODUCT QUICK VIEW MODAL (XEM NHANH)
-       ========================================== -->
-    <div class="modal-overlay" id="product-modal">
-      <div class="modal-content">
-        <button class="modal-close" id="modal-close-btn" aria-label="Đóng">
-          <i class="fa-solid fa-xmark"></i>
+            ">
+          Xem thêm sản phẩm <i class="fa-solid fa-arrow-down"></i>
         </button>
-        <div class="modal-body">
-          <div class="modal-image-section" id="modal-image-container">
-            <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section reveal" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Hỗ Trợ Làm Đồ Án</span>
+        <h2 class="section-title">Thư Viện Đồ Án Mẫu</h2>
+        <p class="section-subtitle">
+          Bạn đang thực hiện các dự án nghiên cứu hoặc đồ án tốt nghiệp? Tham
+          khảo ngay sơ đồ mạch đấu nối và code mẫu miễn phí.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/smarthome.png" alt="Hệ Thống Nhà Thông Minh" />
           </div>
-          <div class="modal-details">
-            <div class="modal-category" id="modal-product-cat">Danh Mục</div>
-            <h3 class="modal-title" id="modal-product-name">Tên Linh Kiện</h3>
-
-            <div class="modal-rating">
-              <div class="stars" id="modal-product-stars"></div>
-              <span class="rating-count" id="modal-product-reviews"
-                >(0 lượt đánh giá)</span
-              >
-            </div>
-
-            <div class="modal-price-section">
-              <span class="modal-price" id="modal-product-price">0đ</span>
-            </div>
-
-            <p class="modal-description" id="modal-product-desc">
-              Mô tả sản phẩm...
+          <div class="project-body">
+            <span class="project-difficulty difficulty-intermediate">Trung Bình</span>
+            <h3 class="project-title">Hệ Thống Nhà Thông Minh IoT</h3>
+            <p class="project-desc">
+              Bộ điều khiển nhà thông minh đo nồng độ khí ga rò rỉ, nhiệt độ
+              phòng và tự động gửi cảnh báo lên dashboard web.
             </p>
-
-            <div class="modal-specs">
-              <h4>Thông Số Kỹ Thuật Chi Tiết</h4>
-              <div id="modal-product-specs-list">
-                <!-- specs listed dynamically -->
-              </div>
+            <div class="project-components">
+              <span class="component-tag">ESP32</span>
+              <span class="component-tag">DHT22</span>
+              <span class="component-tag">Cảm Biến MQ-2</span>
+              <span class="component-tag">Màn Hình OLED</span>
             </div>
+            <button class="project-btn tutorial-btn" data-project="smarthome">
+              <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
+            </button>
+          </div>
+        </div>
 
-            <div class="quantity-selector">
-              <label>Số lượng:</label>
-              <div class="qty-control">
-                <button class="qty-btn" id="modal-qty-minus">-</button>
-                <input
-                  type="text"
-                  value="1"
-                  class="qty-input"
-                  id="modal-qty-input"
-                  readonly
-                />
-                <button class="qty-btn" id="modal-qty-plus">+</button>
-              </div>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/robotcar.png" alt="Xe Robot Tự Hành" />
+          </div>
+          <div class="project-body">
+            <span class="project-difficulty difficulty-advanced">Nâng Cao</span>
+            <h3 class="project-title">Xe Robot Tự Hành Tránh Vật Cản</h3>
+            <p class="project-desc">
+              Hệ thống xe robot tránh chướng ngại vật sử dụng cảm biến siêu âm
+              gắn trên động cơ servo xoay quét góc.
+            </p>
+            <div class="project-components">
+              <span class="component-tag">Arduino Uno</span>
+              <span class="component-tag">HC-SR04</span>
+              <span class="component-tag">Mạch Cầu L298N</span>
+              <span class="component-tag">Servo SG90</span>
             </div>
+            <button class="project-btn tutorial-btn" data-project="robotcar">
+              <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
+            </button>
+          </div>
+        </div>
 
-            <div class="modal-actions">
-              <button class="modal-cart-btn" id="modal-add-to-cart-btn">
-                <i class="fa-solid fa-cart-plus"></i> Thêm Vào Giỏ Hàng
-              </button>
-              <button
-                class="modal-wishlist-btn"
-                id="modal-wishlist-btn"
-                aria-label="Thêm yêu thích"
-              >
-                <i class="fa-regular fa-heart"></i>
-              </button>
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/weather.png" alt="Trạm Thời Tiết" />
+          </div>
+          <div class="project-body">
+            <span class="project-difficulty difficulty-beginner">Cơ Bản</span>
+            <h3 class="project-title">Trạm Giám Sát Thời Tiết WiFi Mini</h3>
+            <p class="project-desc">
+              Hệ thống khí tượng đo nhiệt độ, độ ẩm và áp suất khí quyển, đồng
+              bộ lưu trữ trực tuyến qua mạng WiFi.
+            </p>
+            <div class="project-components">
+              <span class="component-tag">ESP8266</span>
+              <span class="component-tag">DHT22</span>
+              <span class="component-tag">Cảm Biến BMP280</span>
+              <span class="component-tag">Bộ Nguồn 18650</span>
             </div>
+            <button class="project-btn tutorial-btn" data-project="weather">
+              <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/security.png" alt="Khóa Cửa RFID" />
+          </div>
+          <div class="project-body">
+            <span class="project-difficulty difficulty-intermediate">Trung Bình</span>
+            <h3 class="project-title">
+              Khóa Cửa RFID & Mật Mã Không Tiếp Xúc
+            </h3>
+            <p class="project-desc">
+              Mô hình khóa thông minh mở cửa bằng cách quẹt thẻ RFID tần số
+              13.56MHz hoặc nhập mật khẩu trên bàn phím hiển thị LCD.
+            </p>
+            <div class="project-components">
+              <span class="component-tag">ESP8266</span>
+              <span class="component-tag">MFRC522 RFID</span>
+              <span class="component-tag">Servo SG90</span>
+              <span class="component-tag">LCD 16x2 I2C</span>
+            </div>
+            <button class="project-btn tutorial-btn" data-project="security">
+              <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/plantmonitor.png" alt="Hệ Thống Tưới Cây" />
+          </div>
+          <div class="project-body">
+            <span class="project-difficulty difficulty-beginner">Cơ Bản</span>
+            <h3 class="project-title">
+              Hệ Thống Tưới Cây Tự Động Thông Minh
+            </h3>
+            <p class="project-desc">
+              Trạm kiểm tra giám sát độ ẩm đất, nhiệt độ độ ẩm môi trường xung
+              quanh và tự động kích hoạt máy bơm tưới nước qua rơ-le.
+            </p>
+            <div class="project-components">
+              <span class="component-tag">Arduino Uno</span>
+              <span class="component-tag">DHT22</span>
+              <span class="component-tag">Cảm Biến Ánh Sáng</span>
+              <span class="component-tag">Relay 5V 1 Kênh</span>
+            </div>
+            <button class="project-btn tutorial-btn" data-project="plantmonitor">
+              <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="images/industrial.png" alt="Giám Sát Thiết Bị" />
+          </div>
+          <div class="project-body">
+            <span class="project-difficulty difficulty-advanced">Nâng Cao</span>
+            <h3 class="project-title">
+              Bộ Điều Khiển Giám Sát Thiết Bị Công Nghiệp
+            </h3>
+            <p class="project-desc">
+              Hệ thống điều khiển giám sát đóng ngắt động cơ công suất lớn từ
+              xa sử dụng chip ARM Cortex-M3 và cảm biến báo động an toàn khí
+              MQ-2.
+            </p>
+            <div class="project-components">
+              <span class="component-tag">STM32F103</span>
+              <span class="component-tag">Relay 5V 1 Kênh</span>
+              <span class="component-tag">Cảm Biến MQ-2</span>
+              <span class="component-tag">Màn Hình OLED</span>
+            </div>
+            <button class="project-btn tutorial-btn" data-project="industrial">
+              <i class="fa-solid fa-book-open"></i> Hướng Dẫn Chi Tiết
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- ==========================================
-       PROJECT TUTORIAL MODAL (CHI TIẾT ĐẤU NỐI Đổ ÁN)
+  <!-- ==========================================
+       STATS COUNTER SECTION
        ========================================== -->
-    <div class="modal-overlay" id="tutorial-modal">
-      <div class="modal-content" style="max-width: 800px">
-        <button
-          class="modal-close"
-          id="tutorial-modal-close-btn"
-          aria-label="Đóng"
-        >
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div
-          class="modal-body"
-          style="grid-template-columns: 1fr; padding: 32px"
-        >
-          <div
-            class="section-header"
-            style="text-align: left; margin-bottom: 24px"
-          >
-            <span class="section-tag" id="tutorial-proj-difficulty"
-              >Độ khó</span
-            >
-            <h2 class="section-title" id="tutorial-proj-title">
-              Hướng Dẫn Sơ Đồ Mạch Đấu Nối
-            </h2>
-            <p
-              class="section-subtitle"
-              style="margin-left: 0"
-              id="tutorial-proj-desc"
-            >
-              Các bước triển khai chi tiết.
-            </p>
+  <section class="stats-section reveal">
+    <div class="container stats-grid">
+      <div class="stat-item">
+        <span class="stat-value" id="stat-products" data-target="10000">0</span>
+        <span class="stat-label">Mã Linh Kiện Điện Tử</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-projects-done" data-target="1500">0</span>
+        <span class="stat-label">Đồ Án Tốt Nghiệp Được Hỗ Trợ</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-reviews-done" data-target="50000">0</span>
+        <span class="stat-label">Sinh Viên & Kỹ Sư Tin Dùng</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="stat-satisfaction" data-target="99">0</span>
+        <span class="stat-label">Độ Hài Lòng Về Kỹ Thuật</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       WHY CHOOSE US SECTION (ƯU ĐI M)
+       ========================================== -->
+  <section class="features-section reveal">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Cam Kết Chất Lượng</span>
+        <h2 class="section-title">Đồng Hành Cùng Sinh Viên Kỹ Thuật</h2>
+        <p class="section-subtitle">
+          Lý do vì sao TechStore VN trở thành điểm đến mua sắm tin cậy của các
+          bạn sinh viên khối ngành kỹ thuật công nghệ.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon" style="
+                background: rgba(0, 212, 255, 0.1);
+                color: var(--accent-blue);
+              ">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="feature-title">Linh Kiện Đã Kiểm Định</h3>
+          <p class="feature-desc">
+            Các loại chip bán dẫn, IC và module cảm biến đều được chạy thử
+            nghiệm chất lượng để hạn chế tối đa hỏng hóc do cắm nhầm dây.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="
+                background: rgba(124, 58, 237, 0.1);
+                color: var(--accent-purple);
+              ">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 class="feature-title">Tư Vấn Kỹ Thuật Trực Tiếp</h3>
+          <p class="feature-desc">
+            Giải đáp sơ đồ kết nối chân tín hiệu, hướng dẫn cài đặt thư viện
+            và gỡ lỗi code Arduino/C++ hoàn toàn miễn phí.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="
+                background: rgba(247, 37, 133, 0.1);
+                color: var(--accent-pink);
+              ">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 class="feature-title">Giao Hàng Hỏa Tốc</h3>
+          <p class="feature-desc">
+            Hỗ trợ giao hàng hỏa tốc trong ngày tại các thành phố lớn để kịp
+            hạn chót báo cáo đồ án, thử nghiệm sản phẩm.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon" style="
+                background: rgba(0, 255, 136, 0.1);
+                color: var(--accent-green);
+              ">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h3 class="feature-title">Thư Viện & Code Mẫu Free</h3>
+          <p class="feature-desc">
+            Kho tài nguyên mã nguồn mở khộng lồ cho Arduino, ESP32 RTOS SDK và
+            STM32 HAL, giúp tiết kiệm thời gian phát triển code.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BRANDS SHOWCASE SECTION
+       ========================================== -->
+  <section class="brands-section reveal">
+    <div class="container">
+      <div class="brands-grid">
+        <div class="brand-card">ARDUINO</div>
+        <div class="brand-card">RASPBERRY PI</div>
+        <div class="brand-card">ESPRESSIF</div>
+        <div class="brand-card">STMICRO</div>
+        <div class="brand-card">ADAFRUIT</div>
+        <div class="brand-card">SPARKFUN</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CUSTOMER REVIEWS SECTION
+       ========================================== -->
+  <section class="reviews-section reveal" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Phản Hồi Sinh Viên</span>
+        <h2 class="section-title">Nhận Xét Từ Cộng Đồng</h2>
+        <p class="section-subtitle">
+          Lắng nghe ý kiến thực tế từ các sinh viên, nghiên cứu sinh và kỹ sư
+          nhúng trên toàn quốc.
+        </p>
+      </div>
+
+      <div class="reviews-grid">
+        <!-- Review 1 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar" style="background: var(--gradient-blue)">
+              TL
+            </div>
+            <div class="reviewer-info">
+              <h4 class="reviewer-name">Trần Lâm</h4>
+              <span class="reviewer-role">Robotics Team Lead, HUST</span>
+            </div>
+            <span class="review-date">Tháng 5</span>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Module ESP32 và mạch điều khiển ở đây chạy rất bền. Mạch không bị
+            sụt áp đột ngột như các chỗ trôi nội khác. Đồ án của mình chạy ộn
+            định trong 4 ngày thuyết trình."
+          </p>
+          <div class="review-product">
+            <i class="fa-solid fa-microchip"></i>
+            <span>ESP32 Development Board</span>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar" style="background: var(--gradient-purple)">
+              MH
+            </div>
+            <div class="reviewer-info">
+              <h4 class="reviewer-name">Mai Hương</h4>
+              <span class="reviewer-role">Đại học Bách Khoa TP.HCM</span>
+            </div>
+            <span class="review-date">Tháng 5</span>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Giao hàng nhanh khủng khiếp, chiều nộp báo cáo mà trưa nay đặt
+            hàng vẫn nhận kịp. Màn hình OLED và cảm biến DHT22 bọc gói kỹ càng
+            trong xđp chđng tĩnh điện."
+          </p>
+          <div class="review-product">
+            <i class="fa-solid fa-tv"></i>
+            <span>Màn Hình OLED 0.96 inch</span>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-avatar" style="background: var(--gradient-fire)">
+              NQ
+            </div>
+            <div class="reviewer-info">
+              <h4 class="reviewer-name">Nguyễn Quđc</h4>
+              <span class="reviewer-role">Học viện Bưu chính Viễn thông</span>
+            </div>
+            <span class="review-date">Tháng 5</span>
+          </div>
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <p class="review-text">
+            "Mình mua trọn bộ trở vạch, tụ hóa và MOSFET ở đây để làm mạch thủ
+            công. Chân đồng dễ hàn thiếc, dẫn điện ộn định, mạch in thủ công
+            chạy rất mượt."
+          </p>
+          <div class="review-product">
+            <i class="fa-solid fa-gears"></i>
+            <span>Túi Trở Vạch 10k Ohm</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       NEWSLETTER SECTION
+       ========================================== -->
+
+  <section class="newsletter-section reveal">
+    <div class="container">
+      <div class="newsletter-content">
+        <h2 class="newsletter-title">Đăng Ký Nhận Tin Tức Kỹ Thuật</h2>
+        <p class="newsletter-sub">
+          Nhận ngay hướng dẫn đấu nối vi mạch mới nhất, mã nguồn IoT mẫu và
+          thông tin cập nhật linh kiện mới hàng tuần.
+        </p>
+        <form class="newsletter-form" id="newsletter-form">
+          <input type="email" placeholder="Nhập địa chỉ Email của bạn" class="newsletter-input" required />
+          <button type="submit" class="newsletter-btn">Đăng Ký Ngay</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CONTACT SECTION
+       ========================================== -->
+  <section class="contact-section reveal" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <div class="section-header" style="text-align: left; margin-bottom: 24px">
+          <span class="section-tag">Liên Hệ Ngay</span>
+          <h2 class="section-title">Hỗ Trợ Khách Hàng</h2>
+          <p class="section-subtitle" style="margin-left: 0">
+            Bạn cần đặt in mạch PCB số lượng lớn hoặc tư vấn trọn bộ linh kiện
+            đồ án? Hãy gửi lời nhắn cho chúng tôi.
+          </p>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Tên của bạn</label>
+              <input type="text" placeholder="Họ và Tên" class="form-input" id="contact-name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" placeholder="địa chỉ email" class="form-input" id="contact-email" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Tiêu đề hỗ trợ</label>
+            <input type="text" placeholder="Hỗ trợ linh kiện đồ án tốt nghiệp, yêu cầu báo giá..." class="form-input"
+              id="contact-subject" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label">Nội dung chi tiết</label>
+            <textarea placeholder="Viết câu hỏi của bạn tại đây..." class="form-input" id="contact-message"
+              required></textarea>
+          </div>
+          <button type="submit" class="submit-btn" id="contact-submit-btn">
+            Gửi Lời Nhắn <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+
+      <div class="contact-info-cards">
+        <div class="contact-info-card">
+          <div class="contact-icon" style="
+                background: rgba(0, 212, 255, 0.1);
+                color: var(--accent-blue);
+              ">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <div class="contact-detail">
+            <h4>Địa Chỉ Cửa Hàng</h4>
+            <p>470 Trần Đại Nghĩa, Phường Ngũ Hành Sơn, Thành phố Đà Nẵng</p>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon" style="
+                background: rgba(124, 58, 237, 0.1);
+                color: var(--accent-purple);
+              ">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="contact-detail">
+            <h4>Hotline Hỗ Trợ</h4>
+            <p>0236.3.667.117 (Hoạt động 08:00 - 21:00)</p>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <div class="contact-icon" style="
+                background: rgba(247, 37, 133, 0.1);
+                color: var(--accent-pink);
+              ">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="contact-detail">
+            <h4>Email Kỹ Thuật / Kinh Doanh</h4>
+            <p>info@vku.udn.vn</p>
+          </div>
+        </div>
+
+        <div class="social-links">
+          <a class="social-link social-fb" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a class="social-link social-tw" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a class="social-link social-ig" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a class="social-link social-yt" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+          <a class="social-link social-li" aria-label="Linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a class="social-link social-gh" aria-label="Github"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER (CHÂN TRANG)
+       ========================================== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="navbar-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">TechStore VN</span>
+            <span class="logo-sub">IoT & Hardware Hub</span>
+          </div>
+        </a>
+        <p>
+          Thương hiệu cung cấp linh kiện điện tử bán dẫn, thiết bị cơ điện tử
+          STEM, phần cứng máy tính nâng cấp hiệu năng cao và giải pháp IoT học
+          tập hàng đầu Việt Nam.
+        </p>
+        <span style="font-size: 12px; color: var(--text-muted)"><i class="fa-solid fa-shield-halved"></i> SSL Mã Hóa Bảo
+          Mật</span>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hệ Sinh Thái</h4>
+        <div class="footer-links">
+          <a href="#products" class="footer-link mega-cat-item-footer" data-category="microcontrollers"><i
+              class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Vi Điều Khiển</a>
+          <a href="#products" class="footer-link mega-cat-item-footer" data-category="sensors"><i
+              class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Cảm Biến & Đo Đạc</a>
+          <a href="#products" class="footer-link mega-cat-item-footer" data-category="displays"><i
+              class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Màn Hình Hiển Thị</a>
+          <a href="#products" class="footer-link mega-cat-item-footer" data-category="robotics"><i
+              class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Hệ Thống Động Cơ</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hỗ Trợ Khách Hàng</h4>
+        <div class="footer-links">
+          <a href="#projects" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Hướng Dẫn Đấu Nối</a>
+          <a href="#contact" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Bản Đồ Đường Đi</a>
+          <a href="#" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Chính Sách Giao Hàng</a>
+          <a href="#" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Ưu Đãi Sinh Viên</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Tài Nguyên Lập Trình</h4>
+        <div class="footer-links">
+          <a href="#" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Thư Viện Arduino</a>
+          <a href="#" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Code Mẫu ESP32 Free</a>
+          <a href="#" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            Cài Đặt OS Raspberry Pi</a>
+          <a href="#" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size: 9px"></i>
+            STM32 HAL Projects</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p class="footer-copy">
+        &copy; 2026 Bản Quyền Thuộc TechStore VN. Đồng hành cùng sinh viên
+        khối kỹ thuật & khoa học công nghệ Việt Nam.
+      </p>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-bottom-link">Chính Sách Bảo Mật</a>
+        <a href="#" class="footer-bottom-link">Điều Khoản Dịch Vụ</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       PRODUCT QUICK VIEW MODAL (XEM NHANH)
+       ========================================== -->
+  <div class="modal-overlay" id="product-modal">
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close-btn" aria-label="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body">
+        <div class="modal-image-section" id="modal-image-container">
+          <!-- Populated by JS -->
+        </div>
+        <div class="modal-details">
+          <div class="modal-category" id="modal-product-cat">Danh Mục</div>
+          <h3 class="modal-title" id="modal-product-name">Tên Linh Kiện</h3>
+
+          <div class="modal-rating">
+            <div class="stars" id="modal-product-stars"></div>
+            <span class="rating-count" id="modal-product-reviews">(0 lượt đánh giá)</span>
           </div>
 
-          <!-- Dynamic Components List Inside Project Tutorial (Requested) -->
-          <div style="margin-bottom: 24px">
-            <h4
-              style="
+          <div class="modal-price-section">
+            <span class="modal-price" id="modal-product-price">0đ</span>
+          </div>
+
+          <p class="modal-description" id="modal-product-desc">
+            Mô tả sản phẩm...
+          </p>
+
+          <div class="modal-specs">
+            <h4>Thông Số Kỹ Thuật Chi Tiết</h4>
+            <div id="modal-product-specs-list">
+              <!-- specs listed dynamically -->
+            </div>
+          </div>
+
+          <div class="quantity-selector">
+            <label>Số lượng:</label>
+            <div class="qty-control">
+              <button class="qty-btn" id="modal-qty-minus">-</button>
+              <input type="text" value="1" class="qty-input" id="modal-qty-input" readonly />
+              <button class="qty-btn" id="modal-qty-plus">+</button>
+            </div>
+          </div>
+
+          <div class="modal-actions">
+            <button class="modal-cart-btn" id="modal-add-to-cart-btn">
+              <i class="fa-solid fa-cart-plus"></i> Thêm Vào Giỏ Hàng
+            </button>
+            <button class="modal-wishlist-btn" id="modal-wishlist-btn" aria-label="Thêm yêu thích">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PROJECT TUTORIAL MODAL (CHI TIẾT ĐẤU NỐI Đổ ÁN)
+       ========================================== -->
+  <div class="modal-overlay" id="tutorial-modal">
+    <div class="modal-content" style="max-width: 800px">
+      <button class="modal-close" id="tutorial-modal-close-btn" aria-label="Đóng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body" style="grid-template-columns: 1fr; padding: 32px">
+        <div class="section-header" style="text-align: left; margin-bottom: 24px">
+          <span class="section-tag" id="tutorial-proj-difficulty">Độ khó</span>
+          <h2 class="section-title" id="tutorial-proj-title">
+            Hướng Dẫn Sơ Đồ Mạch Đấu Nối
+          </h2>
+          <p class="section-subtitle" style="margin-left: 0" id="tutorial-proj-desc">
+            Các bước triển khai chi tiết.
+          </p>
+        </div>
+
+        <!-- Dynamic Components List Inside Project Tutorial (Requested) -->
+        <div style="margin-bottom: 24px">
+          <h4 style="
                 font-family: &quot;Orbitron&quot;, sans-serif;
                 font-size: 14px;
                 color: var(--accent-blue);
                 margin-bottom: 12px;
-              "
-            >
-              <i class="fa-solid fa-boxes-stacked"></i> Danh Sách Linh Kiện Sử
-              Dụng Trong Đồ Án
-            </h4>
-            <div
-              class="tutorial-components-list"
-              id="tutorial-proj-components-list"
-            >
-              <!-- Populated dynamically by script.js with product details and buy buttons -->
-            </div>
-            <button
-              class="btn-primary"
-              id="tutorial-add-all-cart-btn"
-              style="
+              ">
+            <i class="fa-solid fa-boxes-stacked"></i> Danh Sách Linh Kiện Sử
+            Dụng Trong Đồ Án
+          </h4>
+          <div class="tutorial-components-list" id="tutorial-proj-components-list">
+            <!-- Populated dynamically by script.js with product details and buy buttons -->
+          </div>
+          <button class="btn-primary" id="tutorial-add-all-cart-btn" style="
                 margin-top: 16px;
                 width: 100%;
                 justify-content: center;
                 background: var(--gradient-purple);
-              "
-            >
-              <i class="fa-solid fa-cart-plus"></i> Thêm Tất Cả Linh Kiện Vào
-              Giỏ Hàng
-            </button>
-          </div>
+              ">
+            <i class="fa-solid fa-cart-plus"></i> Thêm Tất Cả Linh Kiện Vào
+            Giỏ Hàng
+          </button>
+        </div>
 
-          <div
-            style="
+        <div style="
               margin-bottom: 24px;
               background: var(--bg-glass);
               border: var(--border-glass);
               border-radius: var(--radius-md);
               padding: 16px;
-            "
-          >
-            <h4
-              style="
+            ">
+          <h4 style="
                 font-family: &quot;Orbitron&quot;, sans-serif;
                 font-size: 13px;
                 color: var(--accent-purple);
                 margin-bottom: 8px;
-              "
-            >
-              <i class="fa-solid fa-diagram-project"></i> Bảng Nối Dây Chi Tiết
-              (Pin Connection)
-            </h4>
-            <table
-              style="width: 100%; border-collapse: collapse; font-size: 13px"
-              id="tutorial-wiring-table"
-            >
-              <!-- Wiring list -->
-            </table>
-          </div>
+              ">
+            <i class="fa-solid fa-diagram-project"></i> Bảng Nối Dây Chi Tiết
+            (Pin Connection)
+          </h4>
+          <table style="width: 100%; border-collapse: collapse; font-size: 13px" id="tutorial-wiring-table">
+            <!-- Wiring list -->
+          </table>
+        </div>
 
-          <div style="margin-bottom: 24px">
-            <h4
-              style="
+        <div style="margin-bottom: 24px">
+          <h4 style="
                 font-family: &quot;Orbitron&quot;, sans-serif;
                 font-size: 14px;
                 color: var(--accent-green);
                 margin-bottom: 8px;
-              "
-            >
-              <i class="fa-solid fa-code"></i> Mã Nguồn Lập Trình Cơ Bản
-              (Arduino Sketch)
-            </h4>
-            <pre
-              style="
+              ">
+            <i class="fa-solid fa-code"></i> Mã Nguồn Lập Trình Cơ Bản
+            (Arduino Sketch)
+          </h4>
+          <pre style="
                 background: #050508;
                 border: var(--border-glass);
                 border-radius: var(--radius-md);
@@ -2065,133 +1538,105 @@
                 font-size: 12px;
                 overflow-x: auto;
                 color: #a8ffb2;
-              "
-              id="tutorial-code-block"
-            >
+              " id="tutorial-code-block">
 // Sample Code
-          </pre
-            >
-          </div>
-
-          <button
-            class="btn-primary"
-            id="tutorial-download-code-btn"
-            style="width: 100%; justify-content: center"
-          >
-            <i class="fa-solid fa-download"></i> Tải Toàn Bộ Code & Sơ Đồ Mạch
-            (.zip)
-          </button>
+          </pre>
         </div>
+
+        <button class="btn-primary" id="tutorial-download-code-btn" style="width: 100%; justify-content: center">
+          <i class="fa-solid fa-download"></i> Tải Toàn Bộ Code & Sơ Đồ Mạch
+          (.zip)
+        </button>
       </div>
     </div>
+  </div>
 
-    <!-- ==========================================
+  <!-- ==========================================
        DANH SÁCH YÊU THÍCH (WISHLIST SIDEBAR)
        ========================================== -->
-    <div class="cart-overlay" id="wishlist-sidebar-overlay"></div>
-    <div class="cart-sidebar" id="wishlist-sidebar">
-      <div class="cart-header">
-        <h3>
-          <i class="fa-solid fa-heart" style="color: var(--accent-pink)"></i>
-          Yêu Thích Của Bạn
-          <span
-            class="cart-item-count-badge"
-            id="wishlist-count-sidebar"
-            style="background: var(--accent-pink)"
-            >0</span
-          >
-        </h3>
-        <button
-          class="cart-close-btn"
-          id="wishlist-close-btn"
-          aria-label="Đóng danh sách yêu thích"
-        >
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <!-- Items list -->
-      <div class="cart-items" id="wishlist-items-container">
-        <!-- Added dynamically by JS -->
-      </div>
-
-      <!-- Footer -->
-      <div class="cart-footer">
-        <button
-          class="cart-checkout-btn"
-          id="wishlist-add-all-cart-btn"
-          style="background: var(--gradient-purple)"
-        >
-          <i class="fa-solid fa-cart-plus"></i> Thêm Tất Cả Vào Giỏ
-        </button>
-        <button class="cart-continue-btn" id="wishlist-continue-btn">
-          Tiếp Tục Mua Sắm
-        </button>
-      </div>
+  <div class="cart-overlay" id="wishlist-sidebar-overlay"></div>
+  <div class="cart-sidebar" id="wishlist-sidebar">
+    <div class="cart-header">
+      <h3>
+        <i class="fa-solid fa-heart" style="color: var(--accent-pink)"></i>
+        Yêu Thích Của Bạn
+        <span class="cart-item-count-badge" id="wishlist-count-sidebar" style="background: var(--accent-pink)">0</span>
+      </h3>
+      <button class="cart-close-btn" id="wishlist-close-btn" aria-label="Đóng danh sách yêu thích">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
 
-    <!-- ==========================================
+    <!-- Items list -->
+    <div class="cart-items" id="wishlist-items-container">
+      <!-- Added dynamically by JS -->
+    </div>
+
+    <!-- Footer -->
+    <div class="cart-footer">
+      <button class="cart-checkout-btn" id="wishlist-add-all-cart-btn" style="background: var(--gradient-purple)">
+        <i class="fa-solid fa-cart-plus"></i> Thêm Tất Cả Vào Giỏ
+      </button>
+      <button class="cart-continue-btn" id="wishlist-continue-btn">
+        Tiếp Tục Mua Sắm
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
        GIỎ HÀNG (CART SIDEBAR)
        ========================================== -->
-    <div class="cart-overlay" id="cart-sidebar-overlay"></div>
-    <div class="cart-sidebar" id="cart-sidebar">
-      <div class="cart-header">
-        <h3>
-          <i
-            class="fa-solid fa-cart-shopping"
-            style="color: var(--accent-blue)"
-          ></i>
-          Giỏ Hàng Của Bạn
-          <span class="cart-item-count-badge" id="cart-count-sidebar">0</span>
-        </h3>
-        <button
-          class="cart-close-btn"
-          id="cart-close-btn"
-          aria-label="Đóng giỏ hàng"
-        >
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <!-- Items list -->
-      <div class="cart-items" id="cart-items-container">
-        <!-- Added dynamically by JS -->
-      </div>
-
-      <!-- Footer -->
-      <div class="cart-footer">
-        <div class="cart-subtotal">
-          <span>Giao hàng:</span>
-          <span style="color: var(--accent-green)"
-            >MIỄN PHÍ Vận Chuyển Toàn Quốc</span
-          >
-        </div>
-        <div class="cart-total">
-          <span class="cart-total-label">Tộng cộng:</span>
-          <span class="cart-total-value" id="cart-total-value">0đ</span>
-        </div>
-        <button class="cart-checkout-btn" id="cart-checkout-btn">
-          <i class="fa-solid fa-credit-card"></i> Tiến Hành Đặt Hàng
-        </button>
-        <button class="cart-continue-btn" id="cart-continue-btn">
-          Tiếp Tục Mua Linh Kiện
-        </button>
-      </div>
+  <div class="cart-overlay" id="cart-sidebar-overlay"></div>
+  <div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h3>
+        <i class="fa-solid fa-cart-shopping" style="color: var(--accent-blue)"></i>
+        Giỏ Hàng Của Bạn
+        <span class="cart-item-count-badge" id="cart-count-sidebar">0</span>
+      </h3>
+      <button class="cart-close-btn" id="cart-close-btn" aria-label="Đóng giỏ hàng">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
 
-    <!-- ==========================================
+    <!-- Items list -->
+    <div class="cart-items" id="cart-items-container">
+      <!-- Added dynamically by JS -->
+    </div>
+
+    <!-- Footer -->
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Giao hàng:</span>
+        <span style="color: var(--accent-green)">MIỄN PHÍ Vận Chuyển Toàn Quốc</span>
+      </div>
+      <div class="cart-total">
+        <span class="cart-total-label">Tộng cộng:</span>
+        <span class="cart-total-value" id="cart-total-value">0đ</span>
+      </div>
+      <button class="cart-checkout-btn" id="cart-checkout-btn">
+        <i class="fa-solid fa-credit-card"></i> Tiến Hành Đặt Hàng
+      </button>
+      <button class="cart-continue-btn" id="cart-continue-btn">
+        Tiếp Tục Mua Linh Kiện
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================
        TÌM KIẾM CHI TIẾT ĐÃ CHUYỂN LÊN NAVBAR
        ========================================== -->
 
-    <!-- Nút Trượt Lên Đầu Trang -->
-    <button class="scroll-top" id="scroll-top-btn" aria-label="Lên đầu trang">
-      <i class="fa-solid fa-arrow-up"></i>
-    </button>
+  <!-- Nút Trượt Lên Đầu Trang -->
+  <button class="scroll-top" id="scroll-top-btn" aria-label="Lên đầu trang">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
 
-    <!-- Hộp Thông Báo (Toast Notification System) -->
-    <div class="toast-container" id="toast-container"></div>
+  <!-- Hộp Thông Báo (Toast Notification System) -->
+  <div class="toast-container" id="toast-container"></div>
 
-    <!-- Vanilla Javascript File -->
-    <script src="script.js?v=2"></script>
-  </body>
+  <!-- Vanilla Javascript File -->
+  <script src="script.js?v=2"></script>
+</body>
+
 </html>

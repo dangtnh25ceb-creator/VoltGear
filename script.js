@@ -4645,7 +4645,7 @@ class FilterManager {
 
       <div class="product-image-wrap">
 
-        <img src="images/${product.image}.png" alt="${product.name}" class="product-img" style="width: 100%; height: 100%; object-fit: contain;">
+        <img src="images/${product.image}.png" alt="${product.name}" class="product-img" style="width: 100%; height: 100%; object-fit: cover;">
 
         <div class="product-badges">
 
@@ -4841,7 +4841,7 @@ function openQuickView(productId, cartManager, wishlistManager) {
   const imageContainer = document.getElementById("modal-image-container");
 
   if (imageContainer) {
-    imageContainer.innerHTML = `<img src="images/${product.image}.png" alt="${product.name}" class="product-img" style="max-height: 280px; max-width: 100%; object-fit: contain;">`;
+    imageContainer.innerHTML = `<img src="images/${product.image}.png" alt="${product.name}" class="product-img" style="max-height: 280px; max-width: 100%; object-fit: cover;">`;
   }
 
   // Khởi tạo trạng thái yêu thích bên trong Modal
